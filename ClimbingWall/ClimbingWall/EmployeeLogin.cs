@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace ClimbingWall
 {
-    public partial class Form1 : Form
+    public partial class EmployeeLogin : Form
     {
-        public Form1()
+        public EmployeeLogin()
         {
             InitializeComponent();
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
