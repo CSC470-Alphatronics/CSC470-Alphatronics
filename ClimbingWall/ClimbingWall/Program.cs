@@ -14,6 +14,7 @@ namespace ClimbingWall
         [STAThread]
         static void Main()
         {
+            Database.Instance.connect();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EmployeeLogin());
