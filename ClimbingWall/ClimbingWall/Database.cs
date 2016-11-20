@@ -17,7 +17,7 @@ namespace ClimbingWall
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
             builder.UserID = "root";
-            builder.Password = "";
+            builder.Password = "blenheim1";
             builder.Database = "climbing_wall";
             connection = new MySqlConnection(builder.ToString());
             connection.Open();

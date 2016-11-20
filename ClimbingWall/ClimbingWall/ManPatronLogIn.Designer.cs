@@ -84,4 +84,3 @@
         private System.Windows.Forms.Label resultLabel;
     }
 }
-
