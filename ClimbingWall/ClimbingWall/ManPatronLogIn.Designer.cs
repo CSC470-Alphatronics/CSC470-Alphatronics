@@ -1,5 +1,4 @@
-﻿namespace PlaygroudForms
-{
+﻿namespace ClimbingWall {
     partial class ManLogInForm
     {
         /// <summary>
