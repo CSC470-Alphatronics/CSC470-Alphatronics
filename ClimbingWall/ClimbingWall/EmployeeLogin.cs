@@ -20,7 +20,15 @@ namespace ClimbingWall
         
         private void loginButton_Click(object sender, EventArgs e)
         {
-            
+            bool isAdmin = false;
+            bool loggedin= false;
+
+            loggedin = Database.Instance.login(usernameInput.Text, passwordInput.Text, ref isAdmin);
+
+            if (loggedin)
+                MessageBox.Show("Login Successful");
+            else
+                MessageBox.Show("Login Failed");
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -18,7 +18,7 @@ namespace ClimbingWall
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
             builder.Server = "localhost";
             builder.UserID = "root";
-            builder.Password = "";
+            builder.Password = "root";
             builder.Database = "climbing_wall";
             connection = new MySqlConnection(builder.ToString());
             try
@@ -46,6 +46,37 @@ namespace ClimbingWall
                 }
                 return instance;
             }
+        }
+        public bool login(string username, string password, ref bool isAdmin)
+        {
+            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Name = @username AND Password = @password";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            if (reader.HasRows)
+            {
+                reader.Read();
+                if (reader.GetBoolean("Admin") == true)
+                    isAdmin = true;
+            }
+            else
+            {
+                reader.Close();
+                return false;
+            }
+            reader.Close();
+            return true;
         }
     }
 }
