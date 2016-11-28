@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace PlaygroudForms
 {
-    
+
     public partial class ManLogInForm : Form
     {
-        
+
         Patron[] patList = { new Patron(1998812, false), new Patron(1443321, false), new Patron(3522521, true, "Arson"), new Patron(1234567, true, "Being a Dick") };
-            
+
         public ManLogInForm()
         {
             InitializeComponent();
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,10 +52,10 @@ namespace PlaygroudForms
                 {
                     resultLabel.Text = "Patron " + Convert.ToString(findPat.getId()) + " Logged In!";
                     //OtherLoginStuff
-                        //Display Patron Info
-                        //Create Log
-                            //If First Log isn't filled, fill it with the new log.
-                            //set Latest log to the newest log made.
+                    //Display Patron Info
+                    //Create Log
+                    //If First Log isn't filled, fill it with the new log.
+                    //set Latest log to the newest log made.
                 }
             }
         }

@@ -17,20 +17,7 @@ namespace ClimbingWall
         [STAThread]
         static void Main()
         {
-            string connectStr = null;
-            MySqlConnection connect;
-            connectStr = "server=localhost;database=climbing_wall;uid=root;pwd=root;";
-            connect = new MySqlConnection(connectStr);
-            try
-            {
-                connect.Open();
-                MessageBox.Show("Connection Successful");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Connection Failed");
-            }
-
+            Database.Instance.connect();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EmployeeLogin());
