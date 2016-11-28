@@ -42,6 +42,7 @@
             this.usernameInput.Name = "usernameInput";
             this.usernameInput.Size = new System.Drawing.Size(220, 20);
             this.usernameInput.TabIndex = 0;
+            this.usernameInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.usernameInput_KeyDown);
             // 
             // passwordInput
             // 
@@ -51,6 +52,7 @@
             this.passwordInput.PasswordChar = '*';
             this.passwordInput.Size = new System.Drawing.Size(220, 20);
             this.passwordInput.TabIndex = 1;
+            this.passwordInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordInput_KeyDown);
             // 
             // label1
             // 

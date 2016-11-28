@@ -35,5 +35,25 @@ namespace ClimbingWall
         {
 
         }
+
+        private void passwordInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
+
+        private void usernameInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                loginButton.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
     }
 }
