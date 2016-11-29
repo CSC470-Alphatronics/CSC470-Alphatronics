@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using Liphsoft.Crypto.Argon2;
 
 namespace ClimbingWall
 {
@@ -26,7 +27,7 @@ namespace ClimbingWall
                 connection.Open();
                 MessageBox.Show("Connection Successful");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Connection Failed");
             }
@@ -49,11 +50,15 @@ namespace ClimbingWall
         }
         public bool login(string username, string password, ref bool isAdmin)
         {
-            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Name = @username AND Password = @password";
+            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Name = @username";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
+
+            // Create hasher variable to hash the entered password
+            var hasher = new PasswordHasher();
+            // Cross-check hashed password with hashes in database
+            // If match is found
             MySqlDataReader reader;
             try
             {
@@ -67,6 +72,11 @@ namespace ClimbingWall
             if (reader.HasRows)
             {
                 reader.Read();
+                if (!hasher.Verify(reader.GetString("Password"), password))
+                {
+                    reader.Close();
+                    return false;
+                }
                 if (reader.GetBoolean("Admin") == true)
                     isAdmin = true;
             }
