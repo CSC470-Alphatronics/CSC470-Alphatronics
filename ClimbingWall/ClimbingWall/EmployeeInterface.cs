@@ -22,5 +22,28 @@ namespace ClimbingWall
             var login = new ManLogInForm();
             login.Show();
         }
+
+        private void EmployeeInterface_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newUsernameInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addEmployeeButton_Click(object sender, EventArgs e)
+        {
+            bool success = Database.Instance.createEmployee(newUsernameInput.Text, newPasswordInput.Text, isAdminInput.Checked);
+            if (success)
+            {
+                MessageBox.Show("User creation succeeded.");
+            }
+            else
+            {
+                MessageBox.Show("User creaton failed.");
+            }
+        }
     }
 }
