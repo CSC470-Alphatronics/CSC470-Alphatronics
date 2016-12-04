@@ -16,5 +16,11 @@ namespace ClimbingWall
         {
             InitializeComponent();
         }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            var login = new ManLogInForm();
+            login.Show();
+        }
     }
 }

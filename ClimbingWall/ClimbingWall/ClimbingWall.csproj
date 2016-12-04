@@ -96,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EmployeeInterface.resx">
+      <DependentUpon>EmployeeInterface.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeLogin.resx">
       <DependentUpon>EmployeeLogin.cs</DependentUpon>
     </EmbeddedResource>

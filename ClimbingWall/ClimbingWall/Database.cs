@@ -88,5 +88,25 @@ namespace ClimbingWall
             reader.Close();
             return true;
         }
+        public bool patron_login(string userID)
+        {
+            string cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@ID", userID);
+
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            return true;
+        }
+
     }
 }

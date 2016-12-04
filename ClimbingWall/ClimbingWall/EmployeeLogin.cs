@@ -26,7 +26,12 @@ namespace ClimbingWall
             loggedin = Database.Instance.login(usernameInput.Text, passwordInput.Text, ref isAdmin);
 
             if (loggedin)
-                MessageBox.Show("Login Successful");
+            {
+                this.Hide();
+                var form = new EmployeeInterface();
+                form.Closed += (s, args) => this.Close();
+                form.Show();
+            }
             else
                 MessageBox.Show("Login Failed");
         }
