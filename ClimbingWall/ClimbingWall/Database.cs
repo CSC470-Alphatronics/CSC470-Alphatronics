@@ -136,7 +136,7 @@ namespace ClimbingWall
             cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             cmd.Parameters.AddWithValue("@ID", userID);
-            reader = cmd.ExecuteReader();
+                reader = cmd.ExecuteReader();
             var ordinal = reader.GetOrdinal("FK_FirstLog");
             reader.Read();
             if (reader.IsDBNull(ordinal))
@@ -163,6 +163,27 @@ namespace ClimbingWall
             return true;
         }
 
+        public bool createEmployee(string username, string password, bool isAdmin)
+        {
+            var hasher = new PasswordHasher();
+            string hashedPassword = hasher.Hash(password);
+            string cmd_str = "INSERT INTO climbing_wall.employee (Employee_Name, Password, Admin) VALUES (@username, @hashedPassword, @isAdmin)";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@hashedPassword", hashedPassword);
+            cmd.Parameters.AddWithValue("@isAdmin", isAdmin);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            return true;
+        }
 
     }
 }

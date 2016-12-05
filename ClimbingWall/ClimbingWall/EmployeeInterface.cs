@@ -12,15 +12,29 @@ namespace ClimbingWall
 {
     public partial class EmployeeInterface : Form
     {
-        public EmployeeInterface()
+        public EmployeeInterface(bool isAdmin)
         {
             InitializeComponent();
+            this.adminPanel.Visible = isAdmin;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
             var login = new ManLogInForm();
             login.Show();
+        }
+
+        private void addEmployeeButton_Click(object sender, EventArgs e)
+        {
+            bool success = Database.Instance.createEmployee(newUsernameInput.Text, newPasswordInput.Text, isAdminInput.Checked);
+            if (success)
+            {
+                MessageBox.Show("User creation succeeded.");
+            }
+            else
+            {
+                MessageBox.Show("User creaton failed.");
+            }
         }
     }
 }
