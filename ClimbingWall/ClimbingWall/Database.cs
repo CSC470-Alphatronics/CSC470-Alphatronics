@@ -88,8 +88,11 @@ namespace ClimbingWall
             reader.Close();
             return true;
         }
-        public bool patron_login(string userID)
+        public bool patron_login(string ID)
         {
+            DateTime dt = DateTime.Now;
+            int first_log;
+            int userID = Int32.Parse(ID);
             string cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
@@ -105,8 +108,61 @@ namespace ClimbingWall
                 MessageBox.Show(ex.Message);
                 return false;
             }
+            if(!reader.HasRows)
+            {
+                reader.Close();
+                return false;
+            }
+
+            reader.Close();
+            cmd_str = "insert into climbing_wall.log_table (FK_Patron_ID, Log_DateTime) VALUES (@id, @dt)";
+            cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@id", userID);
+            cmd.Parameters.AddWithValue("@dt", dt);
+            try
+            {
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            
+            long lastInsert = cmd.LastInsertedId;
+            cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
+            cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@ID", userID);
+            reader = cmd.ExecuteReader();
+            var ordinal = reader.GetOrdinal("FK_FirstLog");
+            reader.Read();
+            if (reader.IsDBNull(ordinal))
+                first_log = (int)lastInsert;
+            else
+                first_log = reader.GetInt32("FK_FirstLog");
+            reader.Close();
+
+            cmd_str = "UPDATE `climbing_wall`.`patron` SET `New_Flag`='0', `FK_FirstLog` = @fLog, `FK_LatestLog` = @lLog WHERE `PatronID` = @id";
+            cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@id", userID);
+            cmd.Parameters.AddWithValue("@flog", first_log);
+            cmd.Parameters.AddWithValue("@lLog", (int)lastInsert);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
             return true;
         }
+
 
     }
 }

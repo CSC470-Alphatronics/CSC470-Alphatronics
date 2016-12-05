@@ -34,9 +34,10 @@
             // 
             // logButton
             // 
-            this.logButton.Location = new System.Drawing.Point(194, 44);
+            this.logButton.Location = new System.Drawing.Point(129, 29);
+            this.logButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.logButton.Name = "logButton";
-            this.logButton.Size = new System.Drawing.Size(128, 50);
+            this.logButton.Size = new System.Drawing.Size(85, 32);
             this.logButton.TabIndex = 0;
             this.logButton.Text = "Log In";
             this.logButton.UseVisualStyleBackColor = true;
@@ -44,30 +45,34 @@
             // 
             // idTextbox
             // 
-            this.idTextbox.Location = new System.Drawing.Point(143, 12);
+            this.idTextbox.Location = new System.Drawing.Point(95, 8);
+            this.idTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.idTextbox.Name = "idTextbox";
-            this.idTextbox.Size = new System.Drawing.Size(235, 26);
+            this.idTextbox.Size = new System.Drawing.Size(158, 20);
             this.idTextbox.TabIndex = 1;
+            this.idTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.idTextbox_KeyDown);
             // 
             // resultLabel
             // 
             this.resultLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.resultLabel.AutoSize = true;
-            this.resultLabel.Location = new System.Drawing.Point(139, 108);
+            this.resultLabel.Location = new System.Drawing.Point(93, 70);
+            this.resultLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(0, 20);
+            this.resultLabel.Size = new System.Drawing.Size(0, 13);
             this.resultLabel.TabIndex = 2;
             this.resultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.resultLabel.Click += new System.EventHandler(this.resultLabel_Click);
             // 
             // ManLogInForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 184);
+            this.ClientSize = new System.Drawing.Size(354, 120);
             this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.idTextbox);
             this.Controls.Add(this.logButton);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ManLogInForm";
             this.Text = "Manual Patron Login";
             this.Load += new System.EventHandler(this.Form1_Load);

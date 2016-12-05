@@ -29,40 +29,29 @@ namespace ClimbingWall
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int chkId;
-            Patron blankPat = new Patron(0, true, "");
-            Patron findPat = blankPat;
-            chkId = Convert.ToInt32(idTextbox.Text);
-            resultLabel.Text = Convert.ToString(chkId);
-            foreach (Patron p in patList)
-            {
-                if (p.isId(chkId))
-                {
-                    findPat = p;
-                    break;
-                }
-            }
-            if (findPat.isId(0))
-                resultLabel.Text = "Patron " + Convert.ToString(chkId) + " Not Found";
+            bool loggedin = false;
+
+            loggedin = Database.Instance.patron_login(idTextbox.Text);
+
+            if (loggedin)
+                MessageBox.Show("login successful");
             else
-            {
-                if (findPat.isSus())
-                    resultLabel.Text = "Patron " + Convert.ToString(findPat.getId()) + " Is SUSPENDED For: " + findPat.getReason();
-                else
-                {
-                    resultLabel.Text = "Patron " + Convert.ToString(findPat.getId()) + " Logged In!";
-                    //OtherLoginStuff
-                        //Display Patron Info
-                        //Create Log
-                            //If First Log isn't filled, fill it with the new log.
-                            //set Latest log to the newest log made.
-                }
-            }
+                MessageBox.Show("Login Failed");
         }
 
         private void resultLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void idTextbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                logButton.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
         }
     }
     public class Patron
