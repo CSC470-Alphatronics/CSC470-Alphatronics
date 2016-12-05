@@ -12,25 +12,16 @@ namespace ClimbingWall
 {
     public partial class EmployeeInterface : Form
     {
-        public EmployeeInterface()
+        public EmployeeInterface(bool isAdmin)
         {
             InitializeComponent();
+            this.adminPanel.Visible = isAdmin;
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
             var login = new ManLogInForm();
             login.Show();
-        }
-
-        private void EmployeeInterface_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void newUsernameInput_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void addEmployeeButton_Click(object sender, EventArgs e)

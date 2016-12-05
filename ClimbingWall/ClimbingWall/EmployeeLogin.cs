@@ -28,17 +28,12 @@ namespace ClimbingWall
             if (loggedin)
             {
                 this.Hide();
-                var form = new EmployeeInterface();
+                var form = new EmployeeInterface(isAdmin);
                 form.Closed += (s, args) => this.Close();
                 form.Show();
             }
             else
                 MessageBox.Show("Login Failed");
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void passwordInput_KeyDown(object sender, KeyEventArgs e)

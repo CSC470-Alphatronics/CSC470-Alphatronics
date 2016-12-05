@@ -30,14 +30,14 @@
         {
             this.addUserButton = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.addEmployeeButton = new System.Windows.Forms.Button();
-            this.usernameLabel = new System.Windows.Forms.Label();
-            this.isAdminLabel = new System.Windows.Forms.Label();
-            this.isAdminInput = new System.Windows.Forms.CheckBox();
-            this.newUsernameInput = new System.Windows.Forms.TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
             this.newPasswordInput = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
+            this.newUsernameInput = new System.Windows.Forms.TextBox();
+            this.isAdminInput = new System.Windows.Forms.CheckBox();
+            this.isAdminLabel = new System.Windows.Forms.Label();
+            this.usernameLabel = new System.Windows.Forms.Label();
+            this.addEmployeeButton = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,15 +64,55 @@
             this.adminPanel.Size = new System.Drawing.Size(343, 286);
             this.adminPanel.TabIndex = 0;
             // 
-            // loginButton
+            // newPasswordInput
             // 
-            this.loginButton.Location = new System.Drawing.Point(12, 63);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(126, 23);
-            this.loginButton.TabIndex = 1;
-            this.loginButton.Text = "Manual User Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.newPasswordInput.Location = new System.Drawing.Point(125, 213);
+            this.newPasswordInput.Name = "newPasswordInput";
+            this.newPasswordInput.Size = new System.Drawing.Size(134, 20);
+            this.newPasswordInput.TabIndex = 7;
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(64, 216);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
+            this.passwordLabel.TabIndex = 6;
+            this.passwordLabel.Text = "Password";
+            // 
+            // newUsernameInput
+            // 
+            this.newUsernameInput.Location = new System.Drawing.Point(125, 186);
+            this.newUsernameInput.Name = "newUsernameInput";
+            this.newUsernameInput.Size = new System.Drawing.Size(134, 20);
+            this.newUsernameInput.TabIndex = 5;
+            // 
+            // isAdminInput
+            // 
+            this.isAdminInput.AutoSize = true;
+            this.isAdminInput.Location = new System.Drawing.Point(125, 242);
+            this.isAdminInput.Name = "isAdminInput";
+            this.isAdminInput.Size = new System.Drawing.Size(15, 14);
+            this.isAdminInput.TabIndex = 4;
+            this.isAdminInput.UseVisualStyleBackColor = true;
+            // 
+            // isAdminLabel
+            // 
+            this.isAdminLabel.AutoSize = true;
+            this.isAdminLabel.Location = new System.Drawing.Point(64, 242);
+            this.isAdminLabel.Name = "isAdminLabel";
+            this.isAdminLabel.Size = new System.Drawing.Size(36, 13);
+            this.isAdminLabel.TabIndex = 3;
+            this.isAdminLabel.Text = "Admin";
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.AutoSize = true;
+            this.usernameLabel.Location = new System.Drawing.Point(64, 189);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(55, 13);
+            this.usernameLabel.TabIndex = 1;
+            this.usernameLabel.Text = "Username";
             // 
             // addEmployeeButton
             // 
@@ -84,56 +124,15 @@
             this.addEmployeeButton.UseVisualStyleBackColor = true;
             this.addEmployeeButton.Click += new System.EventHandler(this.addEmployeeButton_Click);
             // 
-            // usernameLabel
+            // loginButton
             // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(64, 189);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(55, 13);
-            this.usernameLabel.TabIndex = 1;
-            this.usernameLabel.Text = "Username";
-            // 
-            // isAdminLabel
-            // 
-            this.isAdminLabel.AutoSize = true;
-            this.isAdminLabel.Location = new System.Drawing.Point(64, 242);
-            this.isAdminLabel.Name = "isAdminLabel";
-            this.isAdminLabel.Size = new System.Drawing.Size(36, 13);
-            this.isAdminLabel.TabIndex = 3;
-            this.isAdminLabel.Text = "Admin";
-            // 
-            // isAdminInput
-            // 
-            this.isAdminInput.AutoSize = true;
-            this.isAdminInput.Location = new System.Drawing.Point(125, 242);
-            this.isAdminInput.Name = "isAdminInput";
-            this.isAdminInput.Size = new System.Drawing.Size(15, 14);
-            this.isAdminInput.TabIndex = 4;
-            this.isAdminInput.UseVisualStyleBackColor = true;
-            // 
-            // newUsernameInput
-            // 
-            this.newUsernameInput.Location = new System.Drawing.Point(125, 186);
-            this.newUsernameInput.Name = "newUsernameInput";
-            this.newUsernameInput.Size = new System.Drawing.Size(134, 20);
-            this.newUsernameInput.TabIndex = 5;
-            this.newUsernameInput.TextChanged += new System.EventHandler(this.newUsernameInput_TextChanged);
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(64, 216);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
-            this.passwordLabel.TabIndex = 6;
-            this.passwordLabel.Text = "Password";
-            // 
-            // newPasswordInput
-            // 
-            this.newPasswordInput.Location = new System.Drawing.Point(125, 213);
-            this.newPasswordInput.Name = "newPasswordInput";
-            this.newPasswordInput.Size = new System.Drawing.Size(134, 20);
-            this.newPasswordInput.TabIndex = 7;
+            this.loginButton.Location = new System.Drawing.Point(12, 63);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(126, 23);
+            this.loginButton.TabIndex = 1;
+            this.loginButton.Text = "Manual User Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // EmployeeInterface
             // 
@@ -145,7 +144,6 @@
             this.Controls.Add(this.addUserButton);
             this.Name = "EmployeeInterface";
             this.Text = "EmployeeInterface";
-            this.Load += new System.EventHandler(this.EmployeeInterface_Load);
             this.adminPanel.ResumeLayout(false);
             this.adminPanel.PerformLayout();
             this.ResumeLayout(false);
