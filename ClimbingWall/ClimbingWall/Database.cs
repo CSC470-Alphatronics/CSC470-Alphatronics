@@ -48,7 +48,7 @@ namespace ClimbingWall
                 return instance;
             }
         }
-        public bool login(string username, string password, ref int empLevel)
+        public bool login(string username, string password, ref EmployeeLevel empLevel)
         {
             string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Name = @username";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
@@ -77,7 +77,7 @@ namespace ClimbingWall
                     reader.Close();
                     return false;
                 }
-                empLevel = reader.GetInt16("Level");
+                empLevel = (EmployeeLevel)reader.GetInt16("Level");
             }
             else
             {
@@ -162,16 +162,16 @@ namespace ClimbingWall
             return true;
         }
 
-        public bool createEmployee(string username, string password, bool isAdmin)
+        public bool createEmployee(string username, string password, EmployeeLevel empLevel)
         {
             var hasher = new PasswordHasher();
             string hashedPassword = hasher.Hash(password);
-            string cmd_str = "INSERT INTO climbing_wall.employee (Employee_Name, Password, Admin) VALUES (@username, @hashedPassword, @isAdmin)";
+            string cmd_str = "INSERT INTO climbing_wall.employee (Employee_Name, Password, Level) VALUES (@username, @hashedPassword, @level)";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@hashedPassword", hashedPassword);
-            cmd.Parameters.AddWithValue("@isAdmin", isAdmin);
+            cmd.Parameters.AddWithValue("@level", empLevel);
             try
             {
                 cmd.ExecuteNonQuery();

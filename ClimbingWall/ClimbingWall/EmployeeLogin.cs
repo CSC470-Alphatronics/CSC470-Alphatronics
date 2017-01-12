@@ -20,7 +20,7 @@ namespace ClimbingWall
         
         private void loginButton_Click(object sender, EventArgs e)
         {
-            EmployeeLevel empLevel = EMPLOYEE;
+            EmployeeLevel empLevel = EmployeeLevel.EMPLOYEE;
             bool loggedin= false;
 
             loggedin = Database.Instance.login(usernameInput.Text, passwordInput.Text, ref empLevel);

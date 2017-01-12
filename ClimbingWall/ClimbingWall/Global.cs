@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace ClimbingWall
 {
-    enum EmployeeLevel { EMPLOYEE, MANAGER, ADMIN };
+    public enum EmployeeLevel { EMPLOYEE, MANAGER, ADMIN };
 }

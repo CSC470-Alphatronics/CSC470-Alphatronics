@@ -16,7 +16,7 @@ namespace ClimbingWall
         {
             InitializeComponent();
             this.adminPanel.Visible = false;
-            if (empLevel >= MANAGER)
+            if (empLevel >= EmployeeLevel.MANAGER)
             {
                 this.adminPanel.Visible = true;
             }
@@ -30,7 +30,20 @@ namespace ClimbingWall
 
         private void addEmployeeButton_Click(object sender, EventArgs e)
         {
-            bool success = Database.Instance.createEmployee(newUsernameInput.Text, newPasswordInput.Text, isAdminInput.Checked);
+           EmployeeLevel level = EmployeeLevel.EMPLOYEE;
+           switch(levelBox.Text)
+            {
+                case "Employee":
+                    level = EmployeeLevel.EMPLOYEE;
+                    break;
+                case "Manager":
+                    level = EmployeeLevel.MANAGER;
+                    break;
+                case "Admin":
+                    level = EmployeeLevel.ADMIN;
+                    break;
+            }
+            bool success = Database.Instance.createEmployee(newUsernameInput.Text, newPasswordInput.Text, level);
             if (success)
             {
                 MessageBox.Show("User creation succeeded.");

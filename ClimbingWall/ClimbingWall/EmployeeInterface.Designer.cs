@@ -34,11 +34,11 @@
             this.newPasswordInput = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.newUsernameInput = new System.Windows.Forms.TextBox();
-            this.isAdminInput = new System.Windows.Forms.CheckBox();
-            this.isAdminLabel = new System.Windows.Forms.Label();
+            this.levelLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.addEmployeeButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
+            this.levelBox = new System.Windows.Forms.ComboBox();
             this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,12 +53,12 @@
             // 
             // adminPanel
             // 
+            this.adminPanel.Controls.Add(this.levelBox);
             this.adminPanel.Controls.Add(this.suspendButton);
             this.adminPanel.Controls.Add(this.newPasswordInput);
             this.adminPanel.Controls.Add(this.passwordLabel);
             this.adminPanel.Controls.Add(this.newUsernameInput);
-            this.adminPanel.Controls.Add(this.isAdminInput);
-            this.adminPanel.Controls.Add(this.isAdminLabel);
+            this.adminPanel.Controls.Add(this.levelLabel);
             this.adminPanel.Controls.Add(this.usernameLabel);
             this.adminPanel.Controls.Add(this.addEmployeeButton);
             this.adminPanel.Location = new System.Drawing.Point(314, 26);
@@ -99,23 +99,14 @@
             this.newUsernameInput.Size = new System.Drawing.Size(134, 20);
             this.newUsernameInput.TabIndex = 5;
             // 
-            // isAdminInput
+            // levelLabel
             // 
-            this.isAdminInput.AutoSize = true;
-            this.isAdminInput.Location = new System.Drawing.Point(125, 242);
-            this.isAdminInput.Name = "isAdminInput";
-            this.isAdminInput.Size = new System.Drawing.Size(15, 14);
-            this.isAdminInput.TabIndex = 4;
-            this.isAdminInput.UseVisualStyleBackColor = true;
-            // 
-            // isAdminLabel
-            // 
-            this.isAdminLabel.AutoSize = true;
-            this.isAdminLabel.Location = new System.Drawing.Point(64, 242);
-            this.isAdminLabel.Name = "isAdminLabel";
-            this.isAdminLabel.Size = new System.Drawing.Size(36, 13);
-            this.isAdminLabel.TabIndex = 3;
-            this.isAdminLabel.Text = "Admin";
+            this.levelLabel.AutoSize = true;
+            this.levelLabel.Location = new System.Drawing.Point(64, 242);
+            this.levelLabel.Name = "levelLabel";
+            this.levelLabel.Size = new System.Drawing.Size(33, 13);
+            this.levelLabel.TabIndex = 3;
+            this.levelLabel.Text = "Level";
             // 
             // usernameLabel
             // 
@@ -128,7 +119,7 @@
             // 
             // addEmployeeButton
             // 
-            this.addEmployeeButton.Location = new System.Drawing.Point(167, 237);
+            this.addEmployeeButton.Location = new System.Drawing.Point(167, 273);
             this.addEmployeeButton.Name = "addEmployeeButton";
             this.addEmployeeButton.Size = new System.Drawing.Size(92, 24);
             this.addEmployeeButton.TabIndex = 0;
@@ -145,6 +136,18 @@
             this.loginButton.Text = "Manual User Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // levelBox
+            // 
+            this.levelBox.FormattingEnabled = true;
+            this.levelBox.Items.AddRange(new object[] {
+            "Employee",
+            "Manager",
+            "Admin"});
+            this.levelBox.Location = new System.Drawing.Point(125, 242);
+            this.levelBox.Name = "levelBox";
+            this.levelBox.Size = new System.Drawing.Size(134, 21);
+            this.levelBox.TabIndex = 9;
             // 
             // EmployeeInterface
             // 
@@ -169,11 +172,11 @@
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button addEmployeeButton;
         private System.Windows.Forms.TextBox newUsernameInput;
-        private System.Windows.Forms.CheckBox isAdminInput;
-        private System.Windows.Forms.Label isAdminLabel;
+        private System.Windows.Forms.Label levelLabel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.TextBox newPasswordInput;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Button suspendButton;
+        private System.Windows.Forms.ComboBox levelBox;
     }
 }
