@@ -12,10 +12,14 @@ namespace ClimbingWall
 {
     public partial class EmployeeInterface : Form
     {
-        public EmployeeInterface(bool isAdmin)
+        public EmployeeInterface(EmployeeLevel empLevel)
         {
             InitializeComponent();
-            this.adminPanel.Visible = isAdmin;
+            this.adminPanel.Visible = false;
+            if (empLevel >= MANAGER)
+            {
+                this.adminPanel.Visible = true;
+            }
         }
 
         private void loginButton_Click(object sender, EventArgs e)

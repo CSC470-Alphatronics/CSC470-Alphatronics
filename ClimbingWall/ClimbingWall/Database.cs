@@ -48,7 +48,7 @@ namespace ClimbingWall
                 return instance;
             }
         }
-        public bool login(string username, string password, ref bool isAdmin)
+        public bool login(string username, string password, ref int empLevel)
         {
             string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Name = @username";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
@@ -77,8 +77,7 @@ namespace ClimbingWall
                     reader.Close();
                     return false;
                 }
-                if (reader.GetBoolean("Admin") == true)
-                    isAdmin = true;
+                empLevel = reader.GetInt16("Level");
             }
             else
             {
