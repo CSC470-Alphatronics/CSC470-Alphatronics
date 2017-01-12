@@ -36,5 +36,11 @@ namespace ClimbingWall
                 MessageBox.Show("User creaton failed.");
             }
         }
+
+        private void suspendButton_Click(object sender, EventArgs e)
+        {
+            var suspend = new SuspendUser();
+            suspend.Show();
+        }
     }
 }

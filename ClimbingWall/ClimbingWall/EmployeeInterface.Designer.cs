@@ -30,6 +30,7 @@
         {
             this.addUserButton = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
+            this.suspendButton = new System.Windows.Forms.Button();
             this.newPasswordInput = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.newUsernameInput = new System.Windows.Forms.TextBox();
@@ -52,6 +53,7 @@
             // 
             // adminPanel
             // 
+            this.adminPanel.Controls.Add(this.suspendButton);
             this.adminPanel.Controls.Add(this.newPasswordInput);
             this.adminPanel.Controls.Add(this.passwordLabel);
             this.adminPanel.Controls.Add(this.newUsernameInput);
@@ -61,8 +63,18 @@
             this.adminPanel.Controls.Add(this.addEmployeeButton);
             this.adminPanel.Location = new System.Drawing.Point(314, 26);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(343, 286);
+            this.adminPanel.Size = new System.Drawing.Size(343, 315);
             this.adminPanel.TabIndex = 0;
+            // 
+            // suspendButton
+            // 
+            this.suspendButton.Location = new System.Drawing.Point(4, 8);
+            this.suspendButton.Name = "suspendButton";
+            this.suspendButton.Size = new System.Drawing.Size(113, 23);
+            this.suspendButton.TabIndex = 8;
+            this.suspendButton.Text = "Suspend User";
+            this.suspendButton.UseVisualStyleBackColor = true;
+            this.suspendButton.Click += new System.EventHandler(this.suspendButton_Click);
             // 
             // newPasswordInput
             // 
@@ -162,5 +174,6 @@
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.TextBox newPasswordInput;
         private System.Windows.Forms.Label passwordLabel;
+        private System.Windows.Forms.Button suspendButton;
     }
 }
