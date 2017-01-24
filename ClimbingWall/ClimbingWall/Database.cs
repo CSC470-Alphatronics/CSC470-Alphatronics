@@ -184,5 +184,109 @@ namespace ClimbingWall
             return true;
         }
 
+        public SuspendCode suspendUser(int patronID, string reason, SuspendLength length)
+        {
+            //Get suspension length
+            DateTime dt = getExpirationDate(length);
+
+            string cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@ID", patronID);
+            int suspendCount = 0;
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return SuspendCode.DB_FAIL;
+            }
+       
+            if (reader.HasRows)
+            {
+                reader.Read();
+                suspendCount = reader.GetInt16("SuspendCount");
+                var ordinal = reader.GetOrdinal("FK_Suspend");
+                if (!reader.IsDBNull(ordinal))
+                {
+                    reader.Close();
+                    return SuspendCode.SUSPEND_EXISTS;
+                }
+            }
+            else
+            {
+                reader.Close();
+                return SuspendCode.PATRON_NOT_EXIST;
+            }
+            reader.Close();
+
+            cmd_str = "INSERT INTO climbing_wall.suspensions (FK_Patron_ID, Active, Reason, Expires) VALUES (@patron, @active, @reason, @expires)";
+            cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@patron", patronID);
+            cmd.Parameters.AddWithValue("@active", 1);
+            cmd.Parameters.AddWithValue("@reason", reason);
+            cmd.Parameters.AddWithValue("@expires", dt);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return SuspendCode.DB_FAIL;
+            }
+            long lastInsert = cmd.LastInsertedId;
+            cmd_str = "UPDATE `climbing_wall`.`patron` SET `FK_Suspend` = @fk, `SuspendCount` = @count WHERE `PatronID` = @id";
+            cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@fk", (int)lastInsert);
+            cmd.Parameters.AddWithValue("@count", suspendCount + 1);
+            cmd.Parameters.AddWithValue("@id", patronID);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return SuspendCode.DB_FAIL;
+            }
+            return SuspendCode.SUCCESS;
+        }
+        DateTime getExpirationDate(SuspendLength length)
+        {
+            DateTime dt = DateTime.Now;
+            DateTime spring = new DateTime(dt.Year, 5, 12);
+            DateTime summer = new DateTime(dt.Year, 8, 21);
+            DateTime fall = new DateTime(dt.Year, 12, 20);
+            if (length == SuspendLength.SEVEN_DAYS)
+                dt = dt.AddDays(7);
+            else if (length == SuspendLength.THIRTY_DAYS)
+                dt = dt.AddDays(7);
+            else if (length == SuspendLength.SEMESTER)
+            {
+                if (DateTime.Compare(dt,spring) < 0) // spring
+                {
+                    dt.Add(spring.Subtract(dt));
+                }
+                else if (DateTime.Compare(dt, summer) < 0) // summer
+                {
+                    dt.Add(summer.Subtract(dt));
+                }
+                else
+                {
+                    dt.Add(fall.Subtract(dt));
+                }
+            }
+            else
+            {
+                dt.AddYears(1);
+            }
+            return dt;
+        }
     }
 }
