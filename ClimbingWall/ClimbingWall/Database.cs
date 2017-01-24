@@ -90,6 +90,7 @@ namespace ClimbingWall
         public bool patron_login(string ID)
         {
             DateTime dt = DateTime.Now;
+            int suspColNum = 13;
             int first_log;
             int userID = Int32.Parse(ID);
             string cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
@@ -112,8 +113,68 @@ namespace ClimbingWall
                 reader.Close();
                 return false;
             }
-
-            reader.Close();
+            reader.Read();
+            if (!reader.IsDBNull(suspColNum))
+            {
+                int suspID = reader.GetInt16("FK_Suspend");
+                reader.Close();
+                MySqlDataReader suspReader;
+                cmd_str = "SELECT * FROM climbing_wall.suspensions WHERE Suspend_ID = @ID";
+                cmd = new MySqlCommand(cmd_str, connection);
+                cmd.CommandText = cmd_str;
+                cmd.Parameters.AddWithValue("@ID", suspID);
+                try
+                {
+                    suspReader = cmd.ExecuteReader();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return false;
+                }
+                suspReader.Read();
+                DateTime currentDate = DateTime.Today;
+                DateTime expires = suspReader.GetDateTime("Expires");
+                if (suspReader.GetBoolean("Active") && currentDate.Date.CompareTo(expires) < 0)
+                {
+                    suspReader.Close();
+                    return false;
+                }
+                else
+                {
+                    suspReader.Close();
+                    cmd_str = "UPDATE climbing_wall.patron SET FK_SUSPEND = NULL WHERE PatronID = @id";
+                    cmd = new MySqlCommand(cmd_str, connection);
+                    cmd.CommandText = cmd_str;
+                    cmd.Parameters.AddWithValue("@id", userID);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return false;
+                    }
+                    cmd_str = "UPDATE climbing_wall.suspensions SET Active = 0 WHERE Suspend_ID = @id";
+                    cmd = new MySqlCommand(cmd_str, connection);
+                    cmd.CommandText = cmd_str;
+                    cmd.Parameters.AddWithValue("@id", suspID);
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        return false;
+                    }
+                }
+            }
+            if (!reader.IsClosed)
+            {
+                reader.Close();
+            }
             cmd_str = "insert into climbing_wall.log_table (FK_Patron_ID, Log_DateTime) VALUES (@id, @dt)";
             cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
