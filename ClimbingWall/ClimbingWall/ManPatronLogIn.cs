@@ -27,16 +27,32 @@ namespace ClimbingWall
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void logButton_Click(object sender, EventArgs e)
         {
-            bool loggedin = false;
-
-            loggedin = Database.Instance.patron_login(idTextbox.Text);
-
-            if (loggedin)
-                MessageBox.Show("login successful");
+            PatronLoginStatus loggedIn = PatronLoginStatus.MISCERROR;
+            if (String.IsNullOrEmpty(idTextbox.Text))
+            {
+                MessageBox.Show("Please input an ID!");
+            }
             else
-                MessageBox.Show("Login Failed");
+            {
+                loggedIn = Database.Instance.patron_login(idTextbox.Text);
+                string status;
+                switch (loggedIn)
+                {
+                    case PatronLoginStatus.MISCERROR:
+                        status = "Login failed!"; break;
+                    case PatronLoginStatus.PATRONNOTFOUND:
+                        status = "Patron not found!"; break;
+                    case PatronLoginStatus.PATRONSUSPENDED:
+                        status = "Patron currently suspended!"; break;
+                    case PatronLoginStatus.SUCCESS:
+                        status = "Login successful!"; break;
+                    default:
+                        status = "what"; break;
+                }
+                MessageBox.Show(status);
+            }
         }
 
         private void resultLabel_Click(object sender, EventArgs e)

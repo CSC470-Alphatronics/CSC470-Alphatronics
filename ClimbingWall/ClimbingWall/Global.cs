@@ -7,4 +7,5 @@ using System.Threading.Tasks;
 namespace ClimbingWall
 {
     public enum EmployeeLevel { EMPLOYEE, MANAGER, ADMIN };
+    public enum PatronLoginStatus { MISCERROR, PATRONNOTFOUND, PATRONSUSPENDED, SUCCESS }
 }

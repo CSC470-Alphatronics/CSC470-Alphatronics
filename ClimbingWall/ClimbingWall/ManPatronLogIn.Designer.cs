@@ -34,20 +34,21 @@
             // 
             // logButton
             // 
-            this.logButton.Location = new System.Drawing.Point(129, 29);
-            this.logButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logButton.Location = new System.Drawing.Point(129, 32);
+            this.logButton.Margin = new System.Windows.Forms.Padding(2);
             this.logButton.Name = "logButton";
             this.logButton.Size = new System.Drawing.Size(85, 32);
             this.logButton.TabIndex = 0;
             this.logButton.Text = "Log In";
             this.logButton.UseVisualStyleBackColor = true;
-            this.logButton.Click += new System.EventHandler(this.button1_Click);
+            this.logButton.Click += new System.EventHandler(this.logButton_Click);
             // 
             // idTextbox
             // 
             this.idTextbox.Location = new System.Drawing.Point(95, 8);
-            this.idTextbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.idTextbox.Margin = new System.Windows.Forms.Padding(2);
             this.idTextbox.Name = "idTextbox";
+            this.idTextbox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.idTextbox.Size = new System.Drawing.Size(158, 20);
             this.idTextbox.TabIndex = 1;
             this.idTextbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.idTextbox_KeyDown);
@@ -72,7 +73,7 @@
             this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.idTextbox);
             this.Controls.Add(this.logButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManLogInForm";
             this.Text = "Manual Patron Login";
             this.Load += new System.EventHandler(this.Form1_Load);
