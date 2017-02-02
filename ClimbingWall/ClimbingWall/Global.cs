@@ -10,4 +10,9 @@ namespace ClimbingWall
     public enum SuspendLength { SEVEN_DAYS, THIRTY_DAYS, SEMESTER, YEAR};
     public enum SuspendCode {DB_FAIL, PATRON_NOT_EXIST, SUSPEND_EXISTS, SUCCESS};
     public enum PatronLoginStatus { MISCERROR, PATRONNOTFOUND, PATRONSUSPENDED, SUCCESS };
+    
+    static class Constants
+    {
+        public const int minPasswordLength = 4;
+    }
 }

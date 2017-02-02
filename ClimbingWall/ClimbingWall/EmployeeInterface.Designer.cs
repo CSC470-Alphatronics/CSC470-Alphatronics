@@ -30,6 +30,7 @@
         {
             this.addUserButton = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
+            this.levelBox = new System.Windows.Forms.ComboBox();
             this.suspendButton = new System.Windows.Forms.Button();
             this.newPasswordInput = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -38,7 +39,9 @@
             this.usernameLabel = new System.Windows.Forms.Label();
             this.addEmployeeButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
-            this.levelBox = new System.Windows.Forms.ComboBox();
+            this.changePassButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +68,18 @@
             this.adminPanel.Name = "adminPanel";
             this.adminPanel.Size = new System.Drawing.Size(343, 315);
             this.adminPanel.TabIndex = 0;
+            // 
+            // levelBox
+            // 
+            this.levelBox.FormattingEnabled = true;
+            this.levelBox.Items.AddRange(new object[] {
+            "Employee",
+            "Manager",
+            "Admin"});
+            this.levelBox.Location = new System.Drawing.Point(125, 242);
+            this.levelBox.Name = "levelBox";
+            this.levelBox.Size = new System.Drawing.Size(134, 21);
+            this.levelBox.TabIndex = 9;
             // 
             // suspendButton
             // 
@@ -137,23 +152,42 @@
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // levelBox
+            // changePassButton
             // 
-            this.levelBox.FormattingEnabled = true;
-            this.levelBox.Items.AddRange(new object[] {
-            "Employee",
-            "Manager",
-            "Admin"});
-            this.levelBox.Location = new System.Drawing.Point(125, 242);
-            this.levelBox.Name = "levelBox";
-            this.levelBox.Size = new System.Drawing.Size(134, 21);
-            this.levelBox.TabIndex = 9;
+            this.changePassButton.Location = new System.Drawing.Point(12, 92);
+            this.changePassButton.Name = "changePassButton";
+            this.changePassButton.Size = new System.Drawing.Size(126, 23);
+            this.changePassButton.TabIndex = 2;
+            this.changePassButton.Text = "Change Password";
+            this.changePassButton.UseVisualStyleBackColor = true;
+            this.changePassButton.Click += new System.EventHandler(this.changePassButton_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 121);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(126, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Notes";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(13, 151);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(125, 23);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Request Suspension";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // EmployeeInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 381);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.changePassButton);
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.adminPanel);
             this.Controls.Add(this.addUserButton);
@@ -178,5 +212,8 @@
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Button suspendButton;
         private System.Windows.Forms.ComboBox levelBox;
+        private System.Windows.Forms.Button changePassButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

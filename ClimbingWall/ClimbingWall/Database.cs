@@ -13,6 +13,7 @@ namespace ClimbingWall
     {
         MySqlConnection connection;
         private static Database instance;
+        int currentEmployee; // Employee currently logged in
 
         public void connect()
         {
@@ -78,6 +79,7 @@ namespace ClimbingWall
                     return false;
                 }
                 empLevel = (EmployeeLevel)reader.GetInt16("Level");
+                currentEmployee = reader.GetInt16("Employee_ID");
             }
             else
             {
@@ -360,6 +362,63 @@ namespace ClimbingWall
                 dt.AddYears(1);
             }
             return dt;
+        }
+        
+        public bool changePassword(string current, string _new)
+        {
+            // Create hasher variable to hash the new password
+            var hasher = new PasswordHasher();
+            string hashedNew = hasher.Hash(_new);
+
+            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_ID = @id";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@id", currentEmployee);
+
+            // Cross-check hashed password with hashes in database
+            // If match is found
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            if (reader.HasRows)
+            {
+                reader.Read();
+                if (!hasher.Verify(reader.GetString("Password"), current))
+                {
+                    reader.Close();
+                    return false;
+                }
+            }
+            else
+            {
+                reader.Close();
+                return false;
+            }
+            reader.Close();
+
+            // Change Password
+            cmd_str = "UPDATE climbing_wall.employee SET `Password` = @hashedPassword WHERE `Employee_ID` = @id";
+            cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@id", currentEmployee);
+            cmd.Parameters.AddWithValue("@hashedPassword", hashedNew);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            return true;
         }
     }
 }

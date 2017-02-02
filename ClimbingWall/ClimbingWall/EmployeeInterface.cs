@@ -59,5 +59,11 @@ namespace ClimbingWall
             var suspend = new SuspendUser();
             suspend.Show();
         }
+
+        private void changePassButton_Click(object sender, EventArgs e)
+        {
+            var login = new ChangePass();
+            login.Show();
+        }
     }
 }
