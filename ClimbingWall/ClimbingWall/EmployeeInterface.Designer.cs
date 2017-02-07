@@ -40,7 +40,7 @@
 			this.addEmployeeButton = new System.Windows.Forms.Button();
 			this.loginButton = new System.Windows.Forms.Button();
 			this.changePassButton = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+            this.noteButton = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.empChk = new System.Windows.Forms.Button();
 			this.Change_Employee_Button = new System.Windows.Forms.Button();
@@ -165,14 +165,15 @@
 			this.changePassButton.UseVisualStyleBackColor = true;
 			this.changePassButton.Click += new System.EventHandler(this.changePassButton_Click);
 			// 
-			// button2
+            // noteButton
 			// 
-			this.button2.Location = new System.Drawing.Point(12, 121);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(126, 23);
-			this.button2.TabIndex = 3;
-			this.button2.Text = "Notes";
-			this.button2.UseVisualStyleBackColor = true;
+            this.noteButton.Location = new System.Drawing.Point(12, 121);
+            this.noteButton.Name = "noteButton";
+            this.noteButton.Size = new System.Drawing.Size(126, 23);
+            this.noteButton.TabIndex = 3;
+            this.noteButton.Text = "Notes";
+            this.noteButton.UseVisualStyleBackColor = true;
+            this.noteButton.Click += new System.EventHandler(this.noteButton_Click);
 			// 
 			// button3
 			// 
@@ -211,7 +212,7 @@
 			this.Controls.Add(this.Change_Employee_Button);
 			this.Controls.Add(this.empChk);
 			this.Controls.Add(this.button3);
-			this.Controls.Add(this.button2);
+            this.Controls.Add(this.noteButton);
 			this.Controls.Add(this.changePassButton);
 			this.Controls.Add(this.loginButton);
 			this.Controls.Add(this.adminPanel);
@@ -238,7 +239,7 @@
         private System.Windows.Forms.Button suspendButton;
         private System.Windows.Forms.ComboBox levelBox;
         private System.Windows.Forms.Button changePassButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button noteButton;
         private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button empChk;
 		private System.Windows.Forms.Button Change_Employee_Button;

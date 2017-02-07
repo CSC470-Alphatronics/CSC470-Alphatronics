@@ -41,15 +41,19 @@
             // 
             this.currentText.Location = new System.Drawing.Point(134, 28);
             this.currentText.Name = "currentText";
+            this.currentText.PasswordChar = '*';
             this.currentText.Size = new System.Drawing.Size(163, 20);
             this.currentText.TabIndex = 0;
+            this.currentText.UseSystemPasswordChar = true;
             // 
             // newText
             // 
             this.newText.Location = new System.Drawing.Point(134, 54);
             this.newText.Name = "newText";
+            this.newText.PasswordChar = '*';
             this.newText.Size = new System.Drawing.Size(163, 20);
             this.newText.TabIndex = 1;
+            this.newText.UseSystemPasswordChar = true;
             // 
             // currentBox
             // 
@@ -73,8 +77,11 @@
             // 
             this.confirmText.Location = new System.Drawing.Point(134, 80);
             this.confirmText.Name = "confirmText";
+            this.confirmText.PasswordChar = '*';
             this.confirmText.Size = new System.Drawing.Size(163, 20);
             this.confirmText.TabIndex = 4;
+            this.confirmText.UseSystemPasswordChar = true;
+            this.confirmText.KeyDown += new System.Windows.Forms.KeyEventHandler(this.confirmText_KeyDown);
             // 
             // confirmBox
             // 

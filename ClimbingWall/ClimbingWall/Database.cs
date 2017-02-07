@@ -446,5 +446,26 @@ namespace ClimbingWall
             }
             return true;
         }
+
+        public bool addNote(string text, int priority)
+        {
+            string cmd_str = "INSERT INTO climbing_wall.note (FK_Emp_Id, Note_Text, Note_DateTime, Note_Priority) VALUES (@user, @text, @date, @priority)";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@user", Globals.currEmployeeId);
+            cmd.Parameters.AddWithValue("@text", text);
+            cmd.Parameters.AddWithValue("@date", DateTime.Now);
+            cmd.Parameters.AddWithValue("@priority", priority);
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            return true;
+        }
     }
 }
