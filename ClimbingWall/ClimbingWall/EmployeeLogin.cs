@@ -20,15 +20,15 @@ namespace ClimbingWall
         
         private void loginButton_Click(object sender, EventArgs e)
         {
-            EmployeeLevel empLevel = EmployeeLevel.EMPLOYEE;
+            //EmployeeLevel empLevel = EmployeeLevel.EMPLOYEE;
             bool loggedin= false;
 
-            loggedin = Database.Instance.login(usernameInput.Text, passwordInput.Text, ref empLevel);
+            loggedin = Database.Instance.login(usernameInput.Text, passwordInput.Text, ref Globals.empLevel);
 
             if (loggedin)
             {
                 this.Hide();
-                var form = new EmployeeInterface(empLevel);
+                var form = new EmployeeInterface(Globals.empLevel);
                 form.Closed += (s, args) => this.Close();
                 form.Show();
             }

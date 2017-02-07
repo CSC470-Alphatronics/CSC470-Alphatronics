@@ -65,5 +65,11 @@ namespace ClimbingWall
             var login = new ChangePass();
             login.Show();
         }
-    }
+
+		private void empChk_Click(object sender, EventArgs e) //This is a breif Debug Tool to show what Level we currently are
+		{
+			string msg = "Employee: " + Globals.currEmployeeName + "\nEmployee ID: " + Globals.currEmployeeId.ToString() + "\nCurrentLevel: " + Globals.empLevel.ToString();
+			MessageBox.Show(msg);
+		}
+	}
 }

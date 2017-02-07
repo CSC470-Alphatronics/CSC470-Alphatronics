@@ -13,7 +13,7 @@ namespace ClimbingWall
     {
         MySqlConnection connection;
         private static Database instance;
-        int currentEmployee; // Employee currently logged in
+       // int currentEmployee; // Employee currently logged in DEPRECIATED: CURRENTLY Globals
 
         public void connect()
         {
@@ -78,8 +78,9 @@ namespace ClimbingWall
                     reader.Close();
                     return false;
                 }
-                empLevel = (EmployeeLevel)reader.GetInt16("Level");
-                currentEmployee = reader.GetInt16("Employee_ID");
+                Globals.empLevel = (EmployeeLevel)reader.GetInt16("Level");
+				Globals.currEmployeeId = reader.GetInt16("Employee_ID");
+				Globals.currEmployeeName = reader.GetString("Employee_Name");
             }
             else
             {
@@ -373,7 +374,7 @@ namespace ClimbingWall
             string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_ID = @id";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
-            cmd.Parameters.AddWithValue("@id", currentEmployee);
+            cmd.Parameters.AddWithValue("@id", Globals.currEmployeeId);
 
             // Cross-check hashed password with hashes in database
             // If match is found
@@ -407,7 +408,7 @@ namespace ClimbingWall
             cmd_str = "UPDATE climbing_wall.employee SET `Password` = @hashedPassword WHERE `Employee_ID` = @id";
             cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
-            cmd.Parameters.AddWithValue("@id", currentEmployee);
+            cmd.Parameters.AddWithValue("@id", Globals.currEmployeeId);
             cmd.Parameters.AddWithValue("@hashedPassword", hashedNew);
             try
             {
