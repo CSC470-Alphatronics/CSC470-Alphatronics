@@ -65,5 +65,11 @@ namespace ClimbingWall
             var login = new ChangePass();
             login.Show();
         }
+
+        private void noteButton_Click(object sender, EventArgs e)
+        {
+            var note = new Note();
+            note.Show();
+        }
     }
 }

@@ -38,5 +38,15 @@ namespace ClimbingWall
             else
                 MessageBox.Show("Password must be at least " + Constants.minPasswordLength.ToString() + " characters long."); 
         }
+
+        private void confirmText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                changeButton.PerformClick();
+                e.SuppressKeyPress = true;
+                e.Handled = true;
+            }
+        }
     }
 }
