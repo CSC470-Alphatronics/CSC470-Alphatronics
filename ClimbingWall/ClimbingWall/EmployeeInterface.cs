@@ -71,5 +71,13 @@ namespace ClimbingWall
 			string msg = "Employee: " + Globals.currEmployeeName + "\nEmployee ID: " + Globals.currEmployeeId.ToString() + "\nCurrentLevel: " + Globals.empLevel.ToString();
 			MessageBox.Show(msg);
 		}
+
+		private void Change_Employee_Button_Click(object sender, EventArgs e) //This Allows the switching of User 
+		{
+			this.Hide();
+			var form = new EmployeeLogin();
+			form.Closed += (s, args) => this.Close();
+			form.Show();
+		}
 	}
 }

@@ -43,6 +43,7 @@
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.empChk = new System.Windows.Forms.Button();
+			this.Change_Employee_Button = new System.Windows.Forms.Button();
 			this.adminPanel.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -191,11 +192,22 @@
 			this.empChk.UseVisualStyleBackColor = true;
 			this.empChk.Click += new System.EventHandler(this.empChk_Click);
 			// 
+			// Change_Employee_Button
+			// 
+			this.Change_Employee_Button.Location = new System.Drawing.Point(13, 317);
+			this.Change_Employee_Button.Name = "Change_Employee_Button";
+			this.Change_Employee_Button.Size = new System.Drawing.Size(112, 23);
+			this.Change_Employee_Button.TabIndex = 11;
+			this.Change_Employee_Button.Text = "Switch User";
+			this.Change_Employee_Button.UseVisualStyleBackColor = true;
+			this.Change_Employee_Button.Click += new System.EventHandler(this.Change_Employee_Button_Click);
+			// 
 			// EmployeeInterface
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(686, 381);
+			this.Controls.Add(this.Change_Employee_Button);
 			this.Controls.Add(this.empChk);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
@@ -228,5 +240,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button empChk;
+		private System.Windows.Forms.Button Change_Employee_Button;
 	}
 }
