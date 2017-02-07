@@ -65,16 +65,24 @@ namespace ClimbingWall
             var login = new ChangePass();
             login.Show();
         }
-        private void empChk_Click(object sender, EventArgs e) //This is a breif Debug Tool to show what Level we currently are
-        {
-            string msg = "Employee: " + Globals.currEmployeeName + "\nEmployee ID: " + Globals.currEmployeeId.ToString() + "\nCurrentLevel: " + Globals.empLevel.ToString();
-            MessageBox.Show(msg);
-        }
+		private void empChk_Click(object sender, EventArgs e) //This is a breif Debug Tool to show what Level we currently are
+		{
+			string msg = "Employee: " + Globals.currEmployeeName + "\nEmployee ID: " + Globals.currEmployeeId.ToString() + "\nCurrentLevel: " + Globals.empLevel.ToString();
+			MessageBox.Show(msg);
+		}
 
         private void noteButton_Click(object sender, EventArgs e)
         {
             var note = new Note();
             note.Show();
+        }
+
+        private void Change_Employee_Button_Click(object sender, EventArgs e) //This Allows the switching of User 
+        {
+            this.Hide();
+            var form = new EmployeeLogin();
+            form.Closed += (s, args) => this.Close();
+            form.Show();
         }
     }
 }
