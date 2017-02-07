@@ -42,6 +42,7 @@
             this.changePassButton = new System.Windows.Forms.Button();
             this.noteButton = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+			this.empChk = new System.Windows.Forms.Button();
             this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -181,11 +182,22 @@
             this.button3.Text = "Request Suspension";
             this.button3.UseVisualStyleBackColor = true;
             // 
+			// empChk
+			// 
+			this.empChk.Location = new System.Drawing.Point(12, 346);
+			this.empChk.Name = "empChk";
+			this.empChk.Size = new System.Drawing.Size(113, 23);
+			this.empChk.TabIndex = 10;
+			this.empChk.Text = "LevelCheck";
+			this.empChk.UseVisualStyleBackColor = true;
+			this.empChk.Click += new System.EventHandler(this.empChk_Click);
+			// 
             // EmployeeInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 381);
+			this.Controls.Add(this.empChk);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.noteButton);
             this.Controls.Add(this.changePassButton);
@@ -216,5 +228,6 @@
         private System.Windows.Forms.Button changePassButton;
         private System.Windows.Forms.Button noteButton;
         private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Button empChk;
     }
 }
