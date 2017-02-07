@@ -427,7 +427,7 @@ namespace ClimbingWall
             string cmd_str = "INSERT INTO climbing_wall.note (FK_Emp_Id, Note_Text, Note_DateTime, Note_Priority) VALUES (@user, @text, @date, @priority)";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
-            cmd.Parameters.AddWithValue("@user", currentEmployee);
+            cmd.Parameters.AddWithValue("@user", Globals.currEmployeeId);
             cmd.Parameters.AddWithValue("@text", text);
             cmd.Parameters.AddWithValue("@date", DateTime.Now);
             cmd.Parameters.AddWithValue("@priority", priority);
