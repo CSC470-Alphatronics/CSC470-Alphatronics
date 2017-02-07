@@ -238,6 +238,31 @@ namespace ClimbingWall
             return PatronLoginStatus.SUCCESS;
         }
 
+		public bool createPatron(string fName, string lName, string midI, string phone, string email, int pat_Id)
+		{
+			bool status = true;
+			string cmd_str = "INSERT INTO climbing_wall.patron (PatronID, FName, LName, MInitial, Email, Phone, New_Flag) VALUES (@PatronID, @Fname, @LName, @MI, @Email, @Phone, @New)";
+			MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+			cmd.CommandText = cmd_str;
+			cmd.Parameters.AddWithValue("@Fname", fName);
+			cmd.Parameters.AddWithValue("@LName", lName);
+			cmd.Parameters.AddWithValue("@MI", midI);
+			cmd.Parameters.AddWithValue("@Email", email);
+			cmd.Parameters.AddWithValue("@Phone", phone);
+			cmd.Parameters.AddWithValue("@PatronID", pat_Id);
+			cmd.Parameters.AddWithValue("@New", 1);
+
+			try {
+				cmd.ExecuteNonQuery();
+			}
+			catch(MySqlException ex) {
+				MessageBox.Show(ex.Message);
+				status = false;
+			}
+
+			return status;
+		}
+
         public bool createEmployee(string username, string password, EmployeeLevel empLevel)
         {
             var hasher = new PasswordHasher();

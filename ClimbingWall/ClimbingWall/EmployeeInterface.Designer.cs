@@ -55,6 +55,7 @@
 			this.addUserButton.TabIndex = 0;
 			this.addUserButton.Text = "Add User";
 			this.addUserButton.UseVisualStyleBackColor = true;
+			this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
 			// 
 			// adminPanel
 			// 

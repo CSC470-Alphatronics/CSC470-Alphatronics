@@ -79,5 +79,11 @@ namespace ClimbingWall
 			form.Closed += (s, args) => this.Close();
 			form.Show();
 		}
+
+		private void addUserButton_Click(object sender, EventArgs e)
+		{
+			var addPatron = new NewPatronForm();
+			addPatron.Show();
+		}
 	}
 }
