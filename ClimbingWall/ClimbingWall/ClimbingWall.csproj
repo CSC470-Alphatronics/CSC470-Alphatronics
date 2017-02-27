@@ -97,7 +97,7 @@
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
-    <Compile Include="Mail.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="ManPatronLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
