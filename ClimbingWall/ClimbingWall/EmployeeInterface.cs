@@ -90,5 +90,11 @@ namespace ClimbingWall
 			var addPatron = new NewPatronForm();
 			addPatron.Show();
 		}
-	}
+
+        private void resetPassButton_Click(object sender, EventArgs e)
+        {
+            var form = new ResetPass();
+            form.Show();
+        }
+    }
 }

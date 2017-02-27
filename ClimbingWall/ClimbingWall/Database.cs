@@ -467,5 +467,34 @@ namespace ClimbingWall
             }
             return true;
         }
+        public void resetPassword(string name)
+        {
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            string newPass = "";
+            Random rand = new Random();
+            var hasher = new PasswordHasher();
+            // Create random password
+            for (int i = 0; i < 10; i++)
+            {
+                newPass += chars[rand.Next(0, chars.Length)];
+            }
+
+            // Change password
+            string cmd_str = "UPDATE climbing_wall.employee SET `Password` = @hashedPassword WHERE `Employee_Name` = @name";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@name", name);
+            cmd.Parameters.AddWithValue("@hashedPassword", hasher.Hash(newPass));
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            MessageBox.Show("New password: " + newPass);
+        }
     }
 }
