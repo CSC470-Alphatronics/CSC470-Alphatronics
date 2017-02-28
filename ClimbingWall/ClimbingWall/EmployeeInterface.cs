@@ -96,5 +96,11 @@ namespace ClimbingWall
             var form = new ResetPass();
             form.Show();
         }
+
+        private void searchDatabaseButton_Click(object sender, EventArgs e)
+        {
+            var form = new SearchForm();
+            form.Show();
+        }
     }
 }

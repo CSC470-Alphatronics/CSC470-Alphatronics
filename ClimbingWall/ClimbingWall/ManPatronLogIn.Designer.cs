@@ -63,7 +63,6 @@
             this.resultLabel.Size = new System.Drawing.Size(0, 13);
             this.resultLabel.TabIndex = 2;
             this.resultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.resultLabel.Click += new System.EventHandler(this.resultLabel_Click);
             // 
             // ManLogInForm
             // 
@@ -76,7 +75,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ManLogInForm";
             this.Text = "Manual Patron Login";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

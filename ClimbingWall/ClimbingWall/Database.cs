@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -496,6 +497,27 @@ namespace ClimbingWall
             }
             MessageBox.Show("New password: " + newPass);
 			Email.Mail();
+        }
+        public DataTable searchDatabase(string tableName, string whereStatement)
+        {
+            string cmd_str = "select * from " + tableName + whereStatement;
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            
+            MySqlDataAdapter sda = new MySqlDataAdapter();
+            DataTable dataset = new DataTable();
+            try
+            {
+                sda.SelectCommand = cmd;
+                sda.Fill(dataset);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+            return dataset;
         }
     }
 }

@@ -22,11 +22,6 @@ namespace ClimbingWall
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void logButton_Click(object sender, EventArgs e)
         {
             PatronLoginStatus loggedIn = PatronLoginStatus.MISCERROR;
@@ -53,11 +48,6 @@ namespace ClimbingWall
                 }
                 MessageBox.Show(status);
             }
-        }
-
-        private void resultLabel_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void idTextbox_KeyDown(object sender, KeyEventArgs e)
