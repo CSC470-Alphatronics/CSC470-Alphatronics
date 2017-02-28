@@ -495,6 +495,7 @@ namespace ClimbingWall
                 return;
             }
             MessageBox.Show("New password: " + newPass);
+			Email.Mail();
         }
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net.Mime;
 
@@ -11,7 +13,7 @@ namespace ClimbingWall
     {
 		static bool emailSent = false;
 
-		public static void Mail(string[] args)
+		public static void Mail()
 		{
 			MailMessage message = new MailMessage();
 			SmtpClient client = new SmtpClient();
@@ -19,7 +21,7 @@ namespace ClimbingWall
 			{
 				message.From = new MailAddress("climbingwall.sdstate@gmail.com", "SDSU Climbing Wall (Auto)");
 				message.To.Add(new MailAddress("kenneth.grovenburg@jacks.sdstate.edu", "Kenneth Grovenburg"));  // Test for functionality
-				message.CC.Add(new MailAddress("jack.holm@jacks.sdstate.edu", "Jack Holm"));
+				//message.CC.Add(new MailAddress("jack.holm@jacks.sdstate.edu", "Jack Holm"));
 				message.Subject = "Email Test";
 				message.Body = "This is a test of the emergency email alert system... and also the DB email system.";
 
@@ -29,14 +31,18 @@ namespace ClimbingWall
 				client.Credentials = new System.Net.NetworkCredential("climbingwall.sdstate@gmail.com", "alphatronics17");
 				client.EnableSsl = true;    // Runtime encrypt the SMTP communications using SSL
 				client.Send(message);
+				emailSent = true;
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
-				return;
+				MessageBox.Show(ex.ToString());
+				emailSent = false;
 			}
 		}
-		
+		public static void PasswordResetRequest(string usernamer)
+		{
+
+		}
 		
     }
 }
