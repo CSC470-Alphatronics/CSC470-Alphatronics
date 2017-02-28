@@ -510,6 +510,7 @@ namespace ClimbingWall
             {
                 sda.SelectCommand = cmd;
                 sda.Fill(dataset);
+                sda.Update(dataset);
             }
             catch (MySqlException ex)
             {
