@@ -32,6 +32,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.generateReport = new System.Windows.Forms.Button();
+			this.saveLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// startDate
@@ -80,11 +81,21 @@
 			this.generateReport.UseVisualStyleBackColor = true;
 			this.generateReport.Click += new System.EventHandler(this.generateReport_Click);
 			// 
+			// saveLabel
+			// 
+			this.saveLabel.AutoSize = true;
+			this.saveLabel.Location = new System.Drawing.Point(30, 122);
+			this.saveLabel.Name = "saveLabel";
+			this.saveLabel.Size = new System.Drawing.Size(100, 13);
+			this.saveLabel.TabIndex = 5;
+			this.saveLabel.Text = "No report saved yet";
+			// 
 			// reportGenerator
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(161, 139);
+			this.ClientSize = new System.Drawing.Size(168, 178);
+			this.Controls.Add(this.saveLabel);
 			this.Controls.Add(this.generateReport);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
@@ -104,5 +115,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Button generateReport;
+		private System.Windows.Forms.Label saveLabel;
 	}
 }
