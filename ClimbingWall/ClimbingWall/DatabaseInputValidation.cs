@@ -7,33 +7,22 @@ using System.Threading.Tasks;
 
 namespace ClimbingWall
 {
-    public class DatabaseInputValidation
+    public static class DatabaseInputValidation
     {
-        private static DatabaseInputValidation instance;
-        public static DatabaseInputValidation Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new DatabaseInputValidation();
-                }
-                return instance;
-            }
-        }
-        public bool nameIsValid(string input)
+       
+        public static bool nameIsValid(string input)
         {
             return Regex.IsMatch(input, @"^[a-zA-Z\s]*$");
         }
-        public bool stringIsValid(string input)
+        public static bool stringIsValid(string input)
         {
             return Regex.IsMatch(input, @"^[a-zA-Z\s.!?_@]*$");
         }
-        public bool uintIsValid(string input)
+        public static bool uintIsValid(string input)
         {
             return Regex.IsMatch(input, @"^[0-9]*$*$");
         }
-        public bool uintIsValidWithinRange(string input, int min, int max)
+        public static bool uintIsValidWithinRange(string input, int min, int max)
         {
             bool valid = false;
             if (Regex.IsMatch(input, @"^[0-9]+$"))

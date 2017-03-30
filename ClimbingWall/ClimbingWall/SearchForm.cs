@@ -145,15 +145,15 @@ namespace ClimbingWall
             switch (tableSelectBox.SelectedIndex)
             {
                 case ((int)DatabaseSearchVal.EMPLOYEE):
-                    if (DatabaseInputValidation.Instance.uintIsValid(empIdBox.Text) &&
-                        DatabaseInputValidation.Instance.uintIsValidWithinRange(empLevelBox.Text, 0, 2) &&
-                        DatabaseInputValidation.Instance.nameIsValid(empNameBox.Text))
+                    if (DatabaseInputValidation.uintIsValid(empIdBox.Text) &&
+                        DatabaseInputValidation.uintIsValidWithinRange(empLevelBox.Text, 0, 2) &&
+                        DatabaseInputValidation.nameIsValid(empNameBox.Text))
                         isValid = true;
                     break;
                 case ((int)DatabaseSearchVal.PATRON):
-                    if (DatabaseInputValidation.Instance.uintIsValid(patronIdBox.Text) &&
-                        DatabaseInputValidation.Instance.nameIsValid(patronFirstNameBox.Text) &&
-                        DatabaseInputValidation.Instance.nameIsValid(patronLastNameBox.Text))
+                    if (DatabaseInputValidation.uintIsValid(patronIdBox.Text) &&
+                        DatabaseInputValidation.nameIsValid(patronFirstNameBox.Text) &&
+                        DatabaseInputValidation.nameIsValid(patronLastNameBox.Text))
                     {
                         isValid = true;
                     }
