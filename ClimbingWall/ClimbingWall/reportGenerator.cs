@@ -56,7 +56,7 @@ namespace ClimbingWall
 
 			//First Logs
 			string field = "PatronID, FK_FirstLog";
-			where = "Where FK_FirstLog >= '" + start + " 00:00:00' and FK_FirstLog <= '" + end + " 23:59:59';";
+			where = "where FK_FirstLog >= '" + start + " 00:00:00' and FK_FirstLog <= '" + end + " 23:59:59';";
 
 			logData = Database.Instance.searchDatabase("patron", field, where);
 			int firstLogs = logData.Rows.Count;
@@ -66,7 +66,218 @@ namespace ClimbingWall
 			}
 
 			//BreakDown
+			int startYear = startDate.Value.Year;
+			int startMonth = startDate.Value.Month;
+			int startDay = startDate.Value.Day;
 
+			int endYear = endDate.Value.Year;
+			int endMonth = endDate.Value.Month;
+			int endDay = endDate.Value.Day;
+
+			if (endDay == getDays(endMonth)) {
+				endDay = 1;
+				endMonth++;
+				if (endMonth == 13) {
+					endMonth = 1;
+					endYear++;
+				}
+			}
+			else
+				endDay++; //*/
+
+			int yearCounter = startYear;
+			int monthCounter = startMonth;
+			int dayCounter = startDay;
+
+			int yearLogCount = 0;
+			int monthLogCount = 0;
+			int dayLogCount = 0;
+
+			string hrStr;
+			string dayStr;
+
+
+			//where = "where Log_DateTime >= ' YYYY-MM-DD HH:00:00' and Log_DateTime <= ' YYYY-MM-DD HH:59:59';";
+			
+			using (StreamWriter outFile = new StreamWriter(outName, true)) {
+				outFile.WriteLine("Breakdown\n");
+			}
+			while(yearCounter != endYear || monthCounter != endMonth || dayCounter != endDay) {
+				for (int i = 0; i <= 22; i++) { //Each Hour
+					where = "where Log_DateTime >= ' "+numToString(yearCounter)+"-"+numToString(monthCounter)+"-"+numToString(dayCounter)+" "+numToString(i)+":00:00' and Log_DateTime <= ' "+numToString(yearCounter)+"-"+numToString(monthCounter)+"-"+numToString(dayCounter)+" "+numToString(i)+":59:59';";
+					hrStr = numToString(i) + ":00:00 to " + numToString(i) + ":59:59";
+					logData = Database.Instance.searchDatabase("log_table", where);
+					if(logData.Rows.Count != 0)
+						using (StreamWriter outFile = new StreamWriter(outName, true)) {
+							outFile.WriteLine("Hour {0}: {1} Log-Ins", hrStr ,logData.Rows.Count);
+						}
+					dayLogCount += logData.Rows.Count;
+				}//Each Hour Loop end
+				dayStr = getMonth(monthCounter) +" "+ dayCounter + ", "+ yearCounter;
+
+				if(dayLogCount != 0)
+				using (StreamWriter outFile = new StreamWriter(outName, true)) {
+					outFile.WriteLine("{0}: {1} Log-Ins\n", dayStr, dayLogCount);
+				}
+
+				dayCounter++;
+				monthLogCount += dayLogCount;
+				dayLogCount = 0;
+
+				if( dayCounter == getDays(monthCounter) + 1) {
+					dayCounter = 1;
+					dayStr = getMonth(monthCounter) + " " + yearCounter.ToString();
+
+
+					if (monthLogCount != 0)
+						using (StreamWriter outFile = new StreamWriter(outName, true)) {
+						outFile.WriteLine("{0}: {1} Log-Ins\n", dayStr, monthLogCount);
+					}
+
+					monthCounter++;
+					yearLogCount += monthLogCount;
+					monthLogCount = 0;
+
+					if(monthCounter == 13) {
+						monthCounter = 1;
+
+						if (yearLogCount != 0)
+							using (StreamWriter outFile = new StreamWriter(outName, true)) {
+							outFile.WriteLine("{0}: {1} Log-Ins\n", yearCounter, yearLogCount);
+						}
+						yearCounter++;
+						yearLogCount = 0;
+					}
+				}
+			}
+
+			/*for (int i = 0; i <= 22; i++) { //Each Hour
+				where = "where Log_DateTime >= ' " + numToString(yearCounter) + "-" + numToString(monthCounter) + "-" + numToString(dayCounter) + " " + numToString(i) + ":00:00' and Log_DateTime <= ' " + numToString(yearCounter) + "-" + numToString(monthCounter) + "-" + numToString(dayCounter) + " " + numToString(i) + ":59:59';";
+				hrStr = numToString(i) + ":00:00 to " + numToString(i) + ":59:59";
+				logData = Database.Instance.searchDatabase("log_table", where);
+				if (logData.Rows.Count != 0)
+					using (StreamWriter outFile = new StreamWriter(outName, true)) {
+						outFile.WriteLine("Hour {0}: {1} Log-Ins", hrStr, logData.Rows.Count);
+					}
+				dayLogCount += logData.Rows.Count;
+			}//Each Hour Loop end
+			dayStr = getMonth(monthCounter) + " " + dayCounter + ", " + yearCounter;
+
+			if (dayLogCount != 0)
+				using (StreamWriter outFile = new StreamWriter(outName, true)) {
+					outFile.WriteLine("{0}: {1} Log-Ins\n", dayStr, dayLogCount);
+				}
+
+			dayCounter++;
+			monthLogCount += dayLogCount;
+			dayLogCount = 0;
+
+			if (dayCounter == getDays(monthCounter)) {
+				dayCounter = 1;
+				dayStr = getMonth(monthCounter) + " " + yearCounter.ToString();
+
+
+				if (monthLogCount != 0)
+					using (StreamWriter outFile = new StreamWriter(outName, true)) {
+						outFile.WriteLine("{0}: {1} Log-Ins\n", dayStr, monthLogCount);
+					}
+
+				monthCounter++;
+				yearLogCount += monthLogCount;
+				monthLogCount = 0;
+
+				if (monthCounter == 12) {
+					monthCounter = 1;
+
+					if (yearLogCount != 0)
+						using (StreamWriter outFile = new StreamWriter(outName, true)) {
+							outFile.WriteLine("{0}: {1} Log-Ins\n", yearCounter, yearLogCount);
+						}
+					yearCounter++;
+					yearLogCount = 0;
+				}
+			}//*/
+
+
+
+
+
+
+
+		}
+
+		private int getDays(int month)
+		{
+			switch (month) {
+				case (1):
+					return 31;
+				case (2):
+					return 28;
+				case (3):
+					return 31;
+				case (4):
+					return 30;
+				case (5):
+					return 31;
+				case (6):
+					return 30;
+				case (7):
+					return 31;
+				case (8):
+					return 31;
+				case (9):
+					return 30;
+				case (10):
+					return 31;
+				case (11):
+					return 30;
+				case (12):
+					return 31;
+				default:
+					return 30;
+			}
+
+		}
+
+		private string numToString(int num)
+		{
+			if (num <= 9) {
+				return "0" + num.ToString();
+			}
+			else
+				return num.ToString();
+		}
+
+		private string getMonth(int month)
+		{
+			switch (month) {
+				case (1):
+					return "January";
+				case (2):
+					return "February";
+				case (3):
+					return "March";
+				case (4):
+					return "April";
+				case (5):
+					return "May";
+				case (6):
+					return "June";
+				case (7):
+					return "July";
+				case (8):
+					return "August";
+				case (9):
+					return "September";
+				case (10):
+					return "October";
+				case (11):
+					return "November";
+				case (12):
+					return "December";
+				default:
+					return "Smarch";
+			}
 		}
 	}
 }
