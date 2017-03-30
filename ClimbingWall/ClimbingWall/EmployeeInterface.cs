@@ -137,7 +137,8 @@ namespace ClimbingWall
 
 		private void SusRequestButton_Click(object sender, EventArgs e)
 		{
-
+			var suspendReq = new Note();
+			suspendReq.Show();
 		}
 
 		private void ClinicRegButton_Click(object sender, EventArgs e)
