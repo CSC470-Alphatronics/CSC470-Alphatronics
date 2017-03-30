@@ -49,7 +49,7 @@ namespace ClimbingWall
                     return;
                     break;
             }
-            SuspendCode suspension = Database.Instance.suspendUser(userID, reasonBox.Text, length);
+            SuspendCode suspension = Database.Instance.suspendPatron(userID, reasonBox.Text, length);
             switch (suspension)
             {
                 case SuspendCode.DB_FAIL:

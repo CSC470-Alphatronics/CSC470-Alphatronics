@@ -55,27 +55,27 @@
 			// 
 			// FirstNameTextbox
 			// 
-			this.FirstNameTextbox.Location = new System.Drawing.Point(86, 488);
+			this.FirstNameTextbox.Location = new System.Drawing.Point(86, 462);
 			this.FirstNameTextbox.Name = "FirstNameTextbox";
 			this.FirstNameTextbox.Size = new System.Drawing.Size(101, 20);
-			this.FirstNameTextbox.TabIndex = 1;
+			this.FirstNameTextbox.TabIndex = 7;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(20, 491);
+			this.label2.Location = new System.Drawing.Point(20, 465);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(60, 13);
-			this.label2.TabIndex = 2;
+			this.label2.TabIndex = 1;
 			this.label2.Text = "First Name:";
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(19, 465);
+			this.label3.Location = new System.Drawing.Point(19, 491);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(61, 13);
-			this.label3.TabIndex = 3;
+			this.label3.TabIndex = 2;
 			this.label3.Text = "Last Name:";
 			// 
 			// label4
@@ -90,41 +90,41 @@
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(12, 520);
+			this.label5.Location = new System.Drawing.Point(12, 517);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(68, 13);
-			this.label5.TabIndex = 5;
+			this.label5.TabIndex = 3;
 			this.label5.Text = "Middle Initial:";
 			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(268, 491);
+			this.label6.Location = new System.Drawing.Point(271, 491);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(38, 13);
-			this.label6.TabIndex = 6;
-			this.label6.Text = "Email: ";
+			this.label6.Size = new System.Drawing.Size(35, 13);
+			this.label6.TabIndex = 5;
+			this.label6.Text = "Email:";
 			// 
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(262, 517);
+			this.label7.Location = new System.Drawing.Point(265, 517);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(44, 13);
-			this.label7.TabIndex = 7;
-			this.label7.Text = "Phone: ";
+			this.label7.Size = new System.Drawing.Size(41, 13);
+			this.label7.TabIndex = 6;
+			this.label7.Text = "Phone:";
 			// 
 			// LastNameTextbox
 			// 
 			this.LastNameTextbox.ForeColor = System.Drawing.SystemColors.WindowText;
-			this.LastNameTextbox.Location = new System.Drawing.Point(86, 462);
+			this.LastNameTextbox.Location = new System.Drawing.Point(86, 488);
 			this.LastNameTextbox.Name = "LastNameTextbox";
 			this.LastNameTextbox.Size = new System.Drawing.Size(101, 20);
 			this.LastNameTextbox.TabIndex = 8;
 			// 
 			// MiddleInitTextbox
 			// 
-			this.MiddleInitTextbox.Location = new System.Drawing.Point(86, 517);
+			this.MiddleInitTextbox.Location = new System.Drawing.Point(86, 514);
 			this.MiddleInitTextbox.Name = "MiddleInitTextbox";
 			this.MiddleInitTextbox.Size = new System.Drawing.Size(100, 20);
 			this.MiddleInitTextbox.TabIndex = 9;
@@ -134,21 +134,21 @@
 			this.EmailTextbox.Location = new System.Drawing.Point(312, 488);
 			this.EmailTextbox.Name = "EmailTextbox";
 			this.EmailTextbox.Size = new System.Drawing.Size(145, 20);
-			this.EmailTextbox.TabIndex = 10;
+			this.EmailTextbox.TabIndex = 11;
 			// 
 			// PhoneTextbox
 			// 
 			this.PhoneTextbox.Location = new System.Drawing.Point(312, 514);
 			this.PhoneTextbox.Name = "PhoneTextbox";
 			this.PhoneTextbox.Size = new System.Drawing.Size(145, 20);
-			this.PhoneTextbox.TabIndex = 11;
+			this.PhoneTextbox.TabIndex = 12;
 			// 
 			// IDTextbox
 			// 
 			this.IDTextbox.Location = new System.Drawing.Point(312, 462);
 			this.IDTextbox.Name = "IDTextbox";
 			this.IDTextbox.Size = new System.Drawing.Size(145, 20);
-			this.IDTextbox.TabIndex = 12;
+			this.IDTextbox.TabIndex = 10;
 			// 
 			// termsRadio
 			// 

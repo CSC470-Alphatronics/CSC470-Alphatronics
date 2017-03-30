@@ -158,6 +158,9 @@
     <EmbeddedResource Include="ManPatronLogIn.resx">
       <DependentUpon>ManPatronLogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewPatronForm.resx">
+      <DependentUpon>NewPatronForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Note.resx">
       <DependentUpon>Note.cs</DependentUpon>
     </EmbeddedResource>

@@ -286,7 +286,7 @@ namespace ClimbingWall
             return true;
         }
 
-        public SuspendCode suspendUser(int patronID, string reason, SuspendLength length)
+        public SuspendCode suspendPatron(int patronID, string reason, SuspendLength length)
         {
             //Get suspension length
             DateTime dt = getExpirationDate(length);
