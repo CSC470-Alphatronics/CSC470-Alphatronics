@@ -61,7 +61,7 @@
 			this.addUserButton.Name = "addUserButton";
 			this.addUserButton.Size = new System.Drawing.Size(126, 23);
 			this.addUserButton.TabIndex = 0;
-			this.addUserButton.Text = "Add User";
+			this.addUserButton.Text = "Add New Patron";
 			this.addUserButton.UseVisualStyleBackColor = true;
 			this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
 			// 
@@ -132,7 +132,7 @@
 			this.suspendButton.Name = "suspendButton";
 			this.suspendButton.Size = new System.Drawing.Size(113, 23);
 			this.suspendButton.TabIndex = 8;
-			this.suspendButton.Text = "Suspend User";
+			this.suspendButton.Text = "Suspend Patron";
 			this.suspendButton.UseVisualStyleBackColor = true;
 			this.suspendButton.Click += new System.EventHandler(this.suspendButton_Click);
 			// 
@@ -193,7 +193,7 @@
 			this.loginButton.Name = "loginButton";
 			this.loginButton.Size = new System.Drawing.Size(126, 23);
 			this.loginButton.TabIndex = 1;
-			this.loginButton.Text = "Manual User Login";
+			this.loginButton.Text = "Manual Patron Login";
 			this.loginButton.UseVisualStyleBackColor = true;
 			this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
 			// 
@@ -213,7 +213,7 @@
 			this.noteButton.Name = "noteButton";
 			this.noteButton.Size = new System.Drawing.Size(126, 23);
 			this.noteButton.TabIndex = 3;
-			this.noteButton.Text = "Notes";
+			this.noteButton.Text = "Create Note";
 			this.noteButton.UseVisualStyleBackColor = true;
 			this.noteButton.Click += new System.EventHandler(this.noteButton_Click);
 			// 
@@ -233,7 +233,7 @@
 			this.empChk.Name = "empChk";
 			this.empChk.Size = new System.Drawing.Size(113, 23);
 			this.empChk.TabIndex = 10;
-			this.empChk.Text = "LevelCheck";
+			this.empChk.Text = "Level Check";
 			this.empChk.UseVisualStyleBackColor = true;
 			this.empChk.Click += new System.EventHandler(this.empChk_Click);
 			// 
@@ -243,7 +243,7 @@
 			this.Change_Employee_Button.Name = "Change_Employee_Button";
 			this.Change_Employee_Button.Size = new System.Drawing.Size(112, 23);
 			this.Change_Employee_Button.TabIndex = 11;
-			this.Change_Employee_Button.Text = "Switch User";
+			this.Change_Employee_Button.Text = "Switch Employee";
 			this.Change_Employee_Button.UseVisualStyleBackColor = true;
 			this.Change_Employee_Button.Click += new System.EventHandler(this.Change_Employee_Button_Click);
 			// 
