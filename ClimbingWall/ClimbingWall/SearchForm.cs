@@ -22,19 +22,26 @@ namespace ClimbingWall
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            string whereStatement = formWhereStatement();
-            DataTable dataset = Database.Instance.searchDatabase(selectedTable, whereStatement);
-            try
+            if (databaseSearchValidation() == true)
             {
-                BindingSource bSource = new BindingSource();
-                bSource.DataSource = dataset;
-                tableDataView.DataSource = bSource;
-                tableDataView.Refresh();
+                string whereStatement = formWhereStatement();
+                DataTable dataset = Database.Instance.searchDatabase(selectedTable, whereStatement);
+                try
+                {
+                    BindingSource bSource = new BindingSource();
+                    bSource.DataSource = dataset;
+                    tableDataView.DataSource = bSource;
+                    tableDataView.Refresh();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-                return;
+                MessageBox.Show("There was an error with the input. Please check the fields for invalid characters and try again.");
             }
         }
 
@@ -42,38 +49,75 @@ namespace ClimbingWall
         {
             string whereStatement = "";
             //logic
-            switch(tableSelectBox.SelectedIndex)
+            switch (tableSelectBox.SelectedIndex)
             {
-                case (0): //Employee
-                    bool first = true;
+                case ((int)DatabaseSearchVal.EMPLOYEE):
+                    bool firstEmp = true;
                     if (!string.IsNullOrEmpty(empIdBox.Text))
                     {
                         whereStatement += " where employee_id=" + empIdBox.Text;
-                        first = false;
+                        firstEmp = false;
                     }
-                    if (!string.IsNullOrEmpty(empLevelBox.Text) && first == true)
+                    if (!string.IsNullOrEmpty(empLevelBox.Text))
                     {
-                        whereStatement += " where level=" + empLevelBox.Text;
-                        first = false;
+                        if (firstEmp == true)
+                        {
+                            whereStatement += " where ";
+                            firstEmp = false;
+                        }
+                        else
+                        {
+                            whereStatement += " and ";
+                        }
+                        whereStatement += "level=" + empLevelBox.Text;
                     }
-                    else if (!string.IsNullOrEmpty(empLevelBox.Text))
+                    if (!string.IsNullOrEmpty(empNameBox.Text))
                     {
-                        whereStatement += " and level=" + empLevelBox.Text;
-                    }
-                    if (!string.IsNullOrEmpty(empNameBox.Text) && first == true)
-                    {
-                        whereStatement += " where employee_name=" + empNameBox.Text;
-                        first = false;
-                    }
-                    else if (!string.IsNullOrEmpty(empNameBox.Text))
-                    {
-                        whereStatement += " and employee_name=" + empNameBox.Text;
+                        if (firstEmp == true)
+                        {
+                            whereStatement += " where ";
+                            firstEmp = false;
+                        }
+                        else
+                        {
+                            whereStatement += " and ";
+                        }
+                        whereStatement += "employee_name='" + empNameBox.Text + "'";
                     }
                     break;
-                case (1): //Patron
+
+                case ((int)DatabaseSearchVal.PATRON):
+                    bool firstPat = true;
                     if (!string.IsNullOrEmpty(patronIdBox.Text))
                     {
                         whereStatement += " where patronid=" + patronIdBox.Text;
+                        firstPat = false;
+                    }
+                    if (!string.IsNullOrEmpty(patronFirstNameBox.Text))
+                    {
+                        if (firstPat == true)
+                        {
+                            whereStatement += " where ";
+                            firstPat = false;
+                        }
+                        else
+                        {
+                            whereStatement += " and ";
+                        }
+                        whereStatement += "FName='" + patronFirstNameBox.Text + "'";
+                    }
+                    if (!string.IsNullOrEmpty(patronLastNameBox.Text))
+                    {
+                        if (firstPat == true)
+                        {
+                            whereStatement += " where ";
+                            firstPat = false;
+                        }
+                        else
+                        {
+                            whereStatement += " and ";
+                        }
+                        whereStatement += "LName='" + patronLastNameBox.Text + "'";
                     }
                     break;
             }
@@ -81,18 +125,41 @@ namespace ClimbingWall
         }
 
         private void tableSelectBox_SelectedIndexChanged(object sender, EventArgs e)
-        { //needs to be reworked into an enum or something pls
+        {
             switch (tableSelectBox.SelectedIndex)
             {
-                case (0): //Employee
+                case ((int)DatabaseSearchVal.EMPLOYEE):
                     tablePageControl.SelectedIndex = 0;
                     selectedTable = "climbing_wall.employee";
                     break;
-                case (1): //Patron
+                case ((int)DatabaseSearchVal.PATRON):
                     tablePageControl.SelectedIndex = 1;
                     selectedTable = "climbing_wall.patron";
                     break;
             }
+        }
+
+        private bool databaseSearchValidation()
+        {
+            bool isValid = false;
+            switch (tableSelectBox.SelectedIndex)
+            {
+                case ((int)DatabaseSearchVal.EMPLOYEE):
+                    if (DatabaseInputValidation.Instance.uintIsValid(empIdBox.Text) &&
+                        DatabaseInputValidation.Instance.uintIsValidWithinRange(empLevelBox.Text, 0, 2) &&
+                        DatabaseInputValidation.Instance.nameIsValid(empNameBox.Text))
+                        isValid = true;
+                    break;
+                case ((int)DatabaseSearchVal.PATRON):
+                    if (DatabaseInputValidation.Instance.uintIsValid(patronIdBox.Text) &&
+                        DatabaseInputValidation.Instance.nameIsValid(patronFirstNameBox.Text) &&
+                        DatabaseInputValidation.Instance.nameIsValid(patronLastNameBox.Text))
+                    {
+                        isValid = true;
+                    }
+                    break;
+            }
+            return isValid;
         }
     }
 }
