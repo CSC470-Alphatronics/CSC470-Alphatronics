@@ -496,7 +496,6 @@ namespace ClimbingWall
                 return;
             }
             MessageBox.Show("New password: " + newPass);
-			Email.Mail();
         }
         public DataTable searchDatabase(string tableName, string whereStatement)
         {
@@ -519,6 +518,53 @@ namespace ClimbingWall
             }
 
             return dataset;
+        }
+
+        public bool nonQuery(string cmd_str)
+        {
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            return true;
+        }
+        
+        public int getEmployeeID(string emp_name)
+        {
+            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Name = @name";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@name", emp_name);
+            int empID;
+
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return -1;
+            }
+            if (reader.HasRows)
+            {
+                reader.Read();
+                empID = reader.GetInt32("Employee_Id");
+            }
+            else
+            {
+                empID = -1;
+            }
+            reader.Close();
+            return empID;
         }
     }
 }

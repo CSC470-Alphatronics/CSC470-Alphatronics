@@ -102,5 +102,11 @@ namespace ClimbingWall
             var form = new SearchForm();
             form.Show();
         }
+
+        private void scheduleButton_Click(object sender, EventArgs e)
+        {
+            var schedule = new Schedule();
+            schedule.Show();
+        }
     }
 }

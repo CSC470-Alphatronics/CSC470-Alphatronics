@@ -30,6 +30,7 @@
         {
             this.addUserButton = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
+            this.searchDatabaseButton = new System.Windows.Forms.Button();
             this.resetPassButton = new System.Windows.Forms.Button();
             this.levelBox = new System.Windows.Forms.ComboBox();
             this.suspendButton = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.empChk = new System.Windows.Forms.Button();
             this.Change_Employee_Button = new System.Windows.Forms.Button();
-            this.searchDatabaseButton = new System.Windows.Forms.Button();
+            this.scheduleButton = new System.Windows.Forms.Button();
             this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             // 
             // adminPanel
             // 
+            this.adminPanel.Controls.Add(this.scheduleButton);
             this.adminPanel.Controls.Add(this.searchDatabaseButton);
             this.adminPanel.Controls.Add(this.resetPassButton);
             this.adminPanel.Controls.Add(this.levelBox);
@@ -75,6 +77,16 @@
             this.adminPanel.Name = "adminPanel";
             this.adminPanel.Size = new System.Drawing.Size(343, 315);
             this.adminPanel.TabIndex = 0;
+            // 
+            // searchDatabaseButton
+            // 
+            this.searchDatabaseButton.Location = new System.Drawing.Point(167, 8);
+            this.searchDatabaseButton.Name = "searchDatabaseButton";
+            this.searchDatabaseButton.Size = new System.Drawing.Size(113, 23);
+            this.searchDatabaseButton.TabIndex = 11;
+            this.searchDatabaseButton.Text = "Search Database";
+            this.searchDatabaseButton.UseVisualStyleBackColor = true;
+            this.searchDatabaseButton.Click += new System.EventHandler(this.searchDatabaseButton_Click);
             // 
             // resetPassButton
             // 
@@ -218,15 +230,15 @@
             this.Change_Employee_Button.UseVisualStyleBackColor = true;
             this.Change_Employee_Button.Click += new System.EventHandler(this.Change_Employee_Button_Click);
             // 
-            // searchDatabaseButton
+            // scheduleButton
             // 
-            this.searchDatabaseButton.Location = new System.Drawing.Point(167, 8);
-            this.searchDatabaseButton.Name = "searchDatabaseButton";
-            this.searchDatabaseButton.Size = new System.Drawing.Size(113, 23);
-            this.searchDatabaseButton.TabIndex = 11;
-            this.searchDatabaseButton.Text = "Search Database";
-            this.searchDatabaseButton.UseVisualStyleBackColor = true;
-            this.searchDatabaseButton.Click += new System.EventHandler(this.searchDatabaseButton_Click);
+            this.scheduleButton.Location = new System.Drawing.Point(167, 37);
+            this.scheduleButton.Name = "scheduleButton";
+            this.scheduleButton.Size = new System.Drawing.Size(113, 23);
+            this.scheduleButton.TabIndex = 12;
+            this.scheduleButton.Text = "Schedule";
+            this.scheduleButton.UseVisualStyleBackColor = true;
+            this.scheduleButton.Click += new System.EventHandler(this.scheduleButton_Click);
             // 
             // EmployeeInterface
             // 
@@ -269,5 +281,6 @@
 		private System.Windows.Forms.Button Change_Employee_Button;
         private System.Windows.Forms.Button resetPassButton;
         private System.Windows.Forms.Button searchDatabaseButton;
+        private System.Windows.Forms.Button scheduleButton;
     }
 }
