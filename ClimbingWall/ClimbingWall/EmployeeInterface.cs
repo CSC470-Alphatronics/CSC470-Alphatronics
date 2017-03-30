@@ -97,7 +97,7 @@ namespace ClimbingWall
 			MessageBox.Show(msg);
 		}
 
-        private void addNoteButton_Click(object sender, EventArgs e)
+        private void noteButton_Click(object sender, EventArgs e)
         {
             var note = new Note();
             note.Show();
@@ -135,10 +135,15 @@ namespace ClimbingWall
             schedule.Show();
         }
 
-		private void reqSuspensionBtn_Click(object sender, EventArgs e)
+		private void SusRequestButton_Click(object sender, EventArgs e)
 		{
-			var note = new Note();
-			note.Show();
+
+		}
+
+		private void ClinicRegButton_Click(object sender, EventArgs e)
+		{
+			var clinicReg = new ClinicRegistration();
+			clinicReg.Show();
 		}
 	}
 }

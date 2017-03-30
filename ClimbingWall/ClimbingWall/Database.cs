@@ -181,7 +181,7 @@ namespace ClimbingWall
             return PatronLoginStatus.SUCCESS;
         }
 
-        private PatronLoginStatus checkSuspensions(int suspID)
+        public PatronLoginStatus checkSuspensions(int suspID)
         {
             MySqlDataReader suspReader;
             string cmd_str = "SELECT * FROM climbing_wall.suspensions WHERE Suspend_ID = @ID";
@@ -497,9 +497,29 @@ namespace ClimbingWall
             }
             MessageBox.Show("New password: " + newPass);
         }
-        public DataTable searchDatabase(string tableName, string whereStatement)
+		public DataTable searchDatabase(string tableName)			//just collect all the data from the table
+		{
+			string cmd_str = "select * from " + tableName + " ;";
+			MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+			cmd.CommandText = cmd_str;
+
+			MySqlDataAdapter sda = new MySqlDataAdapter();
+			DataTable dataset = new DataTable();
+			try {
+				sda.SelectCommand = cmd;
+				sda.Fill(dataset);
+				sda.Update(dataset);
+			}
+			catch (MySqlException ex) {
+				MessageBox.Show(ex.Message);
+				return null;
+			}
+
+			return dataset;
+		}
+		public DataTable searchDatabase(string tableName, string whereStatement)
         {
-            string cmd_str = "select * from " + tableName + whereStatement;
+            string cmd_str = "select * from " + tableName + " " + whereStatement;
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             
@@ -520,7 +540,29 @@ namespace ClimbingWall
             return dataset;
         }
 
-        public bool nonQuery(string cmd_str)
+		public DataTable searchDatabase(string tableName, string fields ,string whereStatement) //Overloaded statment to check for certain fields
+		{
+			string cmd_str = "select " + fields + " from " + tableName + " " + whereStatement;
+			//MessageBox.Show(cmd_str);   //unCommneting for debugging
+			MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+			cmd.CommandText = cmd_str;
+
+			MySqlDataAdapter sda = new MySqlDataAdapter();
+			DataTable dataset = new DataTable();
+			try {
+				sda.SelectCommand = cmd;
+				sda.Fill(dataset);
+				sda.Update(dataset);
+			}
+			catch (MySqlException ex) {
+				MessageBox.Show(ex.Message);
+				return null;
+			}
+
+			return dataset;
+		}
+
+		public bool nonQuery(string cmd_str)
         {
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
@@ -597,7 +639,7 @@ namespace ClimbingWall
             reader.Close();
             return empName;
         }
-
+		
         public DataTable getNotes()
         {
             string cmd_str = "SELECT FK_Emp_ID, Note_Text, Note_DateTime FROM climbing_wall.note;";

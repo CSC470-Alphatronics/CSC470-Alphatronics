@@ -77,6 +77,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClinicRegistration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClinicRegistration.Designer.cs">
+      <DependentUpon>ClinicRegistration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database.cs" />
     <Compile Include="EmployeeInterface.cs">
       <SubType>Form</SubType>
@@ -146,8 +152,17 @@
       <DependentUpon>SuspendUser.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseInputValidation.cs" />
+    <Compile Include="SuspensionRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuspensionRequest.Designer.cs">
+      <DependentUpon>SuspensionRequest.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClinicRegistration.resx">
+      <DependentUpon>ClinicRegistration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeInterface.resx">
       <DependentUpon>EmployeeInterface.cs</DependentUpon>

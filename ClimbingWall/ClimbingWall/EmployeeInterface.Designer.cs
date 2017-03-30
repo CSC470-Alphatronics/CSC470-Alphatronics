@@ -43,12 +43,13 @@
 			this.addEmployeeButton = new System.Windows.Forms.Button();
 			this.loginButton = new System.Windows.Forms.Button();
 			this.changePassButton = new System.Windows.Forms.Button();
-			this.addNoteButton = new System.Windows.Forms.Button();
-			this.reqSuspensionBtn = new System.Windows.Forms.Button();
+			this.noteButton = new System.Windows.Forms.Button();
+			this.SusRequestButton = new System.Windows.Forms.Button();
 			this.empChk = new System.Windows.Forms.Button();
 			this.Change_Employee_Button = new System.Windows.Forms.Button();
 			this.dataView = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
+			this.ClinicRegButton = new System.Windows.Forms.Button();
 			this.adminPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
 			this.SuspendLayout();
@@ -59,7 +60,7 @@
 			this.addUserButton.Name = "addUserButton";
 			this.addUserButton.Size = new System.Drawing.Size(126, 23);
 			this.addUserButton.TabIndex = 0;
-			this.addUserButton.Text = "Add Patron";
+			this.addUserButton.Text = "Add User";
 			this.addUserButton.UseVisualStyleBackColor = true;
 			this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
 			// 
@@ -130,7 +131,7 @@
 			this.suspendButton.Name = "suspendButton";
 			this.suspendButton.Size = new System.Drawing.Size(113, 23);
 			this.suspendButton.TabIndex = 8;
-			this.suspendButton.Text = "Suspend Patron";
+			this.suspendButton.Text = "Suspend User";
 			this.suspendButton.UseVisualStyleBackColor = true;
 			this.suspendButton.Click += new System.EventHandler(this.suspendButton_Click);
 			// 
@@ -191,7 +192,7 @@
 			this.loginButton.Name = "loginButton";
 			this.loginButton.Size = new System.Drawing.Size(126, 23);
 			this.loginButton.TabIndex = 1;
-			this.loginButton.Text = "Manual Patron Login";
+			this.loginButton.Text = "Manual User Login";
 			this.loginButton.UseVisualStyleBackColor = true;
 			this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
 			// 
@@ -205,25 +206,25 @@
 			this.changePassButton.UseVisualStyleBackColor = true;
 			this.changePassButton.Click += new System.EventHandler(this.changePassButton_Click);
 			// 
-			// addNoteButton
+			// noteButton
 			// 
-			this.addNoteButton.Location = new System.Drawing.Point(12, 121);
-			this.addNoteButton.Name = "addNoteButton";
-			this.addNoteButton.Size = new System.Drawing.Size(126, 23);
-			this.addNoteButton.TabIndex = 3;
-			this.addNoteButton.Text = "Add Note";
-			this.addNoteButton.UseVisualStyleBackColor = true;
-			this.addNoteButton.Click += new System.EventHandler(this.addNoteButton_Click);
+			this.noteButton.Location = new System.Drawing.Point(12, 121);
+			this.noteButton.Name = "noteButton";
+			this.noteButton.Size = new System.Drawing.Size(126, 23);
+			this.noteButton.TabIndex = 3;
+			this.noteButton.Text = "Notes";
+			this.noteButton.UseVisualStyleBackColor = true;
+			this.noteButton.Click += new System.EventHandler(this.noteButton_Click);
 			// 
-			// reqSuspensionBtn
+			// SusRequestButton
 			// 
-			this.reqSuspensionBtn.Location = new System.Drawing.Point(13, 151);
-			this.reqSuspensionBtn.Name = "reqSuspensionBtn";
-			this.reqSuspensionBtn.Size = new System.Drawing.Size(125, 23);
-			this.reqSuspensionBtn.TabIndex = 4;
-			this.reqSuspensionBtn.Text = "Request Suspension";
-			this.reqSuspensionBtn.UseVisualStyleBackColor = true;
-			this.reqSuspensionBtn.Click += new System.EventHandler(this.reqSuspensionBtn_Click);
+			this.SusRequestButton.Location = new System.Drawing.Point(13, 151);
+			this.SusRequestButton.Name = "SusRequestButton";
+			this.SusRequestButton.Size = new System.Drawing.Size(125, 23);
+			this.SusRequestButton.TabIndex = 4;
+			this.SusRequestButton.Text = "Request Suspension";
+			this.SusRequestButton.UseVisualStyleBackColor = true;
+			this.SusRequestButton.Click += new System.EventHandler(this.SusRequestButton_Click);
 			// 
 			// empChk
 			// 
@@ -231,7 +232,7 @@
 			this.empChk.Name = "empChk";
 			this.empChk.Size = new System.Drawing.Size(113, 23);
 			this.empChk.TabIndex = 10;
-			this.empChk.Text = "Level Check";
+			this.empChk.Text = "LevelCheck";
 			this.empChk.UseVisualStyleBackColor = true;
 			this.empChk.Click += new System.EventHandler(this.empChk_Click);
 			// 
@@ -241,7 +242,7 @@
 			this.Change_Employee_Button.Name = "Change_Employee_Button";
 			this.Change_Employee_Button.Size = new System.Drawing.Size(112, 23);
 			this.Change_Employee_Button.TabIndex = 11;
-			this.Change_Employee_Button.Text = "Switch Employee";
+			this.Change_Employee_Button.Text = "Switch User";
 			this.Change_Employee_Button.UseVisualStyleBackColor = true;
 			this.Change_Employee_Button.Click += new System.EventHandler(this.Change_Employee_Button_Click);
 			// 
@@ -263,17 +264,28 @@
 			this.label1.TabIndex = 13;
 			this.label1.Text = "Notes";
 			// 
+			// ClinicRegButton
+			// 
+			this.ClinicRegButton.Location = new System.Drawing.Point(13, 181);
+			this.ClinicRegButton.Name = "ClinicRegButton";
+			this.ClinicRegButton.Size = new System.Drawing.Size(125, 23);
+			this.ClinicRegButton.TabIndex = 14;
+			this.ClinicRegButton.Text = "Clinic Registration";
+			this.ClinicRegButton.UseVisualStyleBackColor = true;
+			this.ClinicRegButton.Click += new System.EventHandler(this.ClinicRegButton_Click);
+			// 
 			// EmployeeInterface
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(943, 381);
+			this.Controls.Add(this.ClinicRegButton);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dataView);
 			this.Controls.Add(this.Change_Employee_Button);
 			this.Controls.Add(this.empChk);
-			this.Controls.Add(this.reqSuspensionBtn);
-			this.Controls.Add(this.addNoteButton);
+			this.Controls.Add(this.SusRequestButton);
+			this.Controls.Add(this.noteButton);
 			this.Controls.Add(this.changePassButton);
 			this.Controls.Add(this.loginButton);
 			this.Controls.Add(this.adminPanel);
@@ -302,8 +314,8 @@
         private System.Windows.Forms.Button suspendButton;
         private System.Windows.Forms.ComboBox levelBox;
         private System.Windows.Forms.Button changePassButton;
-        private System.Windows.Forms.Button addNoteButton;
-        private System.Windows.Forms.Button reqSuspensionBtn;
+        private System.Windows.Forms.Button noteButton;
+        private System.Windows.Forms.Button SusRequestButton;
 		private System.Windows.Forms.Button empChk;
 		private System.Windows.Forms.Button Change_Employee_Button;
         private System.Windows.Forms.Button resetPassButton;
@@ -311,5 +323,6 @@
         private System.Windows.Forms.Button scheduleButton;
         private System.Windows.Forms.DataGridView dataView;
         private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Button ClinicRegButton;
 	}
 }
