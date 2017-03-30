@@ -40,8 +40,12 @@
             this.EmployeeIdLabel = new System.Windows.Forms.Label();
             this.empIdBox = new System.Windows.Forms.TextBox();
             this.patronPage = new System.Windows.Forms.TabPage();
-            this.patronIdLabel = new System.Windows.Forms.Label();
             this.patronIdBox = new System.Windows.Forms.TextBox();
+            this.patronIdLabel = new System.Windows.Forms.Label();
+            this.patronFirstNameLabel = new System.Windows.Forms.Label();
+            this.patronFirstNameBox = new System.Windows.Forms.TextBox();
+            this.patronLastNameBox = new System.Windows.Forms.TextBox();
+            this.patronLastNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tableDataView)).BeginInit();
             this.tablePageControl.SuspendLayout();
             this.employeePage.SuspendLayout();
@@ -155,6 +159,10 @@
             // 
             // patronPage
             // 
+            this.patronPage.Controls.Add(this.patronLastNameLabel);
+            this.patronPage.Controls.Add(this.patronLastNameBox);
+            this.patronPage.Controls.Add(this.patronFirstNameBox);
+            this.patronPage.Controls.Add(this.patronFirstNameLabel);
             this.patronPage.Controls.Add(this.patronIdBox);
             this.patronPage.Controls.Add(this.patronIdLabel);
             this.patronPage.Location = new System.Drawing.Point(4, 22);
@@ -165,6 +173,13 @@
             this.patronPage.Text = "Patron";
             this.patronPage.UseVisualStyleBackColor = true;
             // 
+            // patronIdBox
+            // 
+            this.patronIdBox.Location = new System.Drawing.Point(152, 24);
+            this.patronIdBox.Name = "patronIdBox";
+            this.patronIdBox.Size = new System.Drawing.Size(170, 20);
+            this.patronIdBox.TabIndex = 1;
+            // 
             // patronIdLabel
             // 
             this.patronIdLabel.AutoSize = true;
@@ -174,12 +189,37 @@
             this.patronIdLabel.TabIndex = 0;
             this.patronIdLabel.Text = "Patron ID";
             // 
-            // patronIdBox
+            // patronFirstNameLabel
             // 
-            this.patronIdBox.Location = new System.Drawing.Point(152, 24);
-            this.patronIdBox.Name = "patronIdBox";
-            this.patronIdBox.Size = new System.Drawing.Size(170, 20);
-            this.patronIdBox.TabIndex = 1;
+            this.patronFirstNameLabel.AutoSize = true;
+            this.patronFirstNameLabel.Location = new System.Drawing.Point(45, 85);
+            this.patronFirstNameLabel.Name = "patronFirstNameLabel";
+            this.patronFirstNameLabel.Size = new System.Drawing.Size(57, 13);
+            this.patronFirstNameLabel.TabIndex = 2;
+            this.patronFirstNameLabel.Text = "First Name";
+            // 
+            // patronFirstNameBox
+            // 
+            this.patronFirstNameBox.Location = new System.Drawing.Point(152, 82);
+            this.patronFirstNameBox.Name = "patronFirstNameBox";
+            this.patronFirstNameBox.Size = new System.Drawing.Size(170, 20);
+            this.patronFirstNameBox.TabIndex = 3;
+            // 
+            // patronLastNameBox
+            // 
+            this.patronLastNameBox.Location = new System.Drawing.Point(152, 138);
+            this.patronLastNameBox.Name = "patronLastNameBox";
+            this.patronLastNameBox.Size = new System.Drawing.Size(170, 20);
+            this.patronLastNameBox.TabIndex = 4;
+            // 
+            // patronLastNameLabel
+            // 
+            this.patronLastNameLabel.AutoSize = true;
+            this.patronLastNameLabel.Location = new System.Drawing.Point(45, 141);
+            this.patronLastNameLabel.Name = "patronLastNameLabel";
+            this.patronLastNameLabel.Size = new System.Drawing.Size(58, 13);
+            this.patronLastNameLabel.TabIndex = 5;
+            this.patronLastNameLabel.Text = "Last Name";
             // 
             // SearchForm
             // 
@@ -218,5 +258,9 @@
         private System.Windows.Forms.Label employeeNameLabel;
         private System.Windows.Forms.TextBox patronIdBox;
         private System.Windows.Forms.Label patronIdLabel;
+        private System.Windows.Forms.Label patronLastNameLabel;
+        private System.Windows.Forms.TextBox patronLastNameBox;
+        private System.Windows.Forms.TextBox patronFirstNameBox;
+        private System.Windows.Forms.Label patronFirstNameLabel;
     }
 }
