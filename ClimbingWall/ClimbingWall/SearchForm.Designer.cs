@@ -40,16 +40,24 @@
             this.EmployeeIdLabel = new System.Windows.Forms.Label();
             this.empIdBox = new System.Windows.Forms.TextBox();
             this.patronPage = new System.Windows.Forms.TabPage();
+            this.patronLastNameLabel = new System.Windows.Forms.Label();
+            this.patronLastNameBox = new System.Windows.Forms.TextBox();
+            this.patronFirstNameBox = new System.Windows.Forms.TextBox();
+            this.patronFirstNameLabel = new System.Windows.Forms.Label();
             this.patronIdBox = new System.Windows.Forms.TextBox();
             this.patronIdLabel = new System.Windows.Forms.Label();
-            this.patronFirstNameLabel = new System.Windows.Forms.Label();
-            this.patronFirstNameBox = new System.Windows.Forms.TextBox();
-            this.patronLastNameBox = new System.Windows.Forms.TextBox();
-            this.patronLastNameLabel = new System.Windows.Forms.Label();
+            this.loginsPage = new System.Windows.Forms.TabPage();
+            this.loginPatronIdBox = new System.Windows.Forms.TextBox();
+            this.loginPatronIdLabel = new System.Windows.Forms.Label();
+            this.suspensionsPage = new System.Windows.Forms.TabPage();
+            this.susPatronIdBox = new System.Windows.Forms.TextBox();
+            this.susPatronIdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tableDataView)).BeginInit();
             this.tablePageControl.SuspendLayout();
             this.employeePage.SuspendLayout();
             this.patronPage.SuspendLayout();
+            this.loginsPage.SuspendLayout();
+            this.suspensionsPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableDataView
@@ -57,6 +65,7 @@
             this.tableDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableDataView.Location = new System.Drawing.Point(356, 12);
             this.tableDataView.Name = "tableDataView";
+            this.tableDataView.ReadOnly = true;
             this.tableDataView.Size = new System.Drawing.Size(401, 297);
             this.tableDataView.TabIndex = 0;
             // 
@@ -76,7 +85,9 @@
             this.tableSelectBox.FormattingEnabled = true;
             this.tableSelectBox.Items.AddRange(new object[] {
             "Employee",
-            "Patron"});
+            "Patron",
+            "Logins",
+            "Suspensions"});
             this.tableSelectBox.Location = new System.Drawing.Point(5, 3);
             this.tableSelectBox.Name = "tableSelectBox";
             this.tableSelectBox.Size = new System.Drawing.Size(227, 21);
@@ -87,6 +98,8 @@
             // 
             this.tablePageControl.Controls.Add(this.employeePage);
             this.tablePageControl.Controls.Add(this.patronPage);
+            this.tablePageControl.Controls.Add(this.loginsPage);
+            this.tablePageControl.Controls.Add(this.suspensionsPage);
             this.tablePageControl.Location = new System.Drawing.Point(1, 30);
             this.tablePageControl.Name = "tablePageControl";
             this.tablePageControl.SelectedIndex = 0;
@@ -173,6 +186,38 @@
             this.patronPage.Text = "Patron";
             this.patronPage.UseVisualStyleBackColor = true;
             // 
+            // patronLastNameLabel
+            // 
+            this.patronLastNameLabel.AutoSize = true;
+            this.patronLastNameLabel.Location = new System.Drawing.Point(45, 141);
+            this.patronLastNameLabel.Name = "patronLastNameLabel";
+            this.patronLastNameLabel.Size = new System.Drawing.Size(58, 13);
+            this.patronLastNameLabel.TabIndex = 5;
+            this.patronLastNameLabel.Text = "Last Name";
+            // 
+            // patronLastNameBox
+            // 
+            this.patronLastNameBox.Location = new System.Drawing.Point(152, 138);
+            this.patronLastNameBox.Name = "patronLastNameBox";
+            this.patronLastNameBox.Size = new System.Drawing.Size(170, 20);
+            this.patronLastNameBox.TabIndex = 4;
+            // 
+            // patronFirstNameBox
+            // 
+            this.patronFirstNameBox.Location = new System.Drawing.Point(152, 82);
+            this.patronFirstNameBox.Name = "patronFirstNameBox";
+            this.patronFirstNameBox.Size = new System.Drawing.Size(170, 20);
+            this.patronFirstNameBox.TabIndex = 3;
+            // 
+            // patronFirstNameLabel
+            // 
+            this.patronFirstNameLabel.AutoSize = true;
+            this.patronFirstNameLabel.Location = new System.Drawing.Point(45, 85);
+            this.patronFirstNameLabel.Name = "patronFirstNameLabel";
+            this.patronFirstNameLabel.Size = new System.Drawing.Size(57, 13);
+            this.patronFirstNameLabel.TabIndex = 2;
+            this.patronFirstNameLabel.Text = "First Name";
+            // 
             // patronIdBox
             // 
             this.patronIdBox.Location = new System.Drawing.Point(152, 24);
@@ -189,40 +234,65 @@
             this.patronIdLabel.TabIndex = 0;
             this.patronIdLabel.Text = "Patron ID";
             // 
-            // patronFirstNameLabel
+            // loginsPage
             // 
-            this.patronFirstNameLabel.AutoSize = true;
-            this.patronFirstNameLabel.Location = new System.Drawing.Point(45, 85);
-            this.patronFirstNameLabel.Name = "patronFirstNameLabel";
-            this.patronFirstNameLabel.Size = new System.Drawing.Size(57, 13);
-            this.patronFirstNameLabel.TabIndex = 2;
-            this.patronFirstNameLabel.Text = "First Name";
+            this.loginsPage.Controls.Add(this.loginPatronIdBox);
+            this.loginsPage.Controls.Add(this.loginPatronIdLabel);
+            this.loginsPage.Location = new System.Drawing.Point(4, 22);
+            this.loginsPage.Name = "loginsPage";
+            this.loginsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.loginsPage.Size = new System.Drawing.Size(345, 224);
+            this.loginsPage.TabIndex = 2;
+            this.loginsPage.Text = "Logins";
+            this.loginsPage.UseVisualStyleBackColor = true;
             // 
-            // patronFirstNameBox
+            // loginPatronIdBox
             // 
-            this.patronFirstNameBox.Location = new System.Drawing.Point(152, 82);
-            this.patronFirstNameBox.Name = "patronFirstNameBox";
-            this.patronFirstNameBox.Size = new System.Drawing.Size(170, 20);
-            this.patronFirstNameBox.TabIndex = 3;
+            this.loginPatronIdBox.Location = new System.Drawing.Point(152, 24);
+            this.loginPatronIdBox.Name = "loginPatronIdBox";
+            this.loginPatronIdBox.Size = new System.Drawing.Size(170, 20);
+            this.loginPatronIdBox.TabIndex = 2;
             // 
-            // patronLastNameBox
+            // loginPatronIdLabel
             // 
-            this.patronLastNameBox.Location = new System.Drawing.Point(152, 138);
-            this.patronLastNameBox.Name = "patronLastNameBox";
-            this.patronLastNameBox.Size = new System.Drawing.Size(170, 20);
-            this.patronLastNameBox.TabIndex = 4;
+            this.loginPatronIdLabel.AutoSize = true;
+            this.loginPatronIdLabel.Location = new System.Drawing.Point(45, 27);
+            this.loginPatronIdLabel.Name = "loginPatronIdLabel";
+            this.loginPatronIdLabel.Size = new System.Drawing.Size(52, 13);
+            this.loginPatronIdLabel.TabIndex = 1;
+            this.loginPatronIdLabel.Text = "Patron ID";
             // 
-            // patronLastNameLabel
+            // suspensionsPage
             // 
-            this.patronLastNameLabel.AutoSize = true;
-            this.patronLastNameLabel.Location = new System.Drawing.Point(45, 141);
-            this.patronLastNameLabel.Name = "patronLastNameLabel";
-            this.patronLastNameLabel.Size = new System.Drawing.Size(58, 13);
-            this.patronLastNameLabel.TabIndex = 5;
-            this.patronLastNameLabel.Text = "Last Name";
+            this.suspensionsPage.Controls.Add(this.susPatronIdBox);
+            this.suspensionsPage.Controls.Add(this.susPatronIdLabel);
+            this.suspensionsPage.Location = new System.Drawing.Point(4, 22);
+            this.suspensionsPage.Name = "suspensionsPage";
+            this.suspensionsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.suspensionsPage.Size = new System.Drawing.Size(345, 224);
+            this.suspensionsPage.TabIndex = 3;
+            this.suspensionsPage.Text = "Suspensions";
+            this.suspensionsPage.UseVisualStyleBackColor = true;
+            // 
+            // susPatronIdBox
+            // 
+            this.susPatronIdBox.Location = new System.Drawing.Point(152, 24);
+            this.susPatronIdBox.Name = "susPatronIdBox";
+            this.susPatronIdBox.Size = new System.Drawing.Size(170, 20);
+            this.susPatronIdBox.TabIndex = 3;
+            // 
+            // susPatronIdLabel
+            // 
+            this.susPatronIdLabel.AutoSize = true;
+            this.susPatronIdLabel.Location = new System.Drawing.Point(45, 27);
+            this.susPatronIdLabel.Name = "susPatronIdLabel";
+            this.susPatronIdLabel.Size = new System.Drawing.Size(52, 13);
+            this.susPatronIdLabel.TabIndex = 2;
+            this.susPatronIdLabel.Text = "Patron ID";
             // 
             // SearchForm
             // 
+            this.AcceptButton = this.searchButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(759, 321);
@@ -238,6 +308,10 @@
             this.employeePage.PerformLayout();
             this.patronPage.ResumeLayout(false);
             this.patronPage.PerformLayout();
+            this.loginsPage.ResumeLayout(false);
+            this.loginsPage.PerformLayout();
+            this.suspensionsPage.ResumeLayout(false);
+            this.suspensionsPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,5 +336,11 @@
         private System.Windows.Forms.TextBox patronLastNameBox;
         private System.Windows.Forms.TextBox patronFirstNameBox;
         private System.Windows.Forms.Label patronFirstNameLabel;
+        private System.Windows.Forms.TabPage loginsPage;
+        private System.Windows.Forms.TabPage suspensionsPage;
+        private System.Windows.Forms.TextBox loginPatronIdBox;
+        private System.Windows.Forms.Label loginPatronIdLabel;
+        private System.Windows.Forms.TextBox susPatronIdBox;
+        private System.Windows.Forms.Label susPatronIdLabel;
     }
 }

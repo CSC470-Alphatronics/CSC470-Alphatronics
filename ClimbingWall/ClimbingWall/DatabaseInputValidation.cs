@@ -9,7 +9,10 @@ namespace ClimbingWall
 {
     public static class DatabaseInputValidation
     {
-       
+        public static bool mandatoryStringIsValid(string input, int minCharCount)
+        {
+            return (Regex.IsMatch(input, @"^[a-zA-Z\s.!?_@]*$") && (input.Length >= minCharCount));
+        }
         public static bool nameIsValid(string input)
         {
             return Regex.IsMatch(input, @"^[a-zA-Z\s]*$");
@@ -20,7 +23,7 @@ namespace ClimbingWall
         }
         public static bool uintIsValid(string input)
         {
-            return Regex.IsMatch(input, @"^[0-9]*$*$");
+            return Regex.IsMatch(input, @"^[0-9]*$");
         }
         public static bool uintIsValidWithinRange(string input, int min, int max)
         {

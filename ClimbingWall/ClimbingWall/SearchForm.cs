@@ -84,7 +84,7 @@ namespace ClimbingWall
                         }
                         whereStatement += "employee_name='" + empNameBox.Text + "'";
                     }
-                    break;
+                    break;//employee
 
                 case ((int)DatabaseSearchVal.PATRON):
                     bool firstPat = true;
@@ -119,7 +119,25 @@ namespace ClimbingWall
                         }
                         whereStatement += "LName='" + patronLastNameBox.Text + "'";
                     }
-                    break;
+                    break;//patron
+
+                case ((int)DatabaseSearchVal.LOGINS):
+                    bool firstLog = true;
+                    if (!string.IsNullOrEmpty(loginPatronIdBox.Text))
+                    {
+                        whereStatement += " where FK_Patron_ID=" + loginPatronIdBox.Text;
+                        firstLog = false;
+                    }
+                    break;//logins
+
+                case ((int)DatabaseSearchVal.SUSPENSIONS):
+                    bool firstSus = true;
+                    if (!string.IsNullOrEmpty(susPatronIdBox.Text))
+                    {
+                        whereStatement += " where FK_Patron_ID=" + susPatronIdBox.Text;
+                        firstSus = false;
+                    }
+                    break;//suspensions
             }
             return whereStatement;
         }
@@ -136,6 +154,14 @@ namespace ClimbingWall
                     tablePageControl.SelectedIndex = 1;
                     selectedTable = "climbing_wall.patron";
                     break;
+                case ((int)DatabaseSearchVal.LOGINS):
+                    tablePageControl.SelectedIndex = 2;
+                    selectedTable = "climbing_wall.log_table";
+                    break;
+                case (int)DatabaseSearchVal.SUSPENSIONS:
+                    tablePageControl.SelectedIndex = 3;
+                    selectedTable = "climbing_wall.suspensions";
+                    break;
             }
         }
 
@@ -147,13 +173,25 @@ namespace ClimbingWall
                 case ((int)DatabaseSearchVal.EMPLOYEE):
                     if (DatabaseInputValidation.uintIsValid(empIdBox.Text) &&
                         DatabaseInputValidation.uintIsValidWithinRange(empLevelBox.Text, 0, 2) &&
-                        DatabaseInputValidation.nameIsValid(empNameBox.Text))
+                        DatabaseInputValidation.stringIsValid(empNameBox.Text))
                         isValid = true;
                     break;
                 case ((int)DatabaseSearchVal.PATRON):
                     if (DatabaseInputValidation.uintIsValid(patronIdBox.Text) &&
                         DatabaseInputValidation.nameIsValid(patronFirstNameBox.Text) &&
                         DatabaseInputValidation.nameIsValid(patronLastNameBox.Text))
+                    {
+                        isValid = true;
+                    }
+                    break;
+                case ((int)DatabaseSearchVal.LOGINS):
+                    if (DatabaseInputValidation.uintIsValid(loginPatronIdBox.Text))
+                    {
+                        isValid = true;
+                    }
+                    break;
+                case ((int)DatabaseSearchVal.SUSPENSIONS):
+                    if (DatabaseInputValidation.uintIsValid(susPatronIdBox.Text))
                     {
                         isValid = true;
                     }
