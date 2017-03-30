@@ -16,5 +16,14 @@ namespace ClimbingWall
 		{
 			InitializeComponent();
 		}
+
+		private void reqButton_Click(object sender, EventArgs e)
+		{
+			//Patron ID validation goes here
+
+			String reqText = "Suspension Request for Patron: " + idTextBox.Text + " For: " + reasonTextBox.Text + ". Suggested Suspension: " + lengthTextBox.Text;
+			Database.Instance.addNote(reqText, 10);
+
+		}
 	}
 }

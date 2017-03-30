@@ -212,6 +212,9 @@
     <EmbeddedResource Include="SuspendUser.resx">
       <DependentUpon>SuspendUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuspensionRequest.resx">
+      <DependentUpon>SuspensionRequest.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

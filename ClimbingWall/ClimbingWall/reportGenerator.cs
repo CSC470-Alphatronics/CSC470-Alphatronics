@@ -74,6 +74,7 @@ namespace ClimbingWall
 			int endMonth = endDate.Value.Month;
 			int endDay = endDate.Value.Day;
 
+			endDay++;							//Need to extend the range by one so every day gets hit.
 			if (endDay == getDays(endMonth)) {
 				endDay = 1;
 				endMonth++;
@@ -81,9 +82,7 @@ namespace ClimbingWall
 					endMonth = 1;
 					endYear++;
 				}
-			}
-			else
-				endDay++; //*/
+			} //*/
 
 			int yearCounter = startYear;
 			int monthCounter = startMonth;
@@ -150,60 +149,6 @@ namespace ClimbingWall
 					}
 				}
 			}
-
-			/*for (int i = 0; i <= 22; i++) { //Each Hour
-				where = "where Log_DateTime >= ' " + numToString(yearCounter) + "-" + numToString(monthCounter) + "-" + numToString(dayCounter) + " " + numToString(i) + ":00:00' and Log_DateTime <= ' " + numToString(yearCounter) + "-" + numToString(monthCounter) + "-" + numToString(dayCounter) + " " + numToString(i) + ":59:59';";
-				hrStr = numToString(i) + ":00:00 to " + numToString(i) + ":59:59";
-				logData = Database.Instance.searchDatabase("log_table", where);
-				if (logData.Rows.Count != 0)
-					using (StreamWriter outFile = new StreamWriter(outName, true)) {
-						outFile.WriteLine("Hour {0}: {1} Log-Ins", hrStr, logData.Rows.Count);
-					}
-				dayLogCount += logData.Rows.Count;
-			}//Each Hour Loop end
-			dayStr = getMonth(monthCounter) + " " + dayCounter + ", " + yearCounter;
-
-			if (dayLogCount != 0)
-				using (StreamWriter outFile = new StreamWriter(outName, true)) {
-					outFile.WriteLine("{0}: {1} Log-Ins\n", dayStr, dayLogCount);
-				}
-
-			dayCounter++;
-			monthLogCount += dayLogCount;
-			dayLogCount = 0;
-
-			if (dayCounter == getDays(monthCounter)) {
-				dayCounter = 1;
-				dayStr = getMonth(monthCounter) + " " + yearCounter.ToString();
-
-
-				if (monthLogCount != 0)
-					using (StreamWriter outFile = new StreamWriter(outName, true)) {
-						outFile.WriteLine("{0}: {1} Log-Ins\n", dayStr, monthLogCount);
-					}
-
-				monthCounter++;
-				yearLogCount += monthLogCount;
-				monthLogCount = 0;
-
-				if (monthCounter == 12) {
-					monthCounter = 1;
-
-					if (yearLogCount != 0)
-						using (StreamWriter outFile = new StreamWriter(outName, true)) {
-							outFile.WriteLine("{0}: {1} Log-Ins\n", yearCounter, yearLogCount);
-						}
-					yearCounter++;
-					yearLogCount = 0;
-				}
-			}//*/
-
-
-
-
-
-
-
 		}
 
 		private int getDays(int month)
