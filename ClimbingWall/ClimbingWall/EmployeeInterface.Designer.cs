@@ -50,6 +50,7 @@
 			this.dataView = new System.Windows.Forms.DataGridView();
 			this.label1 = new System.Windows.Forms.Label();
 			this.ClinicRegButton = new System.Windows.Forms.Button();
+			this.reportButton = new System.Windows.Forms.Button();
 			this.adminPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
 			this.SuspendLayout();
@@ -274,11 +275,22 @@
 			this.ClinicRegButton.UseVisualStyleBackColor = true;
 			this.ClinicRegButton.Click += new System.EventHandler(this.ClinicRegButton_Click);
 			// 
+			// reportButton
+			// 
+			this.reportButton.Location = new System.Drawing.Point(13, 211);
+			this.reportButton.Name = "reportButton";
+			this.reportButton.Size = new System.Drawing.Size(125, 25);
+			this.reportButton.TabIndex = 15;
+			this.reportButton.Text = "Report";
+			this.reportButton.UseVisualStyleBackColor = true;
+			this.reportButton.Click += new System.EventHandler(this.reportButton_Click);
+			// 
 			// EmployeeInterface
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(943, 381);
+			this.Controls.Add(this.reportButton);
 			this.Controls.Add(this.ClinicRegButton);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.dataView);
@@ -324,5 +336,6 @@
         private System.Windows.Forms.DataGridView dataView;
         private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button ClinicRegButton;
+		private System.Windows.Forms.Button reportButton;
 	}
 }
