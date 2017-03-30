@@ -153,5 +153,27 @@ namespace ClimbingWall
 			var report = new reportGenerator();
 			report.Show();
 		}
-	}
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            DataTable dataset = Database.Instance.getNotes();
+            try
+            {
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = dataset;
+                dataView.RowHeadersVisible = false;
+                dataView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dataView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+
+                dataView.DataSource = bSource;
+                dataView.Columns[1].Width = 178;
+                dataView.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+        }
+    }
 }
