@@ -10,7 +10,7 @@ namespace ClimbingWall
     public enum SuspendLength { SEVEN_DAYS, THIRTY_DAYS, SEMESTER, YEAR};
     public enum SuspendCode {DB_FAIL, PATRON_NOT_EXIST, SUSPEND_EXISTS, SUCCESS};
     public enum PatronLoginStatus { MISCERROR, PATRONNOTFOUND, PATRONSUSPENDED, SUCCESS };
-    public enum DatabaseSearchVal { EMPLOYEE, PATRON }
+    public enum DatabaseSearchVal { EMPLOYEE, PATRON, LOGINS, SUSPENSIONS }
 
     
     static class Constants

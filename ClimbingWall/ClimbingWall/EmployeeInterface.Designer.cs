@@ -30,6 +30,7 @@
         {
             this.addUserButton = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
+            this.scheduleButton = new System.Windows.Forms.Button();
             this.searchDatabaseButton = new System.Windows.Forms.Button();
             this.resetPassButton = new System.Windows.Forms.Button();
             this.levelBox = new System.Windows.Forms.ComboBox();
@@ -46,7 +47,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.empChk = new System.Windows.Forms.Button();
             this.Change_Employee_Button = new System.Windows.Forms.Button();
-            this.scheduleButton = new System.Windows.Forms.Button();
             this.adminPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +78,16 @@
             this.adminPanel.Size = new System.Drawing.Size(343, 315);
             this.adminPanel.TabIndex = 0;
             // 
+            // scheduleButton
+            // 
+            this.scheduleButton.Location = new System.Drawing.Point(167, 37);
+            this.scheduleButton.Name = "scheduleButton";
+            this.scheduleButton.Size = new System.Drawing.Size(113, 23);
+            this.scheduleButton.TabIndex = 12;
+            this.scheduleButton.Text = "Schedule";
+            this.scheduleButton.UseVisualStyleBackColor = true;
+            this.scheduleButton.Click += new System.EventHandler(this.scheduleButton_Click);
+            // 
             // searchDatabaseButton
             // 
             this.searchDatabaseButton.Location = new System.Drawing.Point(167, 8);
@@ -100,6 +110,7 @@
             // 
             // levelBox
             // 
+            this.levelBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.levelBox.FormattingEnabled = true;
             this.levelBox.Items.AddRange(new object[] {
             "Employee",
@@ -229,16 +240,6 @@
             this.Change_Employee_Button.Text = "Switch User";
             this.Change_Employee_Button.UseVisualStyleBackColor = true;
             this.Change_Employee_Button.Click += new System.EventHandler(this.Change_Employee_Button_Click);
-            // 
-            // scheduleButton
-            // 
-            this.scheduleButton.Location = new System.Drawing.Point(167, 37);
-            this.scheduleButton.Name = "scheduleButton";
-            this.scheduleButton.Size = new System.Drawing.Size(113, 23);
-            this.scheduleButton.TabIndex = 12;
-            this.scheduleButton.Text = "Schedule";
-            this.scheduleButton.UseVisualStyleBackColor = true;
-            this.scheduleButton.Click += new System.EventHandler(this.scheduleButton_Click);
             // 
             // EmployeeInterface
             // 

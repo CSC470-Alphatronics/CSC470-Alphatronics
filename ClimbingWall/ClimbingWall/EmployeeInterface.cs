@@ -18,6 +18,7 @@ namespace ClimbingWall
             this.adminPanel.Visible = false;
             if (empLevel >= EmployeeLevel.MANAGER)
             {
+                levelBox.SelectedIndex = 0;
                 this.adminPanel.Visible = true;
             }
         }
@@ -43,14 +44,21 @@ namespace ClimbingWall
                     level = EmployeeLevel.ADMIN;
                     break;
             }
-            bool success = Database.Instance.createEmployee(newUsernameInput.Text, newPasswordInput.Text, level);
-            if (success)
+            if (DatabaseInputValidation.mandatoryStringIsValid(newUsernameInput.Text, 3) && newPasswordInput.Text.Length >= 4)
             {
-                MessageBox.Show("User creation succeeded.");
+                bool success = Database.Instance.createEmployee(newUsernameInput.Text, newPasswordInput.Text, level);
+                if (success)
+                {
+                    MessageBox.Show("User creation succeeded.");
+                }
+                else
+                {
+                    MessageBox.Show("User creaton failed.");
+                }
             }
             else
             {
-                MessageBox.Show("User creaton failed.");
+                MessageBox.Show("Please enter the new user's username and password (passwords must be at least four characters).");
             }
         }
 
