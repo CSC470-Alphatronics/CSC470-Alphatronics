@@ -113,6 +113,7 @@
             // 
             // levelBox
             // 
+            this.levelBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.levelBox.FormattingEnabled = true;
             this.levelBox.Items.AddRange(new object[] {
             "Employee",

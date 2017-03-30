@@ -46,6 +46,7 @@
             // 
             // priorityBox
             // 
+            this.priorityBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.priorityBox.FormattingEnabled = true;
             this.priorityBox.Items.AddRange(new object[] {
             "Normal",

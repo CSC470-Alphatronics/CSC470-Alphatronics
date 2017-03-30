@@ -29,6 +29,10 @@ namespace ClimbingWall
             {
                 MessageBox.Show("Please input an ID!");
             }
+            else if (!DatabaseInputValidation.uintIsValid(idTextbox.Text))
+            {
+                MessageBox.Show("User ID must be a number!");
+            }
             else
             {
                 loggedIn = Database.Instance.patron_login(idTextbox.Text);
