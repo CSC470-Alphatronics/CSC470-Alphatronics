@@ -41,11 +41,11 @@ namespace ClimbingWall
 				}
 				if (!DatabaseInputValidation.uintIsValid(IDTextbox.Text) && isValid) {
 					isValid = false;
-					MessageBox.Show("First Name has Invalid Input!");
+					MessageBox.Show("ID number has Invalid Input!");
 				}
 				if (!DatabaseInputValidation.stringIsValid(EmailTextbox.Text) && isValid) {
 					isValid = false;
-					MessageBox.Show("First Name has Invalid Input!");
+					MessageBox.Show("Email has Invalid Input!");
 				}
 
 

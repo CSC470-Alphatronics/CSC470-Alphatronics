@@ -52,7 +52,7 @@
 			this.FirstNameTextbox.Location = new System.Drawing.Point(78, 526);
 			this.FirstNameTextbox.Name = "FirstNameTextbox";
 			this.FirstNameTextbox.Size = new System.Drawing.Size(101, 20);
-			this.FirstNameTextbox.TabIndex = 1;
+			this.FirstNameTextbox.TabIndex = 2;
 			// 
 			// label2
 			// 
@@ -114,35 +114,35 @@
 			this.LastNameTextbox.Location = new System.Drawing.Point(78, 500);
 			this.LastNameTextbox.Name = "LastNameTextbox";
 			this.LastNameTextbox.Size = new System.Drawing.Size(101, 20);
-			this.LastNameTextbox.TabIndex = 8;
+			this.LastNameTextbox.TabIndex = 1;
 			// 
 			// MiddleInitTextbox
 			// 
 			this.MiddleInitTextbox.Location = new System.Drawing.Point(78, 555);
 			this.MiddleInitTextbox.Name = "MiddleInitTextbox";
 			this.MiddleInitTextbox.Size = new System.Drawing.Size(100, 20);
-			this.MiddleInitTextbox.TabIndex = 9;
+			this.MiddleInitTextbox.TabIndex = 3;
 			// 
 			// EmailTextbox
 			// 
 			this.EmailTextbox.Location = new System.Drawing.Point(304, 526);
 			this.EmailTextbox.Name = "EmailTextbox";
 			this.EmailTextbox.Size = new System.Drawing.Size(145, 20);
-			this.EmailTextbox.TabIndex = 10;
+			this.EmailTextbox.TabIndex = 5;
 			// 
 			// PhoneTextbox
 			// 
 			this.PhoneTextbox.Location = new System.Drawing.Point(304, 552);
 			this.PhoneTextbox.Name = "PhoneTextbox";
 			this.PhoneTextbox.Size = new System.Drawing.Size(145, 20);
-			this.PhoneTextbox.TabIndex = 11;
+			this.PhoneTextbox.TabIndex = 6;
 			// 
 			// IDTextbox
 			// 
 			this.IDTextbox.Location = new System.Drawing.Point(304, 500);
 			this.IDTextbox.Name = "IDTextbox";
 			this.IDTextbox.Size = new System.Drawing.Size(145, 20);
-			this.IDTextbox.TabIndex = 12;
+			this.IDTextbox.TabIndex = 4;
 			// 
 			// termsRadio
 			// 
@@ -150,7 +150,7 @@
 			this.termsRadio.Location = new System.Drawing.Point(78, 612);
 			this.termsRadio.Name = "termsRadio";
 			this.termsRadio.Size = new System.Drawing.Size(248, 17);
-			this.termsRadio.TabIndex = 13;
+			this.termsRadio.TabIndex = 7;
 			this.termsRadio.TabStop = true;
 			this.termsRadio.Text = "I have read and agree to the terms listed above";
 			this.termsRadio.UseVisualStyleBackColor = true;
@@ -160,7 +160,7 @@
 			this.CreatePatronButton.Location = new System.Drawing.Point(158, 635);
 			this.CreatePatronButton.Name = "CreatePatronButton";
 			this.CreatePatronButton.Size = new System.Drawing.Size(105, 23);
-			this.CreatePatronButton.TabIndex = 14;
+			this.CreatePatronButton.TabIndex = 8;
 			this.CreatePatronButton.Text = "Create Account";
 			this.CreatePatronButton.UseVisualStyleBackColor = true;
 			this.CreatePatronButton.Click += new System.EventHandler(this.CreatePatronButton_Click);

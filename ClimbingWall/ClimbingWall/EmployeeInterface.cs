@@ -134,5 +134,16 @@ namespace ClimbingWall
             var schedule = new Schedule();
             schedule.Show();
         }
-    }
+
+		private void SusRequestButton_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void ClinicRegButton_Click(object sender, EventArgs e)
+		{
+			var clinicReg = new ClinicRegistration();
+			clinicReg.Show();
+		}
+	}
 }

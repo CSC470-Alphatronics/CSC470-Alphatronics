@@ -597,7 +597,7 @@ namespace ClimbingWall
             reader.Close();
             return empName;
         }
-
+		
         public DataTable getNotes()
         {
             string cmd_str = "SELECT FK_Emp_ID, Note_Text, Note_DateTime FROM climbing_wall.note;";
