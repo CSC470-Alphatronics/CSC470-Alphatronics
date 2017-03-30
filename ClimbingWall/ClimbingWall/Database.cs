@@ -566,5 +566,73 @@ namespace ClimbingWall
             reader.Close();
             return empID;
         }
+
+        public string getEmployeeName(int emp_ID)
+        {
+            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Id = @id";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@id", emp_ID);
+            string empName;
+
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return "";
+            }
+            if (reader.HasRows)
+            {
+                reader.Read();
+                empName = reader.GetString("Employee_Name");
+            }
+            else
+            {
+                empName = "";
+            }
+            reader.Close();
+            return empName;
+        }
+
+        public DataTable getNotes()
+        {
+            string cmd_str = "SELECT FK_Emp_ID, Note_Text, Note_DateTime FROM climbing_wall.note;";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+
+            MySqlDataAdapter sda = new MySqlDataAdapter();
+            DataTable dataset = new DataTable();
+            try
+            {
+                sda.SelectCommand = cmd;
+                sda.Fill(dataset);
+                sda.Update(dataset);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+
+            dataset.Columns[0].ColumnName = "User";
+            dataset.Columns[1].ColumnName = "Note";
+            DataTable dtCloned = dataset.Clone();
+            dtCloned.Columns["User"].DataType = System.Type.GetType("System.String");
+            foreach (DataRow row in dataset.Rows)
+            {
+                dtCloned.ImportRow(row);
+            }
+
+            
+            for (int i =0; i < dtCloned.Rows.Count; i++)
+            {
+                dtCloned.Rows[i][0] = getEmployeeName(Int32.Parse(dataset.Rows[i][0].ToString()));
+            }
+            return dtCloned;
+        }
     }
 }

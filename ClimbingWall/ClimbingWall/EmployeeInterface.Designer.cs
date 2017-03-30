@@ -30,6 +30,7 @@
         {
             this.addUserButton = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
+            this.scheduleButton = new System.Windows.Forms.Button();
             this.searchDatabaseButton = new System.Windows.Forms.Button();
             this.resetPassButton = new System.Windows.Forms.Button();
             this.levelBox = new System.Windows.Forms.ComboBox();
@@ -46,8 +47,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.empChk = new System.Windows.Forms.Button();
             this.Change_Employee_Button = new System.Windows.Forms.Button();
-            this.scheduleButton = new System.Windows.Forms.Button();
+            this.dataView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.adminPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
             this.SuspendLayout();
             // 
             // addUserButton
@@ -73,10 +76,20 @@
             this.adminPanel.Controls.Add(this.levelLabel);
             this.adminPanel.Controls.Add(this.usernameLabel);
             this.adminPanel.Controls.Add(this.addEmployeeButton);
-            this.adminPanel.Location = new System.Drawing.Point(314, 26);
+            this.adminPanel.Location = new System.Drawing.Point(582, 34);
             this.adminPanel.Name = "adminPanel";
             this.adminPanel.Size = new System.Drawing.Size(343, 315);
             this.adminPanel.TabIndex = 0;
+            // 
+            // scheduleButton
+            // 
+            this.scheduleButton.Location = new System.Drawing.Point(167, 37);
+            this.scheduleButton.Name = "scheduleButton";
+            this.scheduleButton.Size = new System.Drawing.Size(113, 23);
+            this.scheduleButton.TabIndex = 12;
+            this.scheduleButton.Text = "Schedule";
+            this.scheduleButton.UseVisualStyleBackColor = true;
+            this.scheduleButton.Click += new System.EventHandler(this.scheduleButton_Click);
             // 
             // searchDatabaseButton
             // 
@@ -230,21 +243,31 @@
             this.Change_Employee_Button.UseVisualStyleBackColor = true;
             this.Change_Employee_Button.Click += new System.EventHandler(this.Change_Employee_Button_Click);
             // 
-            // scheduleButton
+            // dataView
             // 
-            this.scheduleButton.Location = new System.Drawing.Point(167, 37);
-            this.scheduleButton.Name = "scheduleButton";
-            this.scheduleButton.Size = new System.Drawing.Size(113, 23);
-            this.scheduleButton.TabIndex = 12;
-            this.scheduleButton.Text = "Schedule";
-            this.scheduleButton.UseVisualStyleBackColor = true;
-            this.scheduleButton.Click += new System.EventHandler(this.scheduleButton_Click);
+            this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataView.Location = new System.Drawing.Point(195, 42);
+            this.dataView.Name = "dataView";
+            this.dataView.Size = new System.Drawing.Size(381, 289);
+            this.dataView.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(191, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Notes";
             // 
             // EmployeeInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 381);
+            this.ClientSize = new System.Drawing.Size(943, 381);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataView);
             this.Controls.Add(this.Change_Employee_Button);
             this.Controls.Add(this.empChk);
             this.Controls.Add(this.button3);
@@ -257,7 +280,9 @@
             this.Text = "EmployeeInterface";
             this.adminPanel.ResumeLayout(false);
             this.adminPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,5 +307,7 @@
         private System.Windows.Forms.Button resetPassButton;
         private System.Windows.Forms.Button searchDatabaseButton;
         private System.Windows.Forms.Button scheduleButton;
+        private System.Windows.Forms.DataGridView dataView;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -20,6 +20,24 @@ namespace ClimbingWall
             {
                 this.adminPanel.Visible = true;
             }
+            DataTable dataset = Database.Instance.getNotes();
+            try
+            {
+                BindingSource bSource = new BindingSource();
+                bSource.DataSource = dataset;
+                dataView.RowHeadersVisible = false;
+                dataView.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                dataView.DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+                
+                dataView.DataSource = bSource;
+                dataView.Columns[1].Width = 178;
+                dataView.Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
         }
 
         private void loginButton_Click(object sender, EventArgs e)
