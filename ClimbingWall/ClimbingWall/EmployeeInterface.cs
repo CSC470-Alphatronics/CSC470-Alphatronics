@@ -145,5 +145,11 @@ namespace ClimbingWall
 			var clinicReg = new ClinicRegistration();
 			clinicReg.Show();
 		}
+
+		private void reportButton_Click(object sender, EventArgs e)
+		{
+			var report = new reportGenerator();
+			report.Show();
+		}
 	}
 }
