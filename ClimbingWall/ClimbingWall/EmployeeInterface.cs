@@ -175,5 +175,19 @@ namespace ClimbingWall
                 return;
             }
         }
-    }
+
+		private void noteDelete_Click(object sender, EventArgs e)
+		{
+			if (dataView.RowCount == 0 || dataView.SelectedRows.Count == 0) {
+				MessageBox.Show("Error: no data selected");
+				return;
+			}
+			
+			string note = dataView.SelectedRows[0].Cells[1].Value.ToString();
+
+			string where = "where Note_Text = '" + note + "';";
+			Database.Instance.nonQuery("Delete from note " + where);
+			refreshButton_Click(this, e);
+		}
+	}
 }
