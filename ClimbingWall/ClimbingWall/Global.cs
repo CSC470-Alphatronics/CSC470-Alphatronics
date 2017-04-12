@@ -12,7 +12,11 @@ namespace ClimbingWall
     public enum PatronLoginStatus { MISCERROR, PATRONNOTFOUND, PATRONSUSPENDED, SUCCESS };
     public enum DatabaseSearchVal { EMPLOYEE, PATRON, LOGINS, SUSPENSIONS }
 
-    
+    public struct MailRecipient
+    {
+        public string address;
+        public string name;
+    }
     static class Constants
     {
         public const int minPasswordLength = 4;

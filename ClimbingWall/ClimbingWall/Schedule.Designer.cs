@@ -33,17 +33,7 @@
             this.beginLabel = new System.Windows.Forms.Label();
             this.endLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.hourBox = new System.Windows.Forms.ComboBox();
-            this.minuteBox = new System.Windows.Forms.ComboBox();
-            this.periodBox = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.periodBox_end = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.dataView = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,6 +49,9 @@
             this.instructorBox = new System.Windows.Forms.TextBox();
             this.instructorLabel = new System.Windows.Forms.Label();
             this.regButton = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.mailButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,263 +101,15 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Date Range";
             // 
-            // hourBox
-            // 
-            this.hourBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.hourBox.FormattingEnabled = true;
-            this.hourBox.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12"});
-            this.hourBox.Location = new System.Drawing.Point(90, 84);
-            this.hourBox.Name = "hourBox";
-            this.hourBox.Size = new System.Drawing.Size(45, 21);
-            this.hourBox.TabIndex = 6;
-            // 
-            // minuteBox
-            // 
-            this.minuteBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.minuteBox.FormattingEnabled = true;
-            this.minuteBox.Items.AddRange(new object[] {
-            "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59"});
-            this.minuteBox.Location = new System.Drawing.Point(161, 84);
-            this.minuteBox.Name = "minuteBox";
-            this.minuteBox.Size = new System.Drawing.Size(45, 21);
-            this.minuteBox.TabIndex = 7;
-            // 
-            // periodBox
-            // 
-            this.periodBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.periodBox.FormattingEnabled = true;
-            this.periodBox.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.periodBox.Location = new System.Drawing.Point(212, 84);
-            this.periodBox.Name = "periodBox";
-            this.periodBox.Size = new System.Drawing.Size(45, 21);
-            this.periodBox.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(141, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = ":";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 89);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 16);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Time:";
-            // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(221, 162);
+            this.searchButton.Location = new System.Drawing.Point(221, 115);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 23);
             this.searchButton.TabIndex = 11;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 126);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 16);
-            this.label4.TabIndex = 16;
-            this.label4.Text = "Time:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(141, 119);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(14, 20);
-            this.label5.TabIndex = 15;
-            this.label5.Text = ":";
-            // 
-            // periodBox_end
-            // 
-            this.periodBox_end.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.periodBox_end.FormattingEnabled = true;
-            this.periodBox_end.Items.AddRange(new object[] {
-            "AM",
-            "PM"});
-            this.periodBox_end.Location = new System.Drawing.Point(212, 121);
-            this.periodBox_end.Name = "periodBox_end";
-            this.periodBox_end.Size = new System.Drawing.Size(45, 21);
-            this.periodBox_end.TabIndex = 14;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "00",
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24",
-            "25",
-            "26",
-            "27",
-            "28",
-            "29",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "36",
-            "37",
-            "38",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "45",
-            "46",
-            "47",
-            "48",
-            "49",
-            "50",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "56",
-            "57",
-            "58",
-            "59"});
-            this.comboBox2.Location = new System.Drawing.Point(161, 121);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(45, 21);
-            this.comboBox2.TabIndex = 13;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "01",
-            "02",
-            "03",
-            "04",
-            "05",
-            "06",
-            "07",
-            "08",
-            "09",
-            "10",
-            "11",
-            "12"});
-            this.comboBox3.Location = new System.Drawing.Point(90, 121);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(45, 21);
-            this.comboBox3.TabIndex = 12;
             // 
             // dataView
             // 
@@ -572,7 +317,7 @@
             // 
             // regButton
             // 
-            this.regButton.Location = new System.Drawing.Point(200, 191);
+            this.regButton.Location = new System.Drawing.Point(201, 144);
             this.regButton.Name = "regButton";
             this.regButton.Size = new System.Drawing.Size(96, 23);
             this.regButton.TabIndex = 31;
@@ -580,11 +325,42 @@
             this.regButton.UseVisualStyleBackColor = true;
             this.regButton.Click += new System.EventHandler(this.regButton_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Topic:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(55, 82);
+            this.textBox1.MaxLength = 255;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(140, 20);
+            this.textBox1.TabIndex = 33;
+            // 
+            // mailButton
+            // 
+            this.mailButton.Location = new System.Drawing.Point(201, 173);
+            this.mailButton.Name = "mailButton";
+            this.mailButton.Size = new System.Drawing.Size(96, 23);
+            this.mailButton.TabIndex = 34;
+            this.mailButton.Text = "Send Message";
+            this.mailButton.UseVisualStyleBackColor = true;
+            this.mailButton.Visible = false;
+            this.mailButton.Click += new System.EventHandler(this.mailButton_Click);
+            // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(781, 588);
+            this.Controls.Add(this.mailButton);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.regButton);
             this.Controls.Add(this.instructorLabel);
             this.Controls.Add(this.instructorBox);
@@ -600,17 +376,7 @@
             this.Controls.Add(this.newMinuteBox);
             this.Controls.Add(this.newHourBox);
             this.Controls.Add(this.dataView);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.periodBox_end);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.periodBox);
-            this.Controls.Add(this.minuteBox);
-            this.Controls.Add(this.hourBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.endLabel);
             this.Controls.Add(this.beginLabel);
@@ -630,17 +396,7 @@
         private System.Windows.Forms.Label beginLabel;
         private System.Windows.Forms.Label endLabel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox hourBox;
-        private System.Windows.Forms.ComboBox minuteBox;
-        private System.Windows.Forms.ComboBox periodBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox periodBox_end;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.DataGridView dataView;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -656,5 +412,8 @@
         private System.Windows.Forms.TextBox instructorBox;
         private System.Windows.Forms.Label instructorLabel;
         private System.Windows.Forms.Button regButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button mailButton;
     }
 }

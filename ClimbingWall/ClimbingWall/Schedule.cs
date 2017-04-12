@@ -35,6 +35,7 @@ namespace ClimbingWall
                 MessageBox.Show(ex.Message);
                 return;
             }
+            mailButton.Visible = false;
         }
 
         private void newClinicButton_Click(object sender, EventArgs e)
@@ -86,6 +87,42 @@ namespace ClimbingWall
             {
                 MessageBox.Show(ex.Message);
                 return;
+            }
+            mailButton.Visible = true;
+        }
+
+        private void mailButton_Click(object sender, EventArgs e)
+        {
+            List<MailRecipient> mailingList = new List<MailRecipient>();
+
+            if (dataView.RowCount == 0)
+            {
+                MessageBox.Show("Error: no users registered");
+                return;
+            }
+            string idlist = "";
+            for (int i = 0; i < dataView.RowCount-1; i++)
+            {
+                string id = dataView.Rows[i].Cells[1].Value.ToString();
+                if (id != "")
+                {
+                    if (i > 0)
+                        idlist += ",";
+                    idlist += id;
+                }
+            }
+            string where = "where PatronID in(" + idlist + ");";
+            DataTable dt = Database.Instance.searchDatabase("patron", "Email, PatronID", where);
+
+            MailRecipient m;
+            m.address = "";
+            m.name = "";
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                m.address = dt.Rows[i][0].ToString();
+                m.name = dt.Rows[i][1].ToString();
+                if (m.address != "")
+                    mailingList.Add(m);
             }
         }
     }
