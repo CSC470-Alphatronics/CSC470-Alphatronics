@@ -28,139 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.startDate = new System.Windows.Forms.DateTimePicker();
-            this.endDate = new System.Windows.Forms.DateTimePicker();
-            this.beginLabel = new System.Windows.Forms.Label();
-            this.endLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchButton = new System.Windows.Forms.Button();
-            this.dataView = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.newPeriodBox = new System.Windows.Forms.ComboBox();
-            this.newMinuteBox = new System.Windows.Forms.ComboBox();
-            this.newHourBox = new System.Windows.Forms.ComboBox();
-            this.newDateLabel = new System.Windows.Forms.Label();
-            this.newDate = new System.Windows.Forms.DateTimePicker();
-            this.newClinicLabel = new System.Windows.Forms.Label();
-            this.descriptionBox = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.newClinicButton = new System.Windows.Forms.Button();
-            this.instructorBox = new System.Windows.Forms.TextBox();
-            this.instructorLabel = new System.Windows.Forms.Label();
-            this.regButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.mailButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.newPeriodEnd = new System.Windows.Forms.ComboBox();
-            this.newMinuteEnd = new System.Windows.Forms.ComboBox();
-            this.newHourEnd = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // startDate
-            // 
-            this.startDate.CustomFormat = "yyyy-MM-dd";
-            this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.startDate.Location = new System.Drawing.Point(55, 54);
-            this.startDate.Name = "startDate";
-            this.startDate.Size = new System.Drawing.Size(95, 20);
-            this.startDate.TabIndex = 1;
-            // 
-            // endDate
-            // 
-            this.endDate.CustomFormat = "yyyy-MM-dd";
-            this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.endDate.Location = new System.Drawing.Point(201, 54);
-            this.endDate.Name = "endDate";
-            this.endDate.Size = new System.Drawing.Size(95, 20);
-            this.endDate.TabIndex = 2;
-            // 
-            // beginLabel
-            // 
-            this.beginLabel.AutoSize = true;
-            this.beginLabel.Location = new System.Drawing.Point(12, 54);
-            this.beginLabel.Name = "beginLabel";
-            this.beginLabel.Size = new System.Drawing.Size(37, 13);
-            this.beginLabel.TabIndex = 3;
-            this.beginLabel.Text = "Begin:";
-            // 
-            // endLabel
-            // 
-            this.endLabel.AutoSize = true;
-            this.endLabel.Location = new System.Drawing.Point(166, 54);
-            this.endLabel.Name = "endLabel";
-            this.endLabel.Size = new System.Drawing.Size(29, 13);
-            this.endLabel.TabIndex = 4;
-            this.endLabel.Text = "End:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Date Range";
-            // 
-            // searchButton
-            // 
-            this.searchButton.Location = new System.Drawing.Point(221, 115);
-            this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(75, 23);
-            this.searchButton.TabIndex = 11;
-            this.searchButton.Text = "Search";
-            this.searchButton.UseVisualStyleBackColor = true;
-            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
-            // 
-            // dataView
-            // 
-            this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataView.Location = new System.Drawing.Point(302, 54);
-            this.dataView.Name = "dataView";
-            this.dataView.Size = new System.Drawing.Size(467, 394);
-            this.dataView.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(24, 346);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 16);
-            this.label6.TabIndex = 22;
-            this.label6.Text = "Start";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(153, 339);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(14, 20);
-            this.label7.TabIndex = 21;
-            this.label7.Text = ":";
-            // 
-            // newPeriodBox
-            // 
-            this.newPeriodBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.newPeriodBox.FormattingEnabled = true;
-            this.newPeriodBox.Items.AddRange(new object[] {
+			this.startDate = new System.Windows.Forms.DateTimePicker();
+			this.endDate = new System.Windows.Forms.DateTimePicker();
+			this.beginLabel = new System.Windows.Forms.Label();
+			this.endLabel = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
+			this.searchButton = new System.Windows.Forms.Button();
+			this.dataView = new System.Windows.Forms.DataGridView();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.newPeriodBox = new System.Windows.Forms.ComboBox();
+			this.newMinuteBox = new System.Windows.Forms.ComboBox();
+			this.newHourBox = new System.Windows.Forms.ComboBox();
+			this.newDateLabel = new System.Windows.Forms.Label();
+			this.newDate = new System.Windows.Forms.DateTimePicker();
+			this.newClinicLabel = new System.Windows.Forms.Label();
+			this.descriptionBox = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.newClinicButton = new System.Windows.Forms.Button();
+			this.instructorBox = new System.Windows.Forms.TextBox();
+			this.instructorLabel = new System.Windows.Forms.Label();
+			this.regButton = new System.Windows.Forms.Button();
+			this.label2 = new System.Windows.Forms.Label();
+			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.mailButton = new System.Windows.Forms.Button();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.newPeriodEnd = new System.Windows.Forms.ComboBox();
+			this.newMinuteEnd = new System.Windows.Forms.ComboBox();
+			this.newHourEnd = new System.Windows.Forms.ComboBox();
+			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
+			this.SuspendLayout();
+			// 
+			// startDate
+			// 
+			this.startDate.CustomFormat = "yyyy-MM-dd";
+			this.startDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.startDate.Location = new System.Drawing.Point(55, 54);
+			this.startDate.Name = "startDate";
+			this.startDate.Size = new System.Drawing.Size(95, 20);
+			this.startDate.TabIndex = 1;
+			// 
+			// endDate
+			// 
+			this.endDate.CustomFormat = "yyyy-MM-dd";
+			this.endDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.endDate.Location = new System.Drawing.Point(201, 54);
+			this.endDate.Name = "endDate";
+			this.endDate.Size = new System.Drawing.Size(95, 20);
+			this.endDate.TabIndex = 2;
+			// 
+			// beginLabel
+			// 
+			this.beginLabel.AutoSize = true;
+			this.beginLabel.Location = new System.Drawing.Point(12, 54);
+			this.beginLabel.Name = "beginLabel";
+			this.beginLabel.Size = new System.Drawing.Size(37, 13);
+			this.beginLabel.TabIndex = 3;
+			this.beginLabel.Text = "Begin:";
+			// 
+			// endLabel
+			// 
+			this.endLabel.AutoSize = true;
+			this.endLabel.Location = new System.Drawing.Point(166, 54);
+			this.endLabel.Name = "endLabel";
+			this.endLabel.Size = new System.Drawing.Size(29, 13);
+			this.endLabel.TabIndex = 4;
+			this.endLabel.Text = "End:";
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(12, 32);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(81, 16);
+			this.label1.TabIndex = 5;
+			this.label1.Text = "Date Range";
+			// 
+			// searchButton
+			// 
+			this.searchButton.Location = new System.Drawing.Point(221, 115);
+			this.searchButton.Name = "searchButton";
+			this.searchButton.Size = new System.Drawing.Size(75, 23);
+			this.searchButton.TabIndex = 11;
+			this.searchButton.Text = "Search";
+			this.searchButton.UseVisualStyleBackColor = true;
+			this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+			// 
+			// dataView
+			// 
+			this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataView.Location = new System.Drawing.Point(302, 54);
+			this.dataView.Name = "dataView";
+			this.dataView.Size = new System.Drawing.Size(467, 394);
+			this.dataView.TabIndex = 17;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(15, 342);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(38, 16);
+			this.label6.TabIndex = 22;
+			this.label6.Text = "Start:";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(123, 338);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(14, 20);
+			this.label7.TabIndex = 21;
+			this.label7.Text = ":";
+			// 
+			// newPeriodBox
+			// 
+			this.newPeriodBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.newPeriodBox.FormattingEnabled = true;
+			this.newPeriodBox.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.newPeriodBox.Location = new System.Drawing.Point(224, 341);
-            this.newPeriodBox.Name = "newPeriodBox";
-            this.newPeriodBox.Size = new System.Drawing.Size(45, 21);
-            this.newPeriodBox.TabIndex = 20;
-            // 
-            // newMinuteBox
-            // 
-            this.newMinuteBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.newMinuteBox.FormattingEnabled = true;
-            this.newMinuteBox.Items.AddRange(new object[] {
+			this.newPeriodBox.Location = new System.Drawing.Point(201, 338);
+			this.newPeriodBox.Name = "newPeriodBox";
+			this.newPeriodBox.Size = new System.Drawing.Size(45, 21);
+			this.newPeriodBox.TabIndex = 20;
+			// 
+			// newMinuteBox
+			// 
+			this.newMinuteBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.newMinuteBox.FormattingEnabled = true;
+			this.newMinuteBox.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -221,16 +221,16 @@
             "57",
             "58",
             "59"});
-            this.newMinuteBox.Location = new System.Drawing.Point(173, 341);
-            this.newMinuteBox.Name = "newMinuteBox";
-            this.newMinuteBox.Size = new System.Drawing.Size(45, 21);
-            this.newMinuteBox.TabIndex = 19;
-            // 
-            // newHourBox
-            // 
-            this.newHourBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.newHourBox.FormattingEnabled = true;
-            this.newHourBox.Items.AddRange(new object[] {
+			this.newMinuteBox.Location = new System.Drawing.Point(145, 338);
+			this.newMinuteBox.Name = "newMinuteBox";
+			this.newMinuteBox.Size = new System.Drawing.Size(45, 21);
+			this.newMinuteBox.TabIndex = 19;
+			// 
+			// newHourBox
+			// 
+			this.newHourBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.newHourBox.FormattingEnabled = true;
+			this.newHourBox.Items.AddRange(new object[] {
             "01",
             "02",
             "03",
@@ -243,158 +243,158 @@
             "10",
             "11",
             "12"});
-            this.newHourBox.Location = new System.Drawing.Point(102, 341);
-            this.newHourBox.Name = "newHourBox";
-            this.newHourBox.Size = new System.Drawing.Size(45, 21);
-            this.newHourBox.TabIndex = 18;
-            // 
-            // newDateLabel
-            // 
-            this.newDateLabel.AutoSize = true;
-            this.newDateLabel.Location = new System.Drawing.Point(29, 319);
-            this.newDateLabel.Name = "newDateLabel";
-            this.newDateLabel.Size = new System.Drawing.Size(30, 13);
-            this.newDateLabel.TabIndex = 24;
-            this.newDateLabel.Text = "Date";
-            // 
-            // newDate
-            // 
-            this.newDate.CustomFormat = "yyyy-MM-dd";
-            this.newDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.newDate.Location = new System.Drawing.Point(95, 313);
-            this.newDate.Name = "newDate";
-            this.newDate.Size = new System.Drawing.Size(95, 20);
-            this.newDate.TabIndex = 23;
-            // 
-            // newClinicLabel
-            // 
-            this.newClinicLabel.AutoSize = true;
-            this.newClinicLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newClinicLabel.Location = new System.Drawing.Point(8, 262);
-            this.newClinicLabel.Name = "newClinicLabel";
-            this.newClinicLabel.Size = new System.Drawing.Size(100, 24);
-            this.newClinicLabel.TabIndex = 25;
-            this.newClinicLabel.Text = "New Clinic";
-            // 
-            // descriptionBox
-            // 
-            this.descriptionBox.Location = new System.Drawing.Point(12, 428);
-            this.descriptionBox.MaxLength = 45;
-            this.descriptionBox.Multiline = true;
-            this.descriptionBox.Name = "descriptionBox";
-            this.descriptionBox.Size = new System.Drawing.Size(284, 83);
-            this.descriptionBox.TabIndex = 26;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 399);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 13);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Description";
-            // 
-            // newClinicButton
-            // 
-            this.newClinicButton.Location = new System.Drawing.Point(169, 517);
-            this.newClinicButton.Name = "newClinicButton";
-            this.newClinicButton.Size = new System.Drawing.Size(127, 23);
-            this.newClinicButton.TabIndex = 28;
-            this.newClinicButton.Text = "Create New Clinic";
-            this.newClinicButton.UseVisualStyleBackColor = true;
-            this.newClinicButton.Click += new System.EventHandler(this.newClinicButton_Click);
-            // 
-            // instructorBox
-            // 
-            this.instructorBox.Location = new System.Drawing.Point(72, 289);
-            this.instructorBox.Name = "instructorBox";
-            this.instructorBox.Size = new System.Drawing.Size(135, 20);
-            this.instructorBox.TabIndex = 29;
-            // 
-            // instructorLabel
-            // 
-            this.instructorLabel.AutoSize = true;
-            this.instructorLabel.Location = new System.Drawing.Point(15, 295);
-            this.instructorLabel.Name = "instructorLabel";
-            this.instructorLabel.Size = new System.Drawing.Size(51, 13);
-            this.instructorLabel.TabIndex = 30;
-            this.instructorLabel.Text = "Instructor";
-            // 
-            // regButton
-            // 
-            this.regButton.Location = new System.Drawing.Point(201, 144);
-            this.regButton.Name = "regButton";
-            this.regButton.Size = new System.Drawing.Size(96, 23);
-            this.regButton.TabIndex = 31;
-            this.regButton.Text = "View Participants";
-            this.regButton.UseVisualStyleBackColor = true;
-            this.regButton.Click += new System.EventHandler(this.regButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 82);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Topic:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(55, 82);
-            this.textBox1.MaxLength = 255;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(140, 20);
-            this.textBox1.TabIndex = 33;
-            // 
-            // mailButton
-            // 
-            this.mailButton.Location = new System.Drawing.Point(201, 173);
-            this.mailButton.Name = "mailButton";
-            this.mailButton.Size = new System.Drawing.Size(96, 23);
-            this.mailButton.TabIndex = 34;
-            this.mailButton.Text = "Send Message";
-            this.mailButton.UseVisualStyleBackColor = true;
-            this.mailButton.Visible = false;
-            this.mailButton.Click += new System.EventHandler(this.mailButton_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 373);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 16);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "End:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(153, 366);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(14, 20);
-            this.label4.TabIndex = 38;
-            this.label4.Text = ":";
-            // 
-            // newPeriodEnd
-            // 
-            this.newPeriodEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.newPeriodEnd.FormattingEnabled = true;
-            this.newPeriodEnd.Items.AddRange(new object[] {
+			this.newHourBox.Location = new System.Drawing.Point(72, 338);
+			this.newHourBox.Name = "newHourBox";
+			this.newHourBox.Size = new System.Drawing.Size(45, 21);
+			this.newHourBox.TabIndex = 18;
+			// 
+			// newDateLabel
+			// 
+			this.newDateLabel.AutoSize = true;
+			this.newDateLabel.Location = new System.Drawing.Point(15, 319);
+			this.newDateLabel.Name = "newDateLabel";
+			this.newDateLabel.Size = new System.Drawing.Size(30, 13);
+			this.newDateLabel.TabIndex = 24;
+			this.newDateLabel.Text = "Date";
+			// 
+			// newDate
+			// 
+			this.newDate.CustomFormat = "yyyy-MM-dd";
+			this.newDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.newDate.Location = new System.Drawing.Point(72, 313);
+			this.newDate.Name = "newDate";
+			this.newDate.Size = new System.Drawing.Size(95, 20);
+			this.newDate.TabIndex = 23;
+			// 
+			// newClinicLabel
+			// 
+			this.newClinicLabel.AutoSize = true;
+			this.newClinicLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.newClinicLabel.Location = new System.Drawing.Point(8, 262);
+			this.newClinicLabel.Name = "newClinicLabel";
+			this.newClinicLabel.Size = new System.Drawing.Size(100, 24);
+			this.newClinicLabel.TabIndex = 25;
+			this.newClinicLabel.Text = "New Clinic";
+			// 
+			// descriptionBox
+			// 
+			this.descriptionBox.Location = new System.Drawing.Point(12, 428);
+			this.descriptionBox.MaxLength = 45;
+			this.descriptionBox.Multiline = true;
+			this.descriptionBox.Name = "descriptionBox";
+			this.descriptionBox.Size = new System.Drawing.Size(284, 108);
+			this.descriptionBox.TabIndex = 26;
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(15, 409);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(60, 13);
+			this.label8.TabIndex = 27;
+			this.label8.Text = "Description";
+			// 
+			// newClinicButton
+			// 
+			this.newClinicButton.Location = new System.Drawing.Point(169, 542);
+			this.newClinicButton.Name = "newClinicButton";
+			this.newClinicButton.Size = new System.Drawing.Size(127, 23);
+			this.newClinicButton.TabIndex = 28;
+			this.newClinicButton.Text = "Create New Clinic";
+			this.newClinicButton.UseVisualStyleBackColor = true;
+			this.newClinicButton.Click += new System.EventHandler(this.newClinicButton_Click);
+			// 
+			// instructorBox
+			// 
+			this.instructorBox.Location = new System.Drawing.Point(72, 289);
+			this.instructorBox.Name = "instructorBox";
+			this.instructorBox.Size = new System.Drawing.Size(135, 20);
+			this.instructorBox.TabIndex = 29;
+			// 
+			// instructorLabel
+			// 
+			this.instructorLabel.AutoSize = true;
+			this.instructorLabel.Location = new System.Drawing.Point(15, 295);
+			this.instructorLabel.Name = "instructorLabel";
+			this.instructorLabel.Size = new System.Drawing.Size(51, 13);
+			this.instructorLabel.TabIndex = 30;
+			this.instructorLabel.Text = "Instructor";
+			// 
+			// regButton
+			// 
+			this.regButton.Location = new System.Drawing.Point(201, 144);
+			this.regButton.Name = "regButton";
+			this.regButton.Size = new System.Drawing.Size(96, 23);
+			this.regButton.TabIndex = 31;
+			this.regButton.Text = "View Participants";
+			this.regButton.UseVisualStyleBackColor = true;
+			this.regButton.Click += new System.EventHandler(this.regButton_Click);
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(12, 82);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(37, 13);
+			this.label2.TabIndex = 32;
+			this.label2.Text = "Topic:";
+			// 
+			// textBox1
+			// 
+			this.textBox1.Location = new System.Drawing.Point(55, 82);
+			this.textBox1.MaxLength = 255;
+			this.textBox1.Name = "textBox1";
+			this.textBox1.Size = new System.Drawing.Size(140, 20);
+			this.textBox1.TabIndex = 33;
+			// 
+			// mailButton
+			// 
+			this.mailButton.Location = new System.Drawing.Point(201, 173);
+			this.mailButton.Name = "mailButton";
+			this.mailButton.Size = new System.Drawing.Size(96, 23);
+			this.mailButton.TabIndex = 34;
+			this.mailButton.Text = "Send Message";
+			this.mailButton.UseVisualStyleBackColor = true;
+			this.mailButton.Visible = false;
+			this.mailButton.Click += new System.EventHandler(this.mailButton_Click);
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(15, 369);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(35, 16);
+			this.label3.TabIndex = 39;
+			this.label3.Text = "End:";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(123, 366);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(14, 20);
+			this.label4.TabIndex = 38;
+			this.label4.Text = ":";
+			// 
+			// newPeriodEnd
+			// 
+			this.newPeriodEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.newPeriodEnd.FormattingEnabled = true;
+			this.newPeriodEnd.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.newPeriodEnd.Location = new System.Drawing.Point(224, 368);
-            this.newPeriodEnd.Name = "newPeriodEnd";
-            this.newPeriodEnd.Size = new System.Drawing.Size(45, 21);
-            this.newPeriodEnd.TabIndex = 37;
-            // 
-            // newMinuteEnd
-            // 
-            this.newMinuteEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.newMinuteEnd.FormattingEnabled = true;
-            this.newMinuteEnd.Items.AddRange(new object[] {
+			this.newPeriodEnd.Location = new System.Drawing.Point(201, 365);
+			this.newPeriodEnd.Name = "newPeriodEnd";
+			this.newPeriodEnd.Size = new System.Drawing.Size(45, 21);
+			this.newPeriodEnd.TabIndex = 37;
+			// 
+			// newMinuteEnd
+			// 
+			this.newMinuteEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.newMinuteEnd.FormattingEnabled = true;
+			this.newMinuteEnd.Items.AddRange(new object[] {
             "00",
             "01",
             "02",
@@ -455,16 +455,16 @@
             "57",
             "58",
             "59"});
-            this.newMinuteEnd.Location = new System.Drawing.Point(173, 368);
-            this.newMinuteEnd.Name = "newMinuteEnd";
-            this.newMinuteEnd.Size = new System.Drawing.Size(45, 21);
-            this.newMinuteEnd.TabIndex = 36;
-            // 
-            // newHourEnd
-            // 
-            this.newHourEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.newHourEnd.FormattingEnabled = true;
-            this.newHourEnd.Items.AddRange(new object[] {
+			this.newMinuteEnd.Location = new System.Drawing.Point(145, 365);
+			this.newMinuteEnd.Name = "newMinuteEnd";
+			this.newMinuteEnd.Size = new System.Drawing.Size(45, 21);
+			this.newMinuteEnd.TabIndex = 36;
+			// 
+			// newHourEnd
+			// 
+			this.newHourEnd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.newHourEnd.FormattingEnabled = true;
+			this.newHourEnd.Items.AddRange(new object[] {
             "01",
             "02",
             "03",
@@ -477,50 +477,50 @@
             "10",
             "11",
             "12"});
-            this.newHourEnd.Location = new System.Drawing.Point(102, 368);
-            this.newHourEnd.Name = "newHourEnd";
-            this.newHourEnd.Size = new System.Drawing.Size(45, 21);
-            this.newHourEnd.TabIndex = 35;
-            // 
-            // Schedule
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 588);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.newPeriodEnd);
-            this.Controls.Add(this.newMinuteEnd);
-            this.Controls.Add(this.newHourEnd);
-            this.Controls.Add(this.mailButton);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.regButton);
-            this.Controls.Add(this.instructorLabel);
-            this.Controls.Add(this.instructorBox);
-            this.Controls.Add(this.newClinicButton);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.descriptionBox);
-            this.Controls.Add(this.newClinicLabel);
-            this.Controls.Add(this.newDateLabel);
-            this.Controls.Add(this.newDate);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.newPeriodBox);
-            this.Controls.Add(this.newMinuteBox);
-            this.Controls.Add(this.newHourBox);
-            this.Controls.Add(this.dataView);
-            this.Controls.Add(this.searchButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.endLabel);
-            this.Controls.Add(this.beginLabel);
-            this.Controls.Add(this.endDate);
-            this.Controls.Add(this.startDate);
-            this.Name = "Schedule";
-            this.Text = "Schedule";
-            ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+			this.newHourEnd.Location = new System.Drawing.Point(72, 365);
+			this.newHourEnd.Name = "newHourEnd";
+			this.newHourEnd.Size = new System.Drawing.Size(45, 21);
+			this.newHourEnd.TabIndex = 35;
+			// 
+			// Schedule
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(781, 588);
+			this.Controls.Add(this.label3);
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.newPeriodEnd);
+			this.Controls.Add(this.newMinuteEnd);
+			this.Controls.Add(this.newHourEnd);
+			this.Controls.Add(this.mailButton);
+			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.regButton);
+			this.Controls.Add(this.instructorLabel);
+			this.Controls.Add(this.instructorBox);
+			this.Controls.Add(this.newClinicButton);
+			this.Controls.Add(this.label8);
+			this.Controls.Add(this.descriptionBox);
+			this.Controls.Add(this.newClinicLabel);
+			this.Controls.Add(this.newDateLabel);
+			this.Controls.Add(this.newDate);
+			this.Controls.Add(this.label6);
+			this.Controls.Add(this.label7);
+			this.Controls.Add(this.newPeriodBox);
+			this.Controls.Add(this.newMinuteBox);
+			this.Controls.Add(this.newHourBox);
+			this.Controls.Add(this.dataView);
+			this.Controls.Add(this.searchButton);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.endLabel);
+			this.Controls.Add(this.beginLabel);
+			this.Controls.Add(this.endDate);
+			this.Controls.Add(this.startDate);
+			this.Name = "Schedule";
+			this.Text = "Schedule";
+			((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
+			this.ResumeLayout(false);
+			this.PerformLayout();
 
         }
 
