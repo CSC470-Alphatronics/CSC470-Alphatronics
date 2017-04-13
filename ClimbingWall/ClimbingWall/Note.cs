@@ -32,10 +32,17 @@ namespace ClimbingWall
                     MessageBox.Show("Select message priority");
                     return;
             }
-            if (Database.Instance.addNote(noteText.Text, priority))
+            if (validateNote() && Database.Instance.addNote(noteText.Text, priority))
                 MessageBox.Show("Success");
             else
                 MessageBox.Show("Failed to enter note");
+        }
+        private bool validateNote()
+        {
+            if (DatabaseInputValidation.stringIsValid(noteText.Text)){
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -38,13 +38,17 @@ namespace ClimbingWall
 
 		private void regButton_Click(object sender, EventArgs e)
 		{
-			
 			string patron = patronTextBox.Text;
 			string clinic = clinicTextBox.Text;
-
+            if (!DatabaseInputValidation.uintIsValidWithinRange(patron, 0, 9999999) || !DatabaseInputValidation.uintIsValidWithinRange(clinic, 0, 99999999)
+                || String.IsNullOrEmpty(patron) || String.IsNullOrEmpty(clinic))
+            {
+                MessageBox.Show("Please enter valid patron and clinic IDs!");
+                return;
+            }
 			string status = "";
 			bool valid = false;
-
+            
 
 			//Check if Patron Valid
 			string where = " Where PatronId = " + patron + ";"; //find clinic where clinic_Id = clinic && time >= today
