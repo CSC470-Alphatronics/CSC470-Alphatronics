@@ -19,10 +19,10 @@ namespace ClimbingWall
         public void connect()
         {
             MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = "localhost";
-            builder.UserID = "root";
-            builder.Password = "root";
-            builder.Database = "climbing_wall";
+            builder.Server = Globals.DBPort;
+            builder.UserID = Globals.DBID;
+            builder.Password = Globals.DBPassword;
+            builder.Database = Globals.DBName;
             connection = new MySqlConnection(builder.ToString());
             try
             {
