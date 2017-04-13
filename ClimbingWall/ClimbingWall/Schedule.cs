@@ -18,6 +18,7 @@ namespace ClimbingWall
         public Schedule()
         {
             InitializeComponent();
+			this.CertPatsBtn.Visible = false;
         }
 
         private void searchButton_Click(object sender, EventArgs e)
@@ -106,7 +107,11 @@ namespace ClimbingWall
                 return;
             }
             mailButton.Visible = true;
-        }
+			if (Globals.empLevel >= EmployeeLevel.MANAGER)
+			{
+				this.CertPatsBtn.Visible = true;
+			}
+		}
 
         private void mailButton_Click(object sender, EventArgs e)
         {
@@ -152,5 +157,32 @@ namespace ClimbingWall
                 csv.NextRecord();
             }
         }
-    }
+
+		private void CertPatsBtn_Click(object sender, EventArgs e)
+		{
+			if (dataView.RowCount == 0)
+			{
+				MessageBox.Show("Error: no users registered");
+				return;
+			}
+			string idlist = "";
+			for (int i = 0; i < dataView.RowCount - 1; i++)
+			{
+				string id = "";
+				if (dataView.Rows[i].Cells[2].Value.ToString() == "1")
+				{
+					// Patron has earned certification
+					id = dataView.Rows[i].Cells[1].Value.ToString();
+					if (id != "")
+					{
+						if (i > 0)
+							idlist += ",";
+						idlist += id;
+					}
+				}
+			}
+			var CertMenu = new CertifyPatrons(idlist);
+			CertMenu.Show();
+		}
+	}
 }

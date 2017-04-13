@@ -82,6 +82,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CertifyPatrons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CertifyPatrons.Designer.cs">
+      <DependentUpon>CertifyPatrons.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClinicRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
       <DependentUpon>SuspensionRequest.cs</DependentUpon>
     </Compile>
     <Compile Include="UnitTesting.cs" />
+    <EmbeddedResource Include="CertifyPatrons.resx">
+      <DependentUpon>CertifyPatrons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </EmbeddedResource>

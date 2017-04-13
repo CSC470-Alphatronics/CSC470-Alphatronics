@@ -30,6 +30,7 @@
         {
 			this.addUserButton = new System.Windows.Forms.Button();
 			this.adminPanel = new System.Windows.Forms.Panel();
+			this.noteDelete = new System.Windows.Forms.Button();
 			this.scheduleButton = new System.Windows.Forms.Button();
 			this.searchDatabaseButton = new System.Windows.Forms.Button();
 			this.resetPassButton = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
 			this.ClinicRegButton = new System.Windows.Forms.Button();
 			this.reportButton = new System.Windows.Forms.Button();
 			this.refreshButton = new System.Windows.Forms.Button();
-			this.noteDelete = new System.Windows.Forms.Button();
 			this.dataView = new System.Windows.Forms.DataGridView();
 			this.adminPanel.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
@@ -85,6 +85,16 @@
 			this.adminPanel.Name = "adminPanel";
 			this.adminPanel.Size = new System.Drawing.Size(343, 335);
 			this.adminPanel.TabIndex = 0;
+			// 
+			// noteDelete
+			// 
+			this.noteDelete.Location = new System.Drawing.Point(4, 303);
+			this.noteDelete.Name = "noteDelete";
+			this.noteDelete.Size = new System.Drawing.Size(113, 23);
+			this.noteDelete.TabIndex = 13;
+			this.noteDelete.Text = "Delete Note";
+			this.noteDelete.UseVisualStyleBackColor = true;
+			this.noteDelete.Click += new System.EventHandler(this.noteDelete_Click);
 			// 
 			// scheduleButton
 			// 
@@ -289,16 +299,6 @@
 			this.refreshButton.Text = "Refresh";
 			this.refreshButton.UseVisualStyleBackColor = true;
 			this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-			// 
-			// noteDelete
-			// 
-			this.noteDelete.Location = new System.Drawing.Point(4, 303);
-			this.noteDelete.Name = "noteDelete";
-			this.noteDelete.Size = new System.Drawing.Size(113, 23);
-			this.noteDelete.TabIndex = 13;
-			this.noteDelete.Text = "Delete Note";
-			this.noteDelete.UseVisualStyleBackColor = true;
-			this.noteDelete.Click += new System.EventHandler(this.noteDelete_Click);
 			// 
 			// dataView
 			// 

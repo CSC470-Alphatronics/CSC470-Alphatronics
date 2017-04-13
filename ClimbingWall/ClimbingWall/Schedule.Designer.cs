@@ -57,6 +57,7 @@
 			this.newPeriodEnd = new System.Windows.Forms.ComboBox();
 			this.newMinuteEnd = new System.Windows.Forms.ComboBox();
 			this.newHourEnd = new System.Windows.Forms.ComboBox();
+			this.CertPatsBtn = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -108,9 +109,9 @@
 			// 
 			// searchButton
 			// 
-			this.searchButton.Location = new System.Drawing.Point(221, 115);
+			this.searchButton.Location = new System.Drawing.Point(201, 115);
 			this.searchButton.Name = "searchButton";
-			this.searchButton.Size = new System.Drawing.Size(75, 23);
+			this.searchButton.Size = new System.Drawing.Size(95, 23);
 			this.searchButton.TabIndex = 11;
 			this.searchButton.Text = "Search";
 			this.searchButton.UseVisualStyleBackColor = true;
@@ -482,11 +483,23 @@
 			this.newHourEnd.Size = new System.Drawing.Size(45, 21);
 			this.newHourEnd.TabIndex = 35;
 			// 
+			// CertPatsBtn
+			// 
+			this.CertPatsBtn.Location = new System.Drawing.Point(201, 203);
+			this.CertPatsBtn.Name = "CertPatsBtn";
+			this.CertPatsBtn.Size = new System.Drawing.Size(94, 23);
+			this.CertPatsBtn.TabIndex = 40;
+			this.CertPatsBtn.Text = "Certify Patrons";
+			this.CertPatsBtn.UseVisualStyleBackColor = true;
+			this.CertPatsBtn.Visible = false;
+			this.CertPatsBtn.Click += new System.EventHandler(this.CertPatsBtn_Click);
+			// 
 			// Schedule
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(781, 588);
+			this.Controls.Add(this.CertPatsBtn);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.newPeriodEnd);
@@ -554,5 +567,6 @@
         private System.Windows.Forms.ComboBox newPeriodEnd;
         private System.Windows.Forms.ComboBox newMinuteEnd;
         private System.Windows.Forms.ComboBox newHourEnd;
-    }
+		private System.Windows.Forms.Button CertPatsBtn;
+	}
 }
