@@ -27,7 +27,6 @@ namespace ClimbingWall
             try
             {
                 connection.Open();
-                MessageBox.Show("Connection Successful");
             }
             catch (Exception)
             {

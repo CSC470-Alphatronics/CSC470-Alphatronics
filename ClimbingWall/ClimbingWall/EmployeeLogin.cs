@@ -32,8 +32,9 @@ namespace ClimbingWall
                 form.Closed += (s, args) => this.Close();
                 form.Show();
             }
-            else
+            else {
                 MessageBox.Show("Login Failed");
+            }
         }
 
         private void passwordInput_KeyDown(object sender, KeyEventArgs e)
