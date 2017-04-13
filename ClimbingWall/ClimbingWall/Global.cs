@@ -27,5 +27,9 @@ namespace ClimbingWall
 		public static EmployeeLevel empLevel = EmployeeLevel.EMPLOYEE;
 		public static int currEmployeeId = 1;
 		public static string currEmployeeName = "";
-	}
+        public static string DBPort = "localhost";
+        public static string DBID = "root";
+        public static string DBPassword = "root";
+        public static string DBName = "climbing_wall";
+    }
 }

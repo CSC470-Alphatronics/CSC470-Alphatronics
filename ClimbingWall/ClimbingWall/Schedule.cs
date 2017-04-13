@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CsvHelper;
+using System.IO;
 
 namespace ClimbingWall
 {
     public partial class Schedule : Form
     {
+        string currentClinicID;
         public Schedule()
         {
             InitializeComponent();
@@ -58,7 +61,21 @@ namespace ClimbingWall
             else
                 hour = hourNum.ToString();
             string dateTime = newDate.Text + " " + hour + ":" + minute + ":00";
-            string sql = "INSERT INTO climbing_wall.clinics (FK_Instruct_ID, Topic, Time) VALUES (" + empID + ",'" + descriptionBox.Text + "','" + dateTime + "')";
+
+            int hourNumEnd = Int32.Parse(newHourEnd.Text);
+            string hourEnd;
+            string minuteEnd = newMinuteEnd.Text;
+            if (newPeriodEnd.Text == "PM")
+            {
+                hourNumEnd += 12;
+            }
+            if (hourNumEnd >= 24)
+                hourEnd = "00";
+            else
+                hourEnd = hourNumEnd.ToString();
+            string dateTimeEnd = newDate.Text + " " + hourEnd + ":" + minuteEnd + ":00";
+
+            string sql = "INSERT INTO climbing_wall.clinics (FK_Instruct_ID, Topic, Time, Time_End) VALUES (" + empID + ",'" + descriptionBox.Text + "','" + dateTime + "','" + dateTimeEnd + "')";
             if (Database.Instance.nonQuery(sql))
             {
                 MessageBox.Show("Successfully created clinic");
@@ -72,9 +89,9 @@ namespace ClimbingWall
                 MessageBox.Show("Error: no row selected");
                 return;
             }
-            string id = dataView.SelectedRows[0].Cells[0].Value.ToString();
+            currentClinicID = dataView.SelectedRows[0].Cells[0].Value.ToString();
 
-            string where = "where FK_Clinic_ID = " + id;
+            string where = "where FK_Clinic_ID = " + currentClinicID;
             DataTable dataset = Database.Instance.searchDatabase("climbing_wall.clinic_registration ", where);
             try
             {
@@ -123,6 +140,16 @@ namespace ClimbingWall
                 m.name = dt.Rows[i][1].ToString();
                 if (m.address != "")
                     mailingList.Add(m);
+            }
+
+            StreamWriter writer = File.CreateText("Clinic_" + currentClinicID + ".csv");
+            writer.AutoFlush = true;
+            var csv = new CsvWriter(writer);
+            foreach (MailRecipient rec in mailingList)
+            {
+                csv.WriteField(rec.address);
+                csv.WriteField(rec.name);
+                csv.NextRecord();
             }
         }
     }
