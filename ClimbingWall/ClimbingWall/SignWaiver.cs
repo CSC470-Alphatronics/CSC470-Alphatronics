@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing.Imaging;
 
 namespace ClimbingWall
 {
     public partial class SignWaiver : Form
     {
         Bitmap bmp ;
-        Color drawColor = Color.Black;
+        Color drawColor = Color.White;
         bool draw = false;
         bool signed = false;
         int x, y, lx, ly = 0;
@@ -42,13 +43,13 @@ namespace ClimbingWall
         private void submitButton_Click(object sender, EventArgs e)
         {
             MemoryStream ms = new MemoryStream();
-            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+            bmp.Save(ms, ImageFormat.Bmp);
             byte[] img = ms.ToArray();
 
             if (signed)
             {
                 //createPatron(string fName, string lName, string midI, string phone, string email, string pat_Id)
-                bool success = Database.Instance.createPatron(first, last, mInitial, phoneNum, eAddress, ID);
+                bool success = Database.Instance.createPatron(first, last, mInitial, phoneNum, eAddress, ID, img);
                 if (success)
                 {
                     MessageBox.Show("User creation succeeded.");
