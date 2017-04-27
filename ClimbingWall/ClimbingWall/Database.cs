@@ -120,7 +120,6 @@ namespace ClimbingWall
             if (!reader.IsDBNull(suspColNum))
             {
                 int suspID = reader.GetInt16("FK_Suspend");
-                reader.Close();
                 PatronLoginStatus status = checkSuspensions(suspID);
                 if(status != PatronLoginStatus.SUCCESS)
                 {
@@ -128,10 +127,28 @@ namespace ClimbingWall
                 }
                 
             }
-            else
+            DateTime waverExp;
+            try
+            {
+                waverExp = reader.GetDateTime("WaverExp");
+            }
+            catch
+            {
+                waverExp = DateTime.MinValue;
+            }
+            DateTime currentDate = DateTime.Today;
+            PatronLoginStatus waverStatus = PatronLoginStatus.SUCCESS;
+            if (waverExp == null || currentDate.Date.CompareTo(waverExp) > 0)
+            {
+                waverStatus = PatronLoginStatus.WAVEREXPIRED;
+            }
+            if (waverStatus != PatronLoginStatus.SUCCESS)
             {
                 reader.Close();
+                return waverStatus;
             }
+            reader.Close();
+
             cmd_str = "insert into climbing_wall.log_table (FK_Patron_ID, Log_DateTime) VALUES (@id, @dt)";
             cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
@@ -238,11 +255,45 @@ namespace ClimbingWall
             return PatronLoginStatus.SUCCESS;
         }
 
-		public bool createPatron(string fName, string lName, string midI, string phone, string email, int pat_Id)
+		public NewPatronStatus createPatron(string fName, string lName, string midI, string phone, string email, int pat_Id)
 		{
-			bool status = true;
-			string cmd_str = "INSERT INTO climbing_wall.patron (PatronID, FName, LName, MInitial, Email, Phone, New_Flag) VALUES (@PatronID, @Fname, @LName, @MI, @Email, @Phone, @New)";
-			MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            bool patronExists = false;
+            string cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@ID", pat_Id);
+
+            MySqlDataReader reader;
+            NewPatronStatus status;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return NewPatronStatus.FAIL;
+            }
+            if (reader.HasRows)
+            {
+                patronExists = true;
+            }
+            reader.Close();
+
+            DateTime curDate = DateTime.Today;
+            DateTime expDate = curDate.AddYears(1);
+            if (patronExists)
+            {
+                cmd_str = "UPDATE climbing_wall.patron SET FName=@Fname, LName=@LName, MInitial=@MI, Email=@Email, Phone=@Phone, New_Flag=@New, WaverExp=@expDate where PatronID = @PatronID";
+                status = NewPatronStatus.UPDATE;
+            }
+            else
+            {
+                cmd_str = "INSERT INTO climbing_wall.patron (PatronID, FName, LName, MInitial, Email, Phone, New_Flag, WaverExp) VALUES (@PatronID, @Fname, @LName, @MI, @Email, @Phone, @New, @expDate)";
+                status = NewPatronStatus.CREATED;
+            }
+
+			cmd = new MySqlCommand(cmd_str, connection);
 			cmd.CommandText = cmd_str;
 			cmd.Parameters.AddWithValue("@Fname", fName);
 			cmd.Parameters.AddWithValue("@LName", lName);
@@ -251,13 +302,14 @@ namespace ClimbingWall
 			cmd.Parameters.AddWithValue("@Phone", phone);
 			cmd.Parameters.AddWithValue("@PatronID", pat_Id);
 			cmd.Parameters.AddWithValue("@New", 1);
+            cmd.Parameters.AddWithValue("@expDate", expDate);
 
 			try {
 				cmd.ExecuteNonQuery();
 			}
 			catch(MySqlException ex) {
 				MessageBox.Show(ex.Message);
-				status = false;
+				status = NewPatronStatus.FAIL;
 			}
 
 			return status;

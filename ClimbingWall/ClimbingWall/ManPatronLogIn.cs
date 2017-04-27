@@ -43,6 +43,8 @@ namespace ClimbingWall
                         status = "Login failed!"; break;
                     case PatronLoginStatus.PATRONNOTFOUND:
                         status = "Patron not found!"; break;
+                    case PatronLoginStatus.WAVEREXPIRED:
+                        status = "Waver expired! Please resign the waver."; break;
                     case PatronLoginStatus.PATRONSUSPENDED:
                         status = "Patron currently suspended!"; break;
                     case PatronLoginStatus.SUCCESS:
