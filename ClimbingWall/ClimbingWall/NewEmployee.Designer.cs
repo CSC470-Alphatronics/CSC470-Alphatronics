@@ -35,6 +35,10 @@
             this.levelLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.addEmployeeButton = new System.Windows.Forms.Button();
+            this.empFN_Label = new System.Windows.Forms.Label();
+            this.empLN_Label = new System.Windows.Forms.Label();
+            this.empFName = new System.Windows.Forms.TextBox();
+            this.empLName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // levelBox
@@ -45,67 +49,104 @@
             "Employee",
             "Manager",
             "Admin"});
-            this.levelBox.Location = new System.Drawing.Point(106, 131);
+            this.levelBox.Location = new System.Drawing.Point(73, 151);
             this.levelBox.Name = "levelBox";
             this.levelBox.Size = new System.Drawing.Size(134, 21);
-            this.levelBox.TabIndex = 16;
+            this.levelBox.TabIndex = 17;
             // 
             // newPasswordInput
             // 
-            this.newPasswordInput.Location = new System.Drawing.Point(106, 102);
+            this.newPasswordInput.Location = new System.Drawing.Point(73, 125);
             this.newPasswordInput.Name = "newPasswordInput";
             this.newPasswordInput.Size = new System.Drawing.Size(134, 20);
-            this.newPasswordInput.TabIndex = 15;
+            this.newPasswordInput.TabIndex = 16;
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(45, 105);
+            this.passwordLabel.Location = new System.Drawing.Point(12, 128);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(53, 13);
-            this.passwordLabel.TabIndex = 14;
+            this.passwordLabel.TabIndex = 21;
             this.passwordLabel.Text = "Password";
             // 
             // newUsernameInput
             // 
-            this.newUsernameInput.Location = new System.Drawing.Point(106, 75);
+            this.newUsernameInput.Location = new System.Drawing.Point(73, 99);
             this.newUsernameInput.Name = "newUsernameInput";
             this.newUsernameInput.Size = new System.Drawing.Size(134, 20);
-            this.newUsernameInput.TabIndex = 13;
+            this.newUsernameInput.TabIndex = 15;
             // 
             // levelLabel
             // 
             this.levelLabel.AutoSize = true;
-            this.levelLabel.Location = new System.Drawing.Point(45, 131);
+            this.levelLabel.Location = new System.Drawing.Point(12, 154);
             this.levelLabel.Name = "levelLabel";
             this.levelLabel.Size = new System.Drawing.Size(33, 13);
-            this.levelLabel.TabIndex = 12;
+            this.levelLabel.TabIndex = 19;
             this.levelLabel.Text = "Level";
+            this.levelLabel.Click += new System.EventHandler(this.levelLabel_Click);
             // 
             // usernameLabel
             // 
             this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(45, 78);
+            this.usernameLabel.Location = new System.Drawing.Point(12, 102);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(55, 13);
-            this.usernameLabel.TabIndex = 11;
+            this.usernameLabel.TabIndex = 20;
             this.usernameLabel.Text = "Username";
             // 
             // addEmployeeButton
             // 
-            this.addEmployeeButton.Location = new System.Drawing.Point(148, 162);
+            this.addEmployeeButton.Location = new System.Drawing.Point(115, 184);
             this.addEmployeeButton.Name = "addEmployeeButton";
             this.addEmployeeButton.Size = new System.Drawing.Size(92, 24);
-            this.addEmployeeButton.TabIndex = 10;
+            this.addEmployeeButton.TabIndex = 18;
             this.addEmployeeButton.Text = "Add Employee";
             this.addEmployeeButton.UseVisualStyleBackColor = true;
             this.addEmployeeButton.Click += new System.EventHandler(this.addEmployeeButton_Click);
+            // 
+            // empFN_Label
+            // 
+            this.empFN_Label.AutoSize = true;
+            this.empFN_Label.Location = new System.Drawing.Point(12, 38);
+            this.empFN_Label.Name = "empFN_Label";
+            this.empFN_Label.Size = new System.Drawing.Size(57, 13);
+            this.empFN_Label.TabIndex = 40;
+            this.empFN_Label.Text = "First Name";
+            // 
+            // empLN_Label
+            // 
+            this.empLN_Label.AutoSize = true;
+            this.empLN_Label.Location = new System.Drawing.Point(12, 64);
+            this.empLN_Label.Name = "empLN_Label";
+            this.empLN_Label.Size = new System.Drawing.Size(58, 13);
+            this.empLN_Label.TabIndex = 42;
+            this.empLN_Label.Text = "Last Name";
+            // 
+            // empFName
+            // 
+            this.empFName.Location = new System.Drawing.Point(107, 35);
+            this.empFName.Name = "empFName";
+            this.empFName.Size = new System.Drawing.Size(100, 20);
+            this.empFName.TabIndex = 10;
+            // 
+            // empLName
+            // 
+            this.empLName.Location = new System.Drawing.Point(107, 61);
+            this.empLName.Name = "empLName";
+            this.empLName.Size = new System.Drawing.Size(100, 20);
+            this.empLName.TabIndex = 12;
             // 
             // NewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(242, 250);
+            this.Controls.Add(this.empLName);
+            this.Controls.Add(this.empFName);
+            this.Controls.Add(this.empLN_Label);
+            this.Controls.Add(this.empFN_Label);
             this.Controls.Add(this.levelBox);
             this.Controls.Add(this.newPasswordInput);
             this.Controls.Add(this.passwordLabel);
@@ -131,5 +172,9 @@
         private System.Windows.Forms.Label levelLabel;
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.Button addEmployeeButton;
+        private System.Windows.Forms.Label empFN_Label;
+        private System.Windows.Forms.Label empLN_Label;
+        private System.Windows.Forms.TextBox empFName;
+        private System.Windows.Forms.TextBox empLName;
     }
 }

@@ -51,7 +51,7 @@ namespace ClimbingWall
         }
         public bool login(string username, string password, ref EmployeeLevel empLevel)
         {
-            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Name = @username";
+            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Username = @username";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             cmd.Parameters.AddWithValue("@username", username);
@@ -80,7 +80,7 @@ namespace ClimbingWall
                 }
                 Globals.empLevel = (EmployeeLevel)reader.GetInt16("Level");
 				Globals.currEmployeeId = reader.GetInt16("Employee_ID");
-				Globals.currEmployeeName = reader.GetString("Employee_Name");
+				Globals.currEmployeeName = reader.GetString("Employee_Username");
             }
             else
             {
@@ -315,16 +315,19 @@ namespace ClimbingWall
 			return status;
 		}
 
-        public bool createEmployee(string username, string password, EmployeeLevel empLevel)
+        public bool createEmployee(string firstName, string lastName, string username, string password, EmployeeLevel empLevel)
         {
             var hasher = new PasswordHasher();
             string hashedPassword = hasher.Hash(password);
-            string cmd_str = "INSERT INTO climbing_wall.employee (Employee_Name, Password, Level) VALUES (@username, @hashedPassword, @level)";
+            string cmd_str = "INSERT INTO climbing_wall.employee (Emp_FirstName, Emp_LastName, Employee_Username, Password, Level, ) VALUES (@firstName, @lastName, @username, @hashedPassword, @level)";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@firstName", firstName);
+            cmd.Parameters.AddWithValue("@lastName", lastName);
             cmd.Parameters.AddWithValue("@username", username);
             cmd.Parameters.AddWithValue("@hashedPassword", hashedPassword);
             cmd.Parameters.AddWithValue("@level", empLevel);
+
             try
             {
                 cmd.ExecuteNonQuery();
@@ -681,7 +684,7 @@ namespace ClimbingWall
             if (reader.HasRows)
             {
                 reader.Read();
-                empName = reader.GetString("Employee_Name");
+                empName = reader.GetString("Employee_Username");
             }
             else
             {

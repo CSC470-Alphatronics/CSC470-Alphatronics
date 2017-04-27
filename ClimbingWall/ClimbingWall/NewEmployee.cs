@@ -34,7 +34,7 @@ namespace ClimbingWall
             }
             if (DatabaseInputValidation.mandatoryStringIsValid(newUsernameInput.Text, 3) && newPasswordInput.Text.Length >= 4)
             {
-                bool success = Database.Instance.createEmployee(newUsernameInput.Text, newPasswordInput.Text, level);
+                bool success = Database.Instance.createEmployee(empFName.Text, empLName.Text, newUsernameInput.Text, newPasswordInput.Text, level);
                 if (success)
                 {
                     MessageBox.Show("User creation succeeded.");
@@ -48,6 +48,11 @@ namespace ClimbingWall
             {
                 MessageBox.Show("Please enter the new employee's username and password (passwords must be at least four characters).");
             }
+        }
+
+        private void levelLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
