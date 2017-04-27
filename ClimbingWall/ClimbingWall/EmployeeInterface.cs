@@ -16,11 +16,11 @@ namespace ClimbingWall
         {
             InitializeComponent();
             this.adminPanel.Visible = false;
-            this.Size = new Size(605, 420);
+            this.Size = new Size(556, 420);
             if (empLevel >= EmployeeLevel.MANAGER)
             {
                 this.adminPanel.Visible = true;
-                this.Size = new Size(728, 420);
+                this.Size = new Size(677, 420);
             }
             DataTable dataset = Database.Instance.getNotes();
             try
@@ -163,5 +163,11 @@ namespace ClimbingWall
 			Database.Instance.nonQuery("Delete from note " + where);
 			refreshButton_Click(this, e);
 		}
-	}
+
+        private void modifyPatronButton_Click(object sender, EventArgs e)
+        {
+            var modifyPatron = new ModifyPatronForm();
+            modifyPatron.Show();
+        }
+    }
 }

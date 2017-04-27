@@ -315,6 +315,61 @@ namespace ClimbingWall
 			return status;
 		}
 
+        public bool modifyPatron(string fName, string lName, string midI, string phone, string email, int pat_Id)
+        {
+            bool patronExists = false;
+            string cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@ID", pat_Id);
+
+            MySqlDataReader reader;
+            try
+            {
+                reader = cmd.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+            if (reader.HasRows)
+            {
+                patronExists = true;
+            }
+            reader.Close();
+            
+            if (patronExists)
+            {
+                cmd_str = "UPDATE climbing_wall.patron SET FName=@Fname, LName=@LName, MInitial=@MI, Email=@Email, Phone=@Phone where PatronID = @PatronID";
+            }
+            else
+            {
+                return false;
+            }
+
+            cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@Fname", fName);
+            cmd.Parameters.AddWithValue("@LName", lName);
+            cmd.Parameters.AddWithValue("@MI", midI);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Phone", phone);
+            cmd.Parameters.AddWithValue("@PatronID", pat_Id);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+            return true;
+        }
+
         public bool createEmployee(string username, string password, EmployeeLevel empLevel)
         {
             var hasher = new PasswordHasher();

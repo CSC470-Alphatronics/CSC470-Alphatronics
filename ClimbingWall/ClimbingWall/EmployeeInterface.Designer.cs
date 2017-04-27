@@ -30,6 +30,7 @@
         {
             this.addUserButton = new System.Windows.Forms.Button();
             this.adminPanel = new System.Windows.Forms.Panel();
+            this.noteDelete = new System.Windows.Forms.Button();
             this.scheduleButton = new System.Windows.Forms.Button();
             this.searchDatabaseButton = new System.Windows.Forms.Button();
             this.resetPassButton = new System.Windows.Forms.Button();
@@ -46,7 +47,7 @@
             this.reportButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
             this.dataView = new System.Windows.Forms.DataGridView();
-            this.noteDelete = new System.Windows.Forms.Button();
+            this.modifyPatronButton = new System.Windows.Forms.Button();
             this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
             this.SuspendLayout();
@@ -63,25 +64,29 @@
             // 
             // adminPanel
             // 
-            this.adminPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.adminPanel.Controls.Add(this.noteDelete);
             this.adminPanel.Controls.Add(this.scheduleButton);
             this.adminPanel.Controls.Add(this.searchDatabaseButton);
             this.adminPanel.Controls.Add(this.resetPassButton);
             this.adminPanel.Controls.Add(this.suspendButton);
             this.adminPanel.Controls.Add(this.addEmployeeButton);
-            this.adminPanel.Location = new System.Drawing.Point(582, 34);
+            this.adminPanel.Location = new System.Drawing.Point(532, 34);
             this.adminPanel.Name = "adminPanel";
             this.adminPanel.Size = new System.Drawing.Size(117, 335);
             this.adminPanel.TabIndex = 0;
             // 
+            // noteDelete
+            // 
+            this.noteDelete.Location = new System.Drawing.Point(4, 303);
+            this.noteDelete.Name = "noteDelete";
+            this.noteDelete.Size = new System.Drawing.Size(75, 23);
+            this.noteDelete.TabIndex = 13;
+            this.noteDelete.Text = "Delete Note";
+            this.noteDelete.UseVisualStyleBackColor = true;
+            this.noteDelete.Click += new System.EventHandler(this.noteDelete_Click);
+            // 
             // scheduleButton
             // 
-            this.scheduleButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.scheduleButton.Location = new System.Drawing.Point(4, 125);
             this.scheduleButton.Name = "scheduleButton";
             this.scheduleButton.Size = new System.Drawing.Size(113, 23);
@@ -92,9 +97,6 @@
             // 
             // searchDatabaseButton
             // 
-            this.searchDatabaseButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.searchDatabaseButton.Location = new System.Drawing.Point(4, 8);
             this.searchDatabaseButton.Name = "searchDatabaseButton";
             this.searchDatabaseButton.Size = new System.Drawing.Size(113, 23);
@@ -105,9 +107,6 @@
             // 
             // resetPassButton
             // 
-            this.resetPassButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.resetPassButton.Location = new System.Drawing.Point(4, 37);
             this.resetPassButton.Name = "resetPassButton";
             this.resetPassButton.Size = new System.Drawing.Size(113, 23);
@@ -118,9 +117,6 @@
             // 
             // suspendButton
             // 
-            this.suspendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.suspendButton.Location = new System.Drawing.Point(4, 66);
             this.suspendButton.Name = "suspendButton";
             this.suspendButton.Size = new System.Drawing.Size(113, 23);
@@ -131,9 +127,6 @@
             // 
             // addEmployeeButton
             // 
-            this.addEmployeeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.addEmployeeButton.Location = new System.Drawing.Point(4, 95);
             this.addEmployeeButton.Name = "addEmployeeButton";
             this.addEmployeeButton.Size = new System.Drawing.Size(113, 24);
@@ -154,9 +147,9 @@
             // 
             // changePassButton
             // 
-            this.changePassButton.Location = new System.Drawing.Point(12, 92);
+            this.changePassButton.Location = new System.Drawing.Point(12, 288);
             this.changePassButton.Name = "changePassButton";
-            this.changePassButton.Size = new System.Drawing.Size(126, 23);
+            this.changePassButton.Size = new System.Drawing.Size(113, 23);
             this.changePassButton.TabIndex = 2;
             this.changePassButton.Text = "Change Password";
             this.changePassButton.UseVisualStyleBackColor = true;
@@ -164,7 +157,7 @@
             // 
             // noteButton
             // 
-            this.noteButton.Location = new System.Drawing.Point(12, 121);
+            this.noteButton.Location = new System.Drawing.Point(12, 123);
             this.noteButton.Name = "noteButton";
             this.noteButton.Size = new System.Drawing.Size(126, 23);
             this.noteButton.TabIndex = 3;
@@ -174,7 +167,7 @@
             // 
             // SusRequestButton
             // 
-            this.SusRequestButton.Location = new System.Drawing.Point(13, 151);
+            this.SusRequestButton.Location = new System.Drawing.Point(13, 152);
             this.SusRequestButton.Name = "SusRequestButton";
             this.SusRequestButton.Size = new System.Drawing.Size(125, 23);
             this.SusRequestButton.TabIndex = 4;
@@ -224,7 +217,7 @@
             // 
             // reportButton
             // 
-            this.reportButton.Location = new System.Drawing.Point(13, 211);
+            this.reportButton.Location = new System.Drawing.Point(13, 210);
             this.reportButton.Name = "reportButton";
             this.reportButton.Size = new System.Drawing.Size(125, 25);
             this.reportButton.TabIndex = 15;
@@ -234,10 +227,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshButton.Location = new System.Drawing.Point(501, 337);
+            this.refreshButton.Location = new System.Drawing.Point(451, 337);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(75, 23);
             this.refreshButton.TabIndex = 16;
@@ -247,32 +237,30 @@
             // 
             // dataView
             // 
-            this.dataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataView.Location = new System.Drawing.Point(144, 42);
             this.dataView.Name = "dataView";
             this.dataView.ReadOnly = true;
             this.dataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataView.Size = new System.Drawing.Size(432, 289);
+            this.dataView.Size = new System.Drawing.Size(382, 289);
             this.dataView.TabIndex = 17;
             // 
-            // noteDelete
+            // modifyPatronButton
             // 
-            this.noteDelete.Location = new System.Drawing.Point(4, 303);
-            this.noteDelete.Name = "noteDelete";
-            this.noteDelete.Size = new System.Drawing.Size(113, 23);
-            this.noteDelete.TabIndex = 13;
-            this.noteDelete.Text = "Delete Note";
-            this.noteDelete.UseVisualStyleBackColor = true;
-            this.noteDelete.Click += new System.EventHandler(this.noteDelete_Click);
+            this.modifyPatronButton.Location = new System.Drawing.Point(12, 92);
+            this.modifyPatronButton.Name = "modifyPatronButton";
+            this.modifyPatronButton.Size = new System.Drawing.Size(125, 25);
+            this.modifyPatronButton.TabIndex = 18;
+            this.modifyPatronButton.Text = "Modify Patron";
+            this.modifyPatronButton.UseVisualStyleBackColor = true;
+            this.modifyPatronButton.Click += new System.EventHandler(this.modifyPatronButton_Click);
             // 
             // EmployeeInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 381);
+            this.ClientSize = new System.Drawing.Size(661, 381);
+            this.Controls.Add(this.modifyPatronButton);
             this.Controls.Add(this.dataView);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.reportButton);
@@ -318,5 +306,6 @@
         private System.Windows.Forms.Button refreshButton;
 		private System.Windows.Forms.DataGridView dataView;
         private System.Windows.Forms.Button noteDelete;
+        private System.Windows.Forms.Button modifyPatronButton;
     }
 }
