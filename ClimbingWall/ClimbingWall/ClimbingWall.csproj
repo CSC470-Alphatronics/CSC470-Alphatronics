@@ -113,6 +113,12 @@
     <Compile Include="ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="SignWaiver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignWaiver.Designer.cs">
+      <DependentUpon>SignWaiver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Email.cs" />
     <Compile Include="ManPatronLogIn.cs">
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeLogin.resx">
       <DependentUpon>EmployeeLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignWaiver.resx">
+      <DependentUpon>SignWaiver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManPatronLogIn.resx">
       <DependentUpon>ManPatronLogIn.cs</DependentUpon>
