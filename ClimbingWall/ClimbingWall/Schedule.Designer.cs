@@ -530,6 +530,8 @@
             this.Controls.Add(this.beginLabel);
             this.Controls.Add(this.endDate);
             this.Controls.Add(this.startDate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Schedule";
             this.Text = "Schedule";
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();

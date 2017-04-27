@@ -113,6 +113,8 @@
             this.Controls.Add(this.levelLabel);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.addEmployeeButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "NewEmployee";
             this.Text = "New Employee";
             this.ResumeLayout(false);

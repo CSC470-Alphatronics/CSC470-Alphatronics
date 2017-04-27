@@ -57,6 +57,8 @@
             this.ClientSize = new System.Drawing.Size(274, 70);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ResetPass";
             this.Text = "ResetPass";
             this.ResumeLayout(false);

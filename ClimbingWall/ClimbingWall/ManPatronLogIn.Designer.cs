@@ -72,7 +72,9 @@
             this.Controls.Add(this.resultLabel);
             this.Controls.Add(this.idTextbox);
             this.Controls.Add(this.logButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "ManLogInForm";
             this.Text = "Manual Patron Login";
             this.ResumeLayout(false);
