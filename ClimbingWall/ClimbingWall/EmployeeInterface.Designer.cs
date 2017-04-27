@@ -277,7 +277,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "EmployeeInterface";
-            this.Text = "EmployeeInterface";
+            this.Text = "Climbing Wall System";
             this.adminPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
             this.ResumeLayout(false);

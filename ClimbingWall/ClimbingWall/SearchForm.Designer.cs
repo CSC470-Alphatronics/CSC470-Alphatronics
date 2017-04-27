@@ -134,9 +134,9 @@
             this.employeeNameLabel.AutoSize = true;
             this.employeeNameLabel.Location = new System.Drawing.Point(28, 116);
             this.employeeNameLabel.Name = "employeeNameLabel";
-            this.employeeNameLabel.Size = new System.Drawing.Size(84, 13);
+            this.employeeNameLabel.Size = new System.Drawing.Size(104, 13);
             this.employeeNameLabel.TabIndex = 4;
-            this.employeeNameLabel.Text = "Employee Name";
+            this.employeeNameLabel.Text = "Employee Username";
             // 
             // empLevelBox
             // 
@@ -303,7 +303,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SearchForm";
-            this.Text = "SearchForm";
+            this.Text = "Search";
             ((System.ComponentModel.ISupportInitialize)(this.tableDataView)).EndInit();
             this.tablePageControl.ResumeLayout(false);
             this.employeePage.ResumeLayout(false);

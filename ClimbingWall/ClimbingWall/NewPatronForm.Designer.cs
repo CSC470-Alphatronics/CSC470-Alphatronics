@@ -169,7 +169,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FirstNameTextbox);
             this.Name = "NewPatronForm";
-            this.Text = "NewPatronForm";
+            this.Text = "New Patron";
             this.ResumeLayout(false);
             this.PerformLayout();
 
