@@ -90,8 +90,15 @@ namespace ClimbingWall
                 MessageBox.Show("Error: no row selected");
                 return;
             }
-            currentClinicID = dataView.SelectedRows[0].Cells[0].Value.ToString();
-
+            try
+            {
+                currentClinicID = dataView.SelectedRows[0].Cells[0].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Error: no row selected");
+                return;
+            }
             string where = "where FK_Clinic_ID = " + currentClinicID;
             DataTable dataset = Database.Instance.searchDatabase("climbing_wall.clinic_registration ", where);
             try
