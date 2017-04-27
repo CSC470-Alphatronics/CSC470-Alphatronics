@@ -303,7 +303,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SearchForm";
-            this.Text = "SearchForm";
+            this.Text = "Search";
             ((System.ComponentModel.ISupportInitialize)(this.tableDataView)).EndInit();
             this.tablePageControl.ResumeLayout(false);
             this.employeePage.ResumeLayout(false);
