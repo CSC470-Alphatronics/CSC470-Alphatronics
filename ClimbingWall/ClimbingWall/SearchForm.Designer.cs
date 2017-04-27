@@ -33,7 +33,7 @@
             this.tableSelectBox = new System.Windows.Forms.ComboBox();
             this.tablePageControl = new ClimbingWall.PageControl();
             this.employeePage = new System.Windows.Forms.TabPage();
-            this.empNameBox = new System.Windows.Forms.TextBox();
+            this.empUsernameBox = new System.Windows.Forms.TextBox();
             this.employeeNameLabel = new System.Windows.Forms.Label();
             this.empLevelBox = new System.Windows.Forms.TextBox();
             this.EmployeeLevelLabel = new System.Windows.Forms.Label();
@@ -108,7 +108,7 @@
             // 
             // employeePage
             // 
-            this.employeePage.Controls.Add(this.empNameBox);
+            this.employeePage.Controls.Add(this.empUsernameBox);
             this.employeePage.Controls.Add(this.employeeNameLabel);
             this.employeePage.Controls.Add(this.empLevelBox);
             this.employeePage.Controls.Add(this.EmployeeLevelLabel);
@@ -122,21 +122,21 @@
             this.employeePage.Text = "Employee";
             this.employeePage.UseVisualStyleBackColor = true;
             // 
-            // empNameBox
+            // empUsernameBox
             // 
-            this.empNameBox.Location = new System.Drawing.Point(153, 113);
-            this.empNameBox.Name = "empNameBox";
-            this.empNameBox.Size = new System.Drawing.Size(169, 20);
-            this.empNameBox.TabIndex = 5;
+            this.empUsernameBox.Location = new System.Drawing.Point(153, 113);
+            this.empUsernameBox.Name = "empUsernameBox";
+            this.empUsernameBox.Size = new System.Drawing.Size(169, 20);
+            this.empUsernameBox.TabIndex = 5;
             // 
             // employeeNameLabel
             // 
             this.employeeNameLabel.AutoSize = true;
             this.employeeNameLabel.Location = new System.Drawing.Point(28, 116);
             this.employeeNameLabel.Name = "employeeNameLabel";
-            this.employeeNameLabel.Size = new System.Drawing.Size(84, 13);
+            this.employeeNameLabel.Size = new System.Drawing.Size(104, 13);
             this.employeeNameLabel.TabIndex = 4;
-            this.employeeNameLabel.Text = "Employee Name";
+            this.employeeNameLabel.Text = "Employee Username";
             // 
             // empLevelBox
             // 
@@ -330,7 +330,7 @@
         private System.Windows.Forms.Label EmployeeLevelLabel;
         private System.Windows.Forms.Label EmployeeIdLabel;
         private System.Windows.Forms.TextBox empIdBox;
-        private System.Windows.Forms.TextBox empNameBox;
+        private System.Windows.Forms.TextBox empUsernameBox;
         private System.Windows.Forms.Label employeeNameLabel;
         private System.Windows.Forms.TextBox patronIdBox;
         private System.Windows.Forms.Label patronIdLabel;

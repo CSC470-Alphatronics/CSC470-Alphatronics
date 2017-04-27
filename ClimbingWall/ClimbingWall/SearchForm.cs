@@ -71,7 +71,7 @@ namespace ClimbingWall
                         }
                         whereStatement += "level=" + empLevelBox.Text;
                     }
-                    if (!string.IsNullOrEmpty(empNameBox.Text))
+                    if (!string.IsNullOrEmpty(empUsernameBox.Text))
                     {
                         if (firstEmp == true)
                         {
@@ -82,7 +82,7 @@ namespace ClimbingWall
                         {
                             whereStatement += " and ";
                         }
-                        whereStatement += "employee_name='" + empNameBox.Text + "'";
+                        whereStatement += "employee_username='" + empUsernameBox.Text + "'";
                     }
                     break;//employee
 
@@ -173,7 +173,7 @@ namespace ClimbingWall
                 case ((int)DatabaseSearchVal.EMPLOYEE):
                     if (DatabaseInputValidation.uintIsValid(empIdBox.Text) &&
                         DatabaseInputValidation.uintIsValidWithinRange(empLevelBox.Text, 0, 2) &&
-                        DatabaseInputValidation.stringIsValid(empNameBox.Text))
+                        DatabaseInputValidation.stringIsValid(empUsernameBox.Text))
                         isValid = true;
                     break;
                 case ((int)DatabaseSearchVal.PATRON):
