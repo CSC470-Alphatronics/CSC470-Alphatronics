@@ -114,6 +114,8 @@
             this.Controls.Add(this.currentBox);
             this.Controls.Add(this.newText);
             this.Controls.Add(this.currentText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MinimizeBox = false;
             this.Name = "ChangePass";
             this.Text = "Change Password";
             this.ResumeLayout(false);

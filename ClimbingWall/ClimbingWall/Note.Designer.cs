@@ -94,6 +94,8 @@
             this.Controls.Add(this.noteLabel);
             this.Controls.Add(this.priorityBox);
             this.Controls.Add(this.noteText);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Note";
             this.Text = "Note";
             this.ResumeLayout(false);

@@ -300,6 +300,8 @@
             this.Controls.Add(this.tablePageControl);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.tableDataView);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "SearchForm";
             this.Text = "SearchForm";
             ((System.ComponentModel.ISupportInitialize)(this.tableDataView)).EndInit();

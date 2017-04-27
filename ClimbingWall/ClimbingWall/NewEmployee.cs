@@ -46,7 +46,7 @@ namespace ClimbingWall
             }
             else
             {
-                MessageBox.Show("Please enter the new user's username and password (passwords must be at least four characters).");
+                MessageBox.Show("Please enter the new employee's username and password (passwords must be at least four characters).");
             }
         }
     }
