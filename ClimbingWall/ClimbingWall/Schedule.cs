@@ -188,8 +188,15 @@ namespace ClimbingWall
 					}
 				}
 			}
-			var CertMenu = new CertifyPatrons(idlist);
-			CertMenu.Show();
+            if (idlist != "")
+            {
+                var CertMenu = new CertifyPatrons(idlist);
+                CertMenu.Show();
+            }
+            else
+            {
+                MessageBox.Show("Error: No patrons in attendance");
+            }
 		}
 	}
 }

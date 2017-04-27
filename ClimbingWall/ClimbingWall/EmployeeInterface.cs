@@ -16,12 +16,10 @@ namespace ClimbingWall
         {
             InitializeComponent();
             this.adminPanel.Visible = false;
-            this.Size = new Size(605, 420);
             if (empLevel >= EmployeeLevel.MANAGER)
             {
                 levelBox.SelectedIndex = 0;
                 this.adminPanel.Visible = true;
-                this.Size = new Size(902, 420);
             }
             DataTable dataset = Database.Instance.getNotes();
             try
