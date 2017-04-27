@@ -255,8 +255,39 @@ namespace ClimbingWall
             return PatronLoginStatus.SUCCESS;
         }
 
-		public NewPatronStatus createPatron(string fName, string lName, string midI, string phone, string email, int pat_Id)
-		{
+        public bool createPatron(string fName, string lName, string midI, string phone, string email, int pat_Id, byte[] img)
+        {
+            DateTime curDate = DateTime.Today;
+            DateTime expDate = curDate.AddYears(1);
+            bool status = true;
+            string cmd_str = "INSERT INTO climbing_wall.patron (PatronID, FName, LName, MInitial, Email, Phone, New_Flag, Waiver, WaiverExp) VALUES (@PatronID, @Fname, @LName, @MI, @Email, @Phone, @New, @waiver, @date)";
+            MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@Fname", fName);
+            cmd.Parameters.AddWithValue("@LName", lName);
+            cmd.Parameters.AddWithValue("@MI", midI);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Phone", phone);
+            cmd.Parameters.AddWithValue("@PatronID", pat_Id);
+            cmd.Parameters.AddWithValue("@New", 1);
+            cmd.Parameters.AddWithValue("@waiver", img);
+            cmd.Parameters.AddWithValue("@date", expDate);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                status = false;
+            }
+
+            return status;
+        }
+
+        public bool modifyPatron(string fName, string lName, string midI, string phone, string email, int pat_Id)
+        {
             bool patronExists = false;
             string cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
@@ -264,7 +295,6 @@ namespace ClimbingWall
             cmd.Parameters.AddWithValue("@ID", pat_Id);
 
             MySqlDataReader reader;
-            NewPatronStatus status;
             try
             {
                 reader = cmd.ExecuteReader();
@@ -272,48 +302,44 @@ namespace ClimbingWall
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return NewPatronStatus.FAIL;
+                return false;
             }
             if (reader.HasRows)
             {
                 patronExists = true;
             }
             reader.Close();
-
-            DateTime curDate = DateTime.Today;
-            DateTime expDate = curDate.AddYears(1);
+            
             if (patronExists)
             {
-                cmd_str = "UPDATE climbing_wall.patron SET FName=@Fname, LName=@LName, MInitial=@MI, Email=@Email, Phone=@Phone, New_Flag=@New, WaverExp=@expDate where PatronID = @PatronID";
-                status = NewPatronStatus.UPDATE;
+                cmd_str = "UPDATE climbing_wall.patron SET FName=@Fname, LName=@LName, MInitial=@MI, Email=@Email, Phone=@Phone where PatronID = @PatronID";
             }
             else
             {
-                cmd_str = "INSERT INTO climbing_wall.patron (PatronID, FName, LName, MInitial, Email, Phone, New_Flag, WaverExp) VALUES (@PatronID, @Fname, @LName, @MI, @Email, @Phone, @New, @expDate)";
-                status = NewPatronStatus.CREATED;
+                return false;
             }
 
-			cmd = new MySqlCommand(cmd_str, connection);
-			cmd.CommandText = cmd_str;
-			cmd.Parameters.AddWithValue("@Fname", fName);
-			cmd.Parameters.AddWithValue("@LName", lName);
-			cmd.Parameters.AddWithValue("@MI", midI);
-			cmd.Parameters.AddWithValue("@Email", email);
-			cmd.Parameters.AddWithValue("@Phone", phone);
-			cmd.Parameters.AddWithValue("@PatronID", pat_Id);
-			cmd.Parameters.AddWithValue("@New", 1);
-            cmd.Parameters.AddWithValue("@expDate", expDate);
+            cmd = new MySqlCommand(cmd_str, connection);
+            cmd.CommandText = cmd_str;
+            cmd.Parameters.AddWithValue("@Fname", fName);
+            cmd.Parameters.AddWithValue("@LName", lName);
+            cmd.Parameters.AddWithValue("@MI", midI);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Phone", phone);
+            cmd.Parameters.AddWithValue("@PatronID", pat_Id);
 
-			try {
-				cmd.ExecuteNonQuery();
-			}
-			catch(MySqlException ex) {
-				MessageBox.Show(ex.Message);
-				status = NewPatronStatus.FAIL;
-			}
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
 
-			return status;
-		}
+            return true;
+        }
 
         public bool createEmployee(string firstName, string lastName, string username, string password, EmployeeLevel empLevel)
         {
@@ -573,7 +599,15 @@ namespace ClimbingWall
 		}
 		public DataTable searchDatabase(string tableName, string whereStatement)
         {
-            string cmd_str = "select * from " + tableName + " " + whereStatement;
+            string cmd_str;
+            if (tableName != "climbing_wall.employee")
+            {
+                cmd_str = "select * from " + tableName + " " + whereStatement;
+            }
+            else
+            {
+                cmd_str = "select Employee_ID, Level, Employee_Name from " + tableName + " " + whereStatement;
+            }
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             

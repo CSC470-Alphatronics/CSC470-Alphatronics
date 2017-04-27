@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>PLEASE NOTE: This Waiver of Liability, Release, Acknowledgement of Risk, and Indemnification Agreement (“Waiver Agreement”) is intended to be, and is, legally binding.
+
+If any aspect of this Waiver Agreement requires clarification, have an SDSU Wellness Center Climbing Gym attendant fully explain it, before signing. By signing the Wellness Center Climbing Gym “Sign-in Sheet(s)”, you are agreeing to all terms set forth in this Waiver Agreement. You and/or the person on whose behalf you are signing, are waiving the right to bring any type of action, whether in court or otherwise, to recover compensation or obtain any other remedy for any personal injuries, damages to property, any accident or incident of any type, or death, arising out of or related to your use of the Wellness Center Climbing Gym, its facilities, grounds, climbing walls, exercise areas, equipment, whether the use is supervised or unsupervised. Rock climbing is a sport that has inherent risks. While the SDSU Wellness Center Climbing Gym offers the sport of rock climbing in a controlled environment, there is still an assumed risk of injury to persons using the SDSU Wellness Center Climbing Gym. In agreeing to this Waiver Agreement, I hereby acknowledge, understand, and agree on my behalf, and upon behalf of the person for whom I am signing, that the sport of rock climbing and the use of the SDSU Wellness Center Climbing Gym, its facilities, equipment, climbing walls, classes and/or participating in activities sponsored by the SDSU Wellness Center Climbing Gym has inherent risks. These risks include, but are not limited to any injury of damage resulting from:
+
+Negligence of employees, or the SDSU Wellness Center Climbing Gym. Negligent misuse of the facility, climbing walls, or equipment of the SDSU Wellness Center Climbing Gym; Falling off or impacting against the climbing walls, impact surface, floors, or anything else; Rope abrasion, entanglement or other activities occurring on the premises; Cuts or abrasions resulting from any cause whatsoever; Failure of the climbing walls or equipment, whether inside or outside; Personal health problems, whether mental or physical; Negligence of other climbers, visitors, or observers or persons who may be present in or around the climbing area or facility; and/or Negligence or lack of adequate training or any person(s) who seek to assist with medical or other help either before or after any injury or damage may occur.
+
+By signing the “Sign-in Sheet”, I, for myself and for my heirs, next of kin assigns, and personal representatives, hereby agree to and do release, indemnify and hold harmless the State of South Dakota, South Dakota Board of Regents, South Dakota State University, and the SDSU Wellness Center Climbing Gym, and their officers, employees, and agents, and/or volunteer assistants, from any and all injuries and damage which I, or the person upon whose behalf I am signing in, may sustain or incur arising out of or related to my use of the SDSU Wellness Center Climbing Gym, its facilities, grounds, climbing walls, exercise areas, equipment, participation in classes or events, and/or outdoor programs guided by or connected with the SDSU Wellness Center Climbing Gym, whether the use is supervised or unsupervised. I, for myself and for my heirs, next of kin, assigns, personal representatives, and persons upon whose behalf I am signing the “Sign-in Sheet,” hereby agree to and release, indemnify and hold harmless the State of South Dakota, South Dakota Board of Regents, South Dakota State University, and the SDSU Wellness Center Climbing Gym, and their agents, employees, offices, and, volunteer assistants, from any and all causes of action, claims for damages or demands whatsoever. THIS WAIVER AGREEMENT IS BINDING EVEN IF THE RELEASED PERSON(S) OR ENTITY(IES) HAVE CAUSED OR CONTRIBUTED TO ANY DAMAGE OR INJURY THROUGH THEIR COLLECTIVE OR INDIVIDUAL NEGLIGENCE.
+
+I and/or person on whose behalf I am signing-in, voluntarily assume complete responsibility for risks and any injuries or damage which may occur as a result of those risks even if the manner or type of injury or damage occurs in a manner that is not foreseeable at the time this Waiver Agreement is accepted. In consideration of my use of the gym, its equipment, employees, volunteer assistants, independent contractors, I agree to and do release, indemnify and hold harmless, the SDSU Wellness Center Climbing Gym, and any and all of their agents, servants and employees, from all liability, claims, demands and damages and further promise not to commence any action or proceeding asserting same.
+
+All climbers who are twelve (12) years of age or under must be directly supervised by an SDSU Wellness Center Climbing Gym approved adult or be a participant in an SDSU Wellness Center Climbing Gym program. The “Sign-in Sheet” is being signed by the youth’s parent, legal guardian, or adult authorized to sign by the youth’s parent or legal guardian. By signing the “Sign-in Sheet”, the adult acknowledges that they understand the terms of the Waiver Agreement and has the authority to sign for the youth climber. The person signing the “Sign-in Sheet” understands and acknowledges that this Waiver Agreement is binding on the person on whose behalf the “Sign-in Sheet” is signed, for their heirs, next of kin, assigns, and personal representatives.
+
+BY SIGNING the SDSU Wellness Center Climbing Gym “SIGN-IN SHEET” I ACKNOWLEDGE THAT I HAVE READ AND AGREE TO THE TERMS OF THIS WAIVER AGREEMENT. THERE ARE NO ORAL REPRESENTATIONS, STATEMENTS, OR INDUCEMENTS WHICH HAVE BEEN MADE THAT ALTER, CHANGE OR MODIFY ANYTHING SET FORTH IN THIS WAIVER AGREEMENT.
+</value>
+  </data>
+</root>

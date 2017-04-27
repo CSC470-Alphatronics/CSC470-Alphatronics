@@ -49,29 +49,14 @@ namespace ClimbingWall
 				}
 
 
-				if (isValid) {
-					if (termsRadio.Checked) {
-						//createPatron(string fName, string lName, string midI, string phone, string email, string pat_Id)
-						NewPatronStatus status = Database.Instance.createPatron(FirstNameTextbox.Text, LastNameTextbox.Text, MiddleInitTextbox.Text, PhoneTextbox.Text, EmailTextbox.Text, Convert.ToInt32(IDTextbox.Text));
-						if (status == NewPatronStatus.CREATED) {
-							MessageBox.Show("User creation succeeded.");
-							this.Hide();
-						}
-                        else if(status == NewPatronStatus.UPDATE)
-                        {
-                            MessageBox.Show("User data updated.");
-                            this.Hide();
-                        }
-						else {
-							MessageBox.Show("User creaton failed.");
-						}
-					}
-					else {
-						MessageBox.Show("You must agree to the terms and conditions \nto create a PatronAccount for the Rock Climbing wall.");
-					}
+				if (isValid)
+                {
+                    var sign = new SignWaiver(FirstNameTextbox.Text, LastNameTextbox.Text, MiddleInitTextbox.Text, PhoneTextbox.Text, EmailTextbox.Text, Convert.ToInt32(IDTextbox.Text));
+                    sign.Show();
 				}
 			}
-			else {
+			else 
+{
 				MessageBox.Show("Make sure all textboxes are filled out!");
 			}
 		}
