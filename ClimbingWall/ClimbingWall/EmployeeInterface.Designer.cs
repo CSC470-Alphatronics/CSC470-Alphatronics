@@ -34,13 +34,7 @@
             this.scheduleButton = new System.Windows.Forms.Button();
             this.searchDatabaseButton = new System.Windows.Forms.Button();
             this.resetPassButton = new System.Windows.Forms.Button();
-            this.levelBox = new System.Windows.Forms.ComboBox();
             this.suspendButton = new System.Windows.Forms.Button();
-            this.newPasswordInput = new System.Windows.Forms.TextBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.newUsernameInput = new System.Windows.Forms.TextBox();
-            this.levelLabel = new System.Windows.Forms.Label();
-            this.usernameLabel = new System.Windows.Forms.Label();
             this.addEmployeeButton = new System.Windows.Forms.Button();
             this.loginButton = new System.Windows.Forms.Button();
             this.changePassButton = new System.Windows.Forms.Button();
@@ -53,6 +47,7 @@
             this.reportButton = new System.Windows.Forms.Button();
             this.refreshButton = new System.Windows.Forms.Button();
             this.dataView = new System.Windows.Forms.DataGridView();
+            this.modifyPatronButton = new System.Windows.Forms.Button();
             this.adminPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).BeginInit();
             this.SuspendLayout();
@@ -73,24 +68,18 @@
             this.adminPanel.Controls.Add(this.scheduleButton);
             this.adminPanel.Controls.Add(this.searchDatabaseButton);
             this.adminPanel.Controls.Add(this.resetPassButton);
-            this.adminPanel.Controls.Add(this.levelBox);
             this.adminPanel.Controls.Add(this.suspendButton);
-            this.adminPanel.Controls.Add(this.newPasswordInput);
-            this.adminPanel.Controls.Add(this.passwordLabel);
-            this.adminPanel.Controls.Add(this.newUsernameInput);
-            this.adminPanel.Controls.Add(this.levelLabel);
-            this.adminPanel.Controls.Add(this.usernameLabel);
             this.adminPanel.Controls.Add(this.addEmployeeButton);
-            this.adminPanel.Location = new System.Drawing.Point(582, 34);
+            this.adminPanel.Location = new System.Drawing.Point(532, 34);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(292, 335);
+            this.adminPanel.Size = new System.Drawing.Size(117, 335);
             this.adminPanel.TabIndex = 0;
             // 
             // noteDelete
             // 
             this.noteDelete.Location = new System.Drawing.Point(4, 303);
             this.noteDelete.Name = "noteDelete";
-            this.noteDelete.Size = new System.Drawing.Size(113, 23);
+            this.noteDelete.Size = new System.Drawing.Size(75, 23);
             this.noteDelete.TabIndex = 13;
             this.noteDelete.Text = "Delete Note";
             this.noteDelete.UseVisualStyleBackColor = true;
@@ -98,7 +87,7 @@
             // 
             // scheduleButton
             // 
-            this.scheduleButton.Location = new System.Drawing.Point(167, 37);
+            this.scheduleButton.Location = new System.Drawing.Point(4, 125);
             this.scheduleButton.Name = "scheduleButton";
             this.scheduleButton.Size = new System.Drawing.Size(113, 23);
             this.scheduleButton.TabIndex = 12;
@@ -108,7 +97,7 @@
             // 
             // searchDatabaseButton
             // 
-            this.searchDatabaseButton.Location = new System.Drawing.Point(167, 8);
+            this.searchDatabaseButton.Location = new System.Drawing.Point(4, 8);
             this.searchDatabaseButton.Name = "searchDatabaseButton";
             this.searchDatabaseButton.Size = new System.Drawing.Size(113, 23);
             this.searchDatabaseButton.TabIndex = 11;
@@ -126,22 +115,9 @@
             this.resetPassButton.UseVisualStyleBackColor = true;
             this.resetPassButton.Click += new System.EventHandler(this.resetPassButton_Click);
             // 
-            // levelBox
-            // 
-            this.levelBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.levelBox.FormattingEnabled = true;
-            this.levelBox.Items.AddRange(new object[] {
-            "Employee",
-            "Manager",
-            "Admin"});
-            this.levelBox.Location = new System.Drawing.Point(125, 242);
-            this.levelBox.Name = "levelBox";
-            this.levelBox.Size = new System.Drawing.Size(134, 21);
-            this.levelBox.TabIndex = 9;
-            // 
             // suspendButton
             // 
-            this.suspendButton.Location = new System.Drawing.Point(4, 8);
+            this.suspendButton.Location = new System.Drawing.Point(4, 66);
             this.suspendButton.Name = "suspendButton";
             this.suspendButton.Size = new System.Drawing.Size(113, 23);
             this.suspendButton.TabIndex = 8;
@@ -149,52 +125,11 @@
             this.suspendButton.UseVisualStyleBackColor = true;
             this.suspendButton.Click += new System.EventHandler(this.suspendButton_Click);
             // 
-            // newPasswordInput
-            // 
-            this.newPasswordInput.Location = new System.Drawing.Point(125, 213);
-            this.newPasswordInput.Name = "newPasswordInput";
-            this.newPasswordInput.Size = new System.Drawing.Size(134, 20);
-            this.newPasswordInput.TabIndex = 7;
-            // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(64, 216);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
-            this.passwordLabel.TabIndex = 6;
-            this.passwordLabel.Text = "Password";
-            // 
-            // newUsernameInput
-            // 
-            this.newUsernameInput.Location = new System.Drawing.Point(125, 186);
-            this.newUsernameInput.Name = "newUsernameInput";
-            this.newUsernameInput.Size = new System.Drawing.Size(134, 20);
-            this.newUsernameInput.TabIndex = 5;
-            // 
-            // levelLabel
-            // 
-            this.levelLabel.AutoSize = true;
-            this.levelLabel.Location = new System.Drawing.Point(64, 242);
-            this.levelLabel.Name = "levelLabel";
-            this.levelLabel.Size = new System.Drawing.Size(33, 13);
-            this.levelLabel.TabIndex = 3;
-            this.levelLabel.Text = "Level";
-            // 
-            // usernameLabel
-            // 
-            this.usernameLabel.AutoSize = true;
-            this.usernameLabel.Location = new System.Drawing.Point(64, 189);
-            this.usernameLabel.Name = "usernameLabel";
-            this.usernameLabel.Size = new System.Drawing.Size(55, 13);
-            this.usernameLabel.TabIndex = 1;
-            this.usernameLabel.Text = "Username";
-            // 
             // addEmployeeButton
             // 
-            this.addEmployeeButton.Location = new System.Drawing.Point(167, 273);
+            this.addEmployeeButton.Location = new System.Drawing.Point(4, 95);
             this.addEmployeeButton.Name = "addEmployeeButton";
-            this.addEmployeeButton.Size = new System.Drawing.Size(92, 24);
+            this.addEmployeeButton.Size = new System.Drawing.Size(113, 24);
             this.addEmployeeButton.TabIndex = 0;
             this.addEmployeeButton.Text = "Add Employee";
             this.addEmployeeButton.UseVisualStyleBackColor = true;
@@ -212,9 +147,9 @@
             // 
             // changePassButton
             // 
-            this.changePassButton.Location = new System.Drawing.Point(12, 92);
+            this.changePassButton.Location = new System.Drawing.Point(12, 288);
             this.changePassButton.Name = "changePassButton";
-            this.changePassButton.Size = new System.Drawing.Size(126, 23);
+            this.changePassButton.Size = new System.Drawing.Size(113, 23);
             this.changePassButton.TabIndex = 2;
             this.changePassButton.Text = "Change Password";
             this.changePassButton.UseVisualStyleBackColor = true;
@@ -222,7 +157,7 @@
             // 
             // noteButton
             // 
-            this.noteButton.Location = new System.Drawing.Point(12, 121);
+            this.noteButton.Location = new System.Drawing.Point(12, 123);
             this.noteButton.Name = "noteButton";
             this.noteButton.Size = new System.Drawing.Size(126, 23);
             this.noteButton.TabIndex = 3;
@@ -232,7 +167,7 @@
             // 
             // SusRequestButton
             // 
-            this.SusRequestButton.Location = new System.Drawing.Point(13, 151);
+            this.SusRequestButton.Location = new System.Drawing.Point(13, 152);
             this.SusRequestButton.Name = "SusRequestButton";
             this.SusRequestButton.Size = new System.Drawing.Size(125, 23);
             this.SusRequestButton.TabIndex = 4;
@@ -282,7 +217,7 @@
             // 
             // reportButton
             // 
-            this.reportButton.Location = new System.Drawing.Point(13, 211);
+            this.reportButton.Location = new System.Drawing.Point(13, 210);
             this.reportButton.Name = "reportButton";
             this.reportButton.Size = new System.Drawing.Size(125, 25);
             this.reportButton.TabIndex = 15;
@@ -292,7 +227,7 @@
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(501, 337);
+            this.refreshButton.Location = new System.Drawing.Point(451, 337);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(75, 23);
             this.refreshButton.TabIndex = 16;
@@ -307,14 +242,25 @@
             this.dataView.Name = "dataView";
             this.dataView.ReadOnly = true;
             this.dataView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataView.Size = new System.Drawing.Size(432, 289);
+            this.dataView.Size = new System.Drawing.Size(382, 289);
             this.dataView.TabIndex = 17;
+            // 
+            // modifyPatronButton
+            // 
+            this.modifyPatronButton.Location = new System.Drawing.Point(12, 92);
+            this.modifyPatronButton.Name = "modifyPatronButton";
+            this.modifyPatronButton.Size = new System.Drawing.Size(125, 25);
+            this.modifyPatronButton.TabIndex = 18;
+            this.modifyPatronButton.Text = "Modify Patron";
+            this.modifyPatronButton.UseVisualStyleBackColor = true;
+            this.modifyPatronButton.Click += new System.EventHandler(this.modifyPatronButton_Click);
             // 
             // EmployeeInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(876, 381);
+            this.ClientSize = new System.Drawing.Size(661, 381);
+            this.Controls.Add(this.modifyPatronButton);
             this.Controls.Add(this.dataView);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.reportButton);
@@ -328,10 +274,11 @@
             this.Controls.Add(this.loginButton);
             this.Controls.Add(this.adminPanel);
             this.Controls.Add(this.addUserButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "EmployeeInterface";
             this.Text = "EmployeeInterface";
             this.adminPanel.ResumeLayout(false);
-            this.adminPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,13 +291,7 @@
         private System.Windows.Forms.Panel adminPanel;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.Button addEmployeeButton;
-        private System.Windows.Forms.TextBox newUsernameInput;
-        private System.Windows.Forms.Label levelLabel;
-        private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.TextBox newPasswordInput;
-        private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Button suspendButton;
-        private System.Windows.Forms.ComboBox levelBox;
         private System.Windows.Forms.Button changePassButton;
         private System.Windows.Forms.Button noteButton;
         private System.Windows.Forms.Button SusRequestButton;
@@ -363,7 +304,8 @@
 		private System.Windows.Forms.Button ClinicRegButton;
 		private System.Windows.Forms.Button reportButton;
         private System.Windows.Forms.Button refreshButton;
-		private System.Windows.Forms.Button noteDelete;
 		private System.Windows.Forms.DataGridView dataView;
-	}
+        private System.Windows.Forms.Button noteDelete;
+        private System.Windows.Forms.Button modifyPatronButton;
+    }
 }

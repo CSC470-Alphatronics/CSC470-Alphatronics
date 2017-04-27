@@ -127,6 +127,12 @@
     <Compile Include="ManPatronLogIn.Designer.cs">
       <DependentUpon>ManPatronLogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModifyPatronForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyPatronForm.Designer.cs">
+      <DependentUpon>ModifyPatronForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManPatronLogIn.resx">
       <DependentUpon>ManPatronLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyPatronForm.resx">
+      <DependentUpon>ModifyPatronForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewEmployee.resx">
       <DependentUpon>NewEmployee.cs</DependentUpon>

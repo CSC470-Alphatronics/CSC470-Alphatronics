@@ -16,12 +16,11 @@ namespace ClimbingWall
         {
             InitializeComponent();
             this.adminPanel.Visible = false;
-            this.Size = new Size(605, 420);
+            this.Size = new Size(556, 420);
             if (empLevel >= EmployeeLevel.MANAGER)
             {
-                levelBox.SelectedIndex = 0;
                 this.adminPanel.Visible = true;
-                this.Size = new Size(892, 420);
+                this.Size = new Size(677, 420);
             }
             DataTable dataset = Database.Instance.getNotes();
             try
@@ -51,35 +50,8 @@ namespace ClimbingWall
 
         private void addEmployeeButton_Click(object sender, EventArgs e)
         {
-           EmployeeLevel level = EmployeeLevel.EMPLOYEE;
-           switch(levelBox.Text)
-            {
-                case "Employee":
-                    level = EmployeeLevel.EMPLOYEE;
-                    break;
-                case "Manager":
-                    level = EmployeeLevel.MANAGER;
-                    break;
-                case "Admin":
-                    level = EmployeeLevel.ADMIN;
-                    break;
-            }
-            if (DatabaseInputValidation.mandatoryStringIsValid(newUsernameInput.Text, 3) && newPasswordInput.Text.Length >= 4)
-            {
-                bool success = Database.Instance.createEmployee(newUsernameInput.Text, newPasswordInput.Text, level);
-                if (success)
-                {
-                    MessageBox.Show("User creation succeeded.");
-                }
-                else
-                {
-                    MessageBox.Show("User creaton failed.");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Please enter the new user's username and password (passwords must be at least four characters).");
-            }
+            var newEmp = new NewEmployee();
+            newEmp.Show();
         }
 
         private void suspendButton_Click(object sender, EventArgs e)
@@ -191,5 +163,11 @@ namespace ClimbingWall
 			Database.Instance.nonQuery("Delete from note " + where);
 			refreshButton_Click(this, e);
 		}
-	}
+
+        private void modifyPatronButton_Click(object sender, EventArgs e)
+        {
+            var modifyPatron = new ModifyPatronForm();
+            modifyPatron.Show();
+        }
+    }
 }
