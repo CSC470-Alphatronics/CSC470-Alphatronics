@@ -57,13 +57,11 @@ namespace ClimbingWall
                     {
 						//createPatron(string fName, string lName, string midI, string phone, string email, string pat_Id)
 						bool success = Database.Instance.createPatron(FirstNameTextbox.Text, LastNameTextbox.Text, MiddleInitTextbox.Text, PhoneTextbox.Text, EmailTextbox.Text, Convert.ToInt32(IDTextbox.Text));
-						if (success)
-                        {
+						if (success) {
 							MessageBox.Show("User creation succeeded.");
 							this.Hide();
 						}
-						else
-                        {
+						else {
 							MessageBox.Show("User creaton failed.");
 						}
 					}
