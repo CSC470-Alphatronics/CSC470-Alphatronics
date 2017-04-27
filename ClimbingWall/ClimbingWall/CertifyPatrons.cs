@@ -57,7 +57,7 @@ namespace ClimbingWall
 			string cmd_str = "";
 			if (belay)
 			{
-				cmd_str = "UPDATE climbing_wall.patron SET BelayCert = 1 WHERE PatronID in(" + patrons + ")";
+				cmd_str = "UPDATE climbing_wall.patron SET BelayCert = 1 WHERE PatronID in('" + patrons + "')";
 				if (Database.Instance.nonQuery(cmd_str))
 				{
 					MessageBox.Show("Successfully applied patron belay certifications");
@@ -65,7 +65,7 @@ namespace ClimbingWall
 			}
 			if (lead)
 			{
-				cmd_str = "UPDATE climbing_wall.patron SET LeadCert = 1 WHERE Patrons in(" + patrons + ")";
+				cmd_str = "UPDATE climbing_wall.patron SET LeadCert = 1 WHERE PatronID in('" + patrons + "')";
 				if (Database.Instance.nonQuery(cmd_str))
 				{
 					MessageBox.Show("Successfully applied patron lead certifications");
@@ -73,7 +73,7 @@ namespace ClimbingWall
 			}
 			if (bouldering)
 			{
-				cmd_str = "UPDATE climbing_wall.patron SET BoulderingCert = 1 WHERE Patrons in(" + patrons + ")";
+				cmd_str = "UPDATE climbing_wall.patron SET BoulderingCert = 1 WHERE PatronID in('" + patrons + "')";
 				if (Database.Instance.nonQuery(cmd_str))
 				{
 					MessageBox.Show("Successfully applied patron bouldering certifications.");
