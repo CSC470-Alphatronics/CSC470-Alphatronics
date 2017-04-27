@@ -83,7 +83,7 @@
             this.adminPanel.Controls.Add(this.addEmployeeButton);
             this.adminPanel.Location = new System.Drawing.Point(582, 34);
             this.adminPanel.Name = "adminPanel";
-            this.adminPanel.Size = new System.Drawing.Size(343, 335);
+            this.adminPanel.Size = new System.Drawing.Size(297, 335);
             this.adminPanel.TabIndex = 0;
             // 
             // noteDelete
@@ -314,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(943, 381);
+            this.ClientSize = new System.Drawing.Size(886, 381);
             this.Controls.Add(this.dataView);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.reportButton);
