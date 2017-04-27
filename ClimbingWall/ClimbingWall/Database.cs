@@ -345,7 +345,7 @@ namespace ClimbingWall
         {
             var hasher = new PasswordHasher();
             string hashedPassword = hasher.Hash(password);
-            string cmd_str = "INSERT INTO climbing_wall.employee (Emp_FirstName, Emp_LastName, Employee_Username, Password, Level, ) VALUES (@firstName, @lastName, @username, @hashedPassword, @level)";
+            string cmd_str = "INSERT INTO climbing_wall.employee (Emp_FirstName, Emp_LastName, Employee_Username, Password, Level) VALUES (@firstName, @lastName, @username, @hashedPassword, @level)";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             cmd.Parameters.AddWithValue("@firstName", firstName);
