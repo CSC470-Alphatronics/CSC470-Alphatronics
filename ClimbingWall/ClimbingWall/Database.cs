@@ -561,7 +561,7 @@ namespace ClimbingWall
             }
 
             // Change password
-            string cmd_str = "UPDATE climbing_wall.employee SET `Password` = @hashedPassword WHERE `Employee_Name` = @name";
+            string cmd_str = "UPDATE climbing_wall.employee SET `Password` = @hashedPassword WHERE `Employee_Username` = @name";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             cmd.Parameters.AddWithValue("@name", name);
@@ -606,7 +606,7 @@ namespace ClimbingWall
             }
             else
             {
-                cmd_str = "select Employee_ID, Level, Employee_Name from " + tableName + " " + whereStatement;
+                cmd_str = "select Employee_ID, Level, Employee_Username from " + tableName + " " + whereStatement;
             }
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
@@ -668,7 +668,7 @@ namespace ClimbingWall
         
         public int getEmployeeID(string emp_name)
         {
-            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Name = @name";
+            string cmd_str = "SELECT * FROM climbing_wall.employee WHERE Employee_Username = @name";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             cmd.Parameters.AddWithValue("@name", emp_name);

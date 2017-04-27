@@ -82,7 +82,7 @@ namespace ClimbingWall
                         {
                             whereStatement += " and ";
                         }
-                        whereStatement += "employee_name='" + empNameBox.Text + "'";
+                        whereStatement += "Employee_Username='" + empNameBox.Text + "'";
                     }
                     break;//employee
 
