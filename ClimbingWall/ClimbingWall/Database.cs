@@ -596,7 +596,15 @@ namespace ClimbingWall
 		}
 		public DataTable searchDatabase(string tableName, string whereStatement)
         {
-            string cmd_str = "select * from " + tableName + " " + whereStatement;
+            string cmd_str;
+            if (tableName != "climbing_wall.employee")
+            {
+                cmd_str = "select * from " + tableName + " " + whereStatement;
+            }
+            else
+            {
+                cmd_str = "select Employee_ID, Level, Employee_Name from " + tableName + " " + whereStatement;
+            }
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             
