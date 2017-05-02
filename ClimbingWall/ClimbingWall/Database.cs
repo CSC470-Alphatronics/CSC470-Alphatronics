@@ -130,7 +130,7 @@ namespace ClimbingWall
             DateTime waverExp;
             try
             {
-                waverExp = reader.GetDateTime("WaverExp");
+                waverExp = reader.GetDateTime("WaiverExp");
             }
             catch
             {
