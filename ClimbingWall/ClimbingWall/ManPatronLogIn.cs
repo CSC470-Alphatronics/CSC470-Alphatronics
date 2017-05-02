@@ -49,6 +49,8 @@ namespace ClimbingWall
                         status = "Patron currently suspended!"; break;
                     case PatronLoginStatus.SUCCESS:
                         status = "Login successful!"; break;
+					case PatronLoginStatus.PATRONSUSPCLEAR:
+						status = "Patron Suspension Cleared, Please Re-Enter your Login!"; break;
                     default:
                         status = "what"; break;
                 }

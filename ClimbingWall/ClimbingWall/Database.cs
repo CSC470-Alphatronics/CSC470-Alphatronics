@@ -120,13 +120,17 @@ namespace ClimbingWall
             if (!reader.IsDBNull(suspColNum))
             {
                 int suspID = reader.GetInt16("FK_Suspend");
-                PatronLoginStatus status = checkSuspensions(suspID);
+				reader.Close();
+                PatronLoginStatus status = checkSuspensions(suspID, ref reader);
                 if(status != PatronLoginStatus.SUCCESS)
                 {
                     return status;
                 }
-                
+				if(status == PatronLoginStatus.SUCCESS) {
+					return PatronLoginStatus.PATRONSUSPCLEAR;
+				}
             }
+			reader.Read();
             DateTime waverExp;
             try
             {
@@ -138,7 +142,7 @@ namespace ClimbingWall
             }
             DateTime currentDate = DateTime.Today;
             PatronLoginStatus waverStatus = PatronLoginStatus.SUCCESS;
-            if (waverExp == null || currentDate.Date.CompareTo(waverExp) > 0)
+            if (waverExp == DateTime.MinValue || currentDate.Date.CompareTo(waverExp) > 0)
             {
                 waverStatus = PatronLoginStatus.WAVEREXPIRED;
             }
@@ -197,9 +201,8 @@ namespace ClimbingWall
             return PatronLoginStatus.SUCCESS;
         }
 
-        public PatronLoginStatus checkSuspensions(int suspID)
+        public PatronLoginStatus checkSuspensions(int suspID, ref MySqlDataReader suspReader)
         {
-            MySqlDataReader suspReader;
             string cmd_str = "SELECT * FROM climbing_wall.suspensions WHERE Suspend_ID = @ID";
             MySqlCommand cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
