@@ -289,7 +289,7 @@ namespace ClimbingWall
             return status;
         }
 
-        public bool modifyPatron(string fName, string lName, string midI, string phone, string email, int pat_Id)
+        public bool modifyPatron(string fName, string lName, string midI, string phone, string email, int pat_Id, byte[] img)
         {
             bool patronExists = false;
             string cmd_str = "SELECT * FROM climbing_wall.patron WHERE PatronID = @ID";
@@ -315,13 +315,14 @@ namespace ClimbingWall
             
             if (patronExists)
             {
-                cmd_str = "UPDATE climbing_wall.patron SET FName=@Fname, LName=@LName, MInitial=@MI, Email=@Email, Phone=@Phone where PatronID = @PatronID";
+                cmd_str = "UPDATE climbing_wall.patron SET FName=@Fname, LName=@LName, MInitial=@MI, Email=@Email, Phone=@Phone, Waiver = @waiver, WaiverExp = @exp where PatronID = @PatronID";
             }
             else
             {
                 return false;
             }
-
+            DateTime expire = DateTime.Now;
+            expire = expire.AddYears(1);
             cmd = new MySqlCommand(cmd_str, connection);
             cmd.CommandText = cmd_str;
             cmd.Parameters.AddWithValue("@Fname", fName);
@@ -330,7 +331,8 @@ namespace ClimbingWall
             cmd.Parameters.AddWithValue("@Email", email);
             cmd.Parameters.AddWithValue("@Phone", phone);
             cmd.Parameters.AddWithValue("@PatronID", pat_Id);
-
+            cmd.Parameters.AddWithValue("@waiver", img);
+            cmd.Parameters.AddWithValue("@exp", expire);
             try
             {
                 cmd.ExecuteNonQuery();
@@ -767,5 +769,6 @@ namespace ClimbingWall
             }
             return dtCloned;
         }
+
     }
 }

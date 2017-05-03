@@ -51,7 +51,7 @@ namespace ClimbingWall
 
 				if (isValid)
                 {
-                    var sign = new SignWaiver(FirstNameTextbox.Text, LastNameTextbox.Text, MiddleInitTextbox.Text, PhoneTextbox.Text, EmailTextbox.Text, Convert.ToInt32(IDTextbox.Text));
+                    var sign = new SignWaiver(FirstNameTextbox.Text, LastNameTextbox.Text, MiddleInitTextbox.Text, PhoneTextbox.Text, EmailTextbox.Text, Convert.ToInt32(IDTextbox.Text), false);
                     sign.Show();
 				}
 			}

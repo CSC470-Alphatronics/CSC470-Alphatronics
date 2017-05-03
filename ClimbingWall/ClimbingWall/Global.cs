@@ -25,6 +25,7 @@ namespace ClimbingWall
 
 	static class Globals
 	{
+        public static bool useConfigFile = true;
 		public static EmployeeLevel empLevel = EmployeeLevel.EMPLOYEE;
 		public static int currEmployeeId = 1;
 		public static string currEmployeeName = "";

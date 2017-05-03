@@ -58,18 +58,10 @@ namespace ClimbingWall
 
                 if (isValid)
                 {
+                    var sign = new SignWaiver(FirstNameTextbox.Text, LastNameTextbox.Text, MiddleInitTextbox.Text, PhoneTextbox.Text, EmailTextbox.Text, Convert.ToInt32(IDTextbox.Text), true);
+                    sign.Show();
                     //createPatron(string fName, string lName, string midI, string phone, string email, string pat_Id)
-                    bool status = Database.Instance.modifyPatron(FirstNameTextbox.Text, LastNameTextbox.Text, MiddleInitTextbox.Text, PhoneTextbox.Text, EmailTextbox.Text, Convert.ToInt32(IDTextbox.Text));
-
-                    if (status == true)
-                    {
-                        MessageBox.Show("User data updated.");
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("User modification failed.");
-                    }
+                  //  bool status = Database.Instance.modifyPatron(FirstNameTextbox.Text, LastNameTextbox.Text, MiddleInitTextbox.Text, PhoneTextbox.Text, EmailTextbox.Text, Convert.ToInt32(IDTextbox.Text));
                 }
             }
             else

@@ -21,7 +21,7 @@ namespace ClimbingWall
         int x, y, lx, ly = 0;
         string first, last, mInitial, phoneNum, eAddress;
         int ID;
-
+        bool modify = false;
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImage(bmp, Point.Empty);
@@ -48,16 +48,13 @@ namespace ClimbingWall
 
             if (signed)
             {
-                //createPatron(string fName, string lName, string midI, string phone, string email, string pat_Id)
-                bool success = Database.Instance.createPatron(first, last, mInitial, phoneNum, eAddress, ID, img);
-                if (success)
+                if(modify)
                 {
-                    MessageBox.Show("User creation succeeded.");
-                    this.Hide();
+                    mod(img);
                 }
                 else
                 {
-                    MessageBox.Show("User creaton failed.");
+                    create(img);
                 }
             }
             else
@@ -73,7 +70,7 @@ namespace ClimbingWall
             ly = e.Y;
         }
 
-        public SignWaiver(string fname, string lname, string middle, string phone, string email, int id)
+        public SignWaiver(string fname, string lname, string middle, string phone, string email, int id, bool m)
         {
             InitializeComponent();
             first = fname;
@@ -82,6 +79,7 @@ namespace ClimbingWall
             phoneNum = phone;
             eAddress = email;
             ID = id;
+            modify = m;
             bmp = new Bitmap(432, 116);
         }
 
@@ -95,7 +93,32 @@ namespace ClimbingWall
                 g.FillEllipse(Brushes.Black, e.X, e.Y, 5, 5);
             }
             pictureBox1.Invalidate();
-
+        }
+        private void create(byte[] img)
+        {
+            bool success = Database.Instance.createPatron(first, last, mInitial, phoneNum, eAddress, ID, img);
+            if (success)
+            {
+                MessageBox.Show("User creation succeeded.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("User creaton failed.");
+            }
+        }
+        private void mod(byte[] img)
+        {
+            bool status = Database.Instance.modifyPatron(first, last, mInitial, phoneNum, eAddress, ID, img);
+            if (status == true)
+            {
+                MessageBox.Show("User data updated.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("User modification failed.");
+            }
         }
     }
 }
